@@ -9,3 +9,56 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.text_habarovsk {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    text-transform: uppercase;
+    background-image: url('../../assets/border_habarovsk.png');
+    background-repeat: no-repeat;
+    width: 540px;
+    height: 210px;
+    bottom: 42%;
+    right: 66%;
+    z-index: 1;
+}
+
+.text_title {
+    margin: 20px;
+    font-size: 37px;
+}
+
+.text_subtitle {
+    display: flex;
+
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+.text_cheluskin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    text-transform: uppercase;
+    background-image: url('../../assets/border_cheluskin.png');
+    background-repeat: no-repeat;
+    width: 541px;
+    height: 177px;
+    bottom: 16%;
+    left: 60%;
+    z-index: 1;
+}
+
+.point {
+    position: absolute;
+    bottom: 14%;
+    right: 39%;
+}
+
+.point_left {
+    position: absolute;
+    bottom: 40%;
+    left: 33%;
+}
