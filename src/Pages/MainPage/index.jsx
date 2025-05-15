@@ -10,7 +10,7 @@ const MainPage = () => {
             <div className={styles.container}>
                 <Header />
                 <div className={styles.main}>
-                    <Link to="history">
+                    <Link to="/history">
                         <button className={styles.button_main}>исторический обзор</button>
                     </Link>
                     <button className={styles.button_main}>персонали</button>

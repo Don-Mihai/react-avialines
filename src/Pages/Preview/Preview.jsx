@@ -1,24 +1,19 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import styles from './Preview.module.css';
 
+import rescue from '../../video/rescue_operations.mp4';
+
 export default function Preview() {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate('/main');
-  };
+    const handleClick = () => {
+        navigate('/main');
+    };
 
-  return (
-    <div className={styles.container} onClick={handleClick}>
-      <video
-        className={styles.video}
-        src="/videos/preview.mp4" // укажите путь к вашему видео
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-    </div>
-  );
+    return (
+        <div className={styles.container} onClick={handleClick}>
+            <video className={styles.video} src={rescue} autoPlay loop muted playsInline />
+        </div>
+    );
 }
