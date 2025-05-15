@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 import styles from './Preview.module.css';
 
-import rescue from '../../../public/videos/rescue_operations.mp4';
+import rescue from '../../videos/rescue_operations.mp4';
 
 export default function Preview() {
     const navigate = useNavigate();
