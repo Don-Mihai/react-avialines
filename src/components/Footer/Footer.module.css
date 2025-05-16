@@ -26,7 +26,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 86px;
     height: 86px;
     border-radius: 50%;
@@ -35,6 +34,5 @@
     outline-offset: 6px;
     background: rgba(255, 255, 255, 0.25);
     color: #ffffff;
-
     cursor: pointer;
 }

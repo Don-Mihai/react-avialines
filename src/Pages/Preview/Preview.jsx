@@ -8,9 +8,11 @@ export default function Preview() {
     navigate('/main');
   };
 
-  return (
-    <div className={styles.container} onClick={handleClick}>
-      <video className={styles.video} src={'/videos/preview.mp4'} autoPlay loop muted playsInline />
-    </div>
-  );
+
+    return (
+        <div className={styles.container} onClick={handleClick}>
+            <video className={styles.video} src={'/videos/preview.mp4'} autoPlay loop muted playsInline />
+        </div>
+    );
+
 }

@@ -13,13 +13,13 @@
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-    background: rgba(24, 54, 60, 0.25);
-    outline: solid 2px rgba(24, 54, 60, 1) !important;
+    background: rgba(255, 255, 255, 0.8);
+    outline: solid 2px rgba(255, 255, 255, 0.8) !important;
     outline-offset: 7px;
     color: rgba(23, 53, 61, 1);
 }
 
-.button_header_history {
-    background: rgba(255, 255, 255, 1);
-    outline: solid 2px rgba(255, 255, 255, 1) !important;
+.button_header_main {
+    background: rgba(24, 54, 60, 0.25);
+    outline: solid 2px rgba(24, 54, 60, 1) !important;
 }
