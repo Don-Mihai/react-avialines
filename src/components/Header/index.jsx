@@ -4,21 +4,21 @@ import styles from './Header.module.css';
 
 const Header = () => {
     const location = useLocation();
-    const isHistoricalPage = location.pathname === '/history';
+    const isMainPage = location.pathname === '/main';
 
     return (
         <>
             <div className={styles.header}>
-                <button className={`${styles.button_header} ${isHistoricalPage ? styles.button_header_history : ''}`}>
+                <button className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>
                     Версия для <br /> слабовидящих
                 </button>
-                <button className={`${styles.button_header} ${isHistoricalPage ? styles.button_header_history : ''}`}>
+                <button className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>
                     каталог <br /> экспонатов
                 </button>
-                <button className={`${styles.button_header} ${isHistoricalPage ? styles.button_header_history : ''}`}>
+                <button className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>
                     аудиогид <br /> по приложению
                 </button>
-                <button className={`${styles.button_header} ${isHistoricalPage ? styles.button_header_history : ''}`}>ru</button>
+                <button className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>ru</button>
             </div>
         </>
     );
