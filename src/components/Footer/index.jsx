@@ -5,6 +5,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import styles from './Footer.module.css';
 
 const Footer = () => {
+
     const navigate = useNavigate();
     const location = useLocation();
     const isMainPage = location.pathname === '/main';
@@ -27,6 +28,7 @@ const Footer = () => {
             </div>
         </>
     );
+
 };
 
 export default Footer;
