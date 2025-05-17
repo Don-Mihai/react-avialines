@@ -9,3 +9,21 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.nordic {
+    position: absolute;
+    top: 26%;
+    left: 5%;
+    width: 580px;
+    height: 350px;
+    cursor: pointer;
+}
+
+.cheliuskina {
+    position: absolute;
+    bottom: 10%;
+    right: 12%;
+    width: 580px;
+    height: 350px;
+    cursor: pointer;
+}
