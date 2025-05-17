@@ -15,13 +15,13 @@ const TABS = {
 };
 
 const Menu = ({ data }) => {
-    const { images, videos, audios, title } = data;
+    const { images = [], videos = [], audios = [], title } = data;
     const [activeTab, setActiveTab] = useState(TABS.PHOTO);
 
     const renderContent = () => {
         switch (activeTab) {
             case TABS.PHOTO:
-                return <MenuPhoto images={images} text={data.text} />;
+                return <MenuPhoto images={images} />;
             case TABS.VIDEO:
                 return <MenuVideo videos={videos} />;
             case TABS.AUDIO:

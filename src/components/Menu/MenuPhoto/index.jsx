@@ -3,10 +3,12 @@ import { useState } from 'react';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
+import ImageModal from './imageModal';
 
-const MenuPhoto = ({ images, text, title }) => {
+const MenuPhoto = ({ images }) => {
     const [currentPhoto, setCurrentPhoto] = useState(1);
-    const totalPhotos = 12;
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const totalPhotos = images.length;
 
     const handlePrev = () => {
         setCurrentPhoto(prev => Math.max(prev - 1, 1));
@@ -19,12 +21,15 @@ const MenuPhoto = ({ images, text, title }) => {
     return (
         <>
             <div className={styles.container}>
+                <ImageModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                    <img className={styles.imageFullscreen} src={images[currentPhoto - 1]?.src} alt="Fullscreen" />
+                </ImageModal>
                 <div className={styles.text}>
-                    <span>{text}</span>
+                    <span>{images[currentPhoto - 1]?.text}</span>
                 </div>
                 <div className={styles.content}>
-                    <h3 className={styles.title}>{title}</h3>
-                    <img className={styles.img} src={images[currentPhoto - 1].src} alt="MenuPhoto" />
+                    <h3 className={styles.title}>{images[currentPhoto - 1]?.title || 'Название фото'}</h3>
+                    <img className={styles.img} src={images[currentPhoto - 1]?.src} alt="MenuPhoto" />
                     <div className={styles.controls}>
                         <div className={styles.pagination_container}>
                             <button className={styles.button} onClick={handlePrev} disabled={currentPhoto === 1}>
@@ -38,7 +43,7 @@ const MenuPhoto = ({ images, text, title }) => {
                             </button>
                         </div>
                     </div>
-                    <button className={styles.button_fullscreen} onClick={() => window.location.reload()}>
+                    <button className={styles.button_fullscreen} onClick={() => setIsModalOpen(true)}>
                         <FullscreenIcon style={{ width: '50px', height: '50px' }} />
                     </button>
                 </div>
