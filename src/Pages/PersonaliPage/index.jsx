@@ -1,11 +1,15 @@
 import styles from './PersonaliPage.module.css';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { personali } from '../../data';
 
 const PersonaliPage = ({ data = personali }) => {
+    const navigate = useNavigate();
     const [currentCategory, setCurrentCategory] = useState('pilots');
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(4);
@@ -19,9 +23,10 @@ const PersonaliPage = ({ data = personali }) => {
                     person =>
                         person.gallery?.map((img, idx) => ({
                             ...img,
+                            personId: person.id,
                             personTitle: person.title,
                             date: person.date,
-                            id: `${person.title}-${idx}`,
+                            id: `${person.id}-${idx}`,
                         })) || []
                 )
                 .filter(img => img.src);
@@ -38,7 +43,17 @@ const PersonaliPage = ({ data = personali }) => {
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = currentImages.slice(indexOfFirstItem, indexOfLastItem);
 
-    const paginate = pageNumber => setCurrentPage(pageNumber);
+    const handlePrevious = () => {
+        if (currentPage > 1) {
+            setCurrentPage(prev => prev - 1);
+        }
+    };
+
+    const handleNext = () => {
+        if (currentPage < totalPages) {
+            setCurrentPage(prev => prev + 1);
+        }
+    };
 
     return (
         <>
@@ -56,12 +71,12 @@ const PersonaliPage = ({ data = personali }) => {
                 <div className={styles.imageGrid}>
                     {currentItems.length > 0 ? (
                         currentItems.map(image => (
-                            <div key={image.id} className={styles.imageCard}>
+                            <div key={image.id} className={styles.imageCard} onClick={() => navigate(`/personali/${image.personId}`)}>
                                 <img src={image.src} alt={image.title} className={styles.image} />
                                 <div className={styles.imageInfo}>
-                                    <h3>{image.personTitle}</h3>
+                                    <h4 style={{ fontWeight: 'normal' }}>{image.personTitle}</h4>
                                     <p>{image.date}</p>
-                                    <p>{image.title}</p>
+                                    <p style={{ fontSize: '14px' }}>{image.title}</p>
                                 </div>
                             </div>
                         ))
@@ -70,11 +85,15 @@ const PersonaliPage = ({ data = personali }) => {
                     )}
                 </div>
                 <div className={styles.pagination}>
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(number => (
-                        <button key={number} onClick={() => paginate(number)} className={currentPage === number ? styles.activePage : ''}>
-                            {number}
-                        </button>
-                    ))}
+                    <button onClick={handlePrevious} disabled={currentPage === 1} className={styles.arrowButton}>
+                        <ArrowLeftIcon />
+                    </button>
+                    <span className={styles.pageCounter}>
+                        {currentPage} / {totalPages}
+                    </span>
+                    <button onClick={handleNext} disabled={currentPage === totalPages} className={styles.arrowButton}>
+                        <ArrowRightIcon />
+                    </button>
                 </div>
                 <Footer />
             </div>

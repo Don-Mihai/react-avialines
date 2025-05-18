@@ -51,7 +51,7 @@
     text-align: center;
 }
 
-.pagination_container {
+.paginationContainer {
     display: flex;
     align-items: center;
     gap: 1rem;

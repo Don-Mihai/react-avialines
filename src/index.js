@@ -11,6 +11,7 @@ import NordicPage from './Pages/HistoricalPage/NordicPage/index.jsx';
 import PersonaliPage from './Pages/PersonaliPage/index.jsx';
 import GamesPage from './Pages/GamesPage/index.jsx';
 import FilmsPage from './Pages/FilmsPage/index.jsx';
+import PersonDetail from './Pages/PersonaliPage/PersonDetail/index.jsx';
 
 const router = createBrowserRouter([
     {
@@ -35,7 +36,16 @@ const router = createBrowserRouter([
     },
     {
         path: 'personali',
-        element: <PersonaliPage />,
+        children: [
+            {
+                index: true,
+                element: <PersonaliPage />,
+            },
+            {
+                path: ':id',
+                element: <PersonDetail />,
+            },
+        ],
     },
     {
         path: 'films',
@@ -44,6 +54,10 @@ const router = createBrowserRouter([
     {
         path: 'games',
         element: <GamesPage />,
+    },
+    {
+        path: '*',
+        element: <div>Страница не найдена</div>,
     },
 ]);
 

@@ -64,41 +64,55 @@ export const cheliuskina = {
 export const personali = {
     pilots: [
         {
-            date: '1900-1900',
-            src: '',
-            title: 'Фамилия Имя Отчество',
+            id: 'pilot',
+            date: '(1900-1900)',
+            title: 'Фамилия Имя Отчество1',
             biography: {
-                date: '1900-1900',
-                src: '',
-                title: 'Фамилия Имя Отчество',
+                title: 'Биография пилота 1',
             },
-            quotes: [{ title: 'цитата' }],
-            awards: [{}],
-            gallery: [
-                { src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 1' },
-                { src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 2' },
-                { src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 2' },
-                { src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 2' },
-            ],
+            quotes: { title: 'цитата пилота 1' },
+            awards: [{ title: 'награда пилота 1' }],
+            gallery: [{ src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 1' }],
+        },
+        {
+            id: 'pilot-1',
+            date: '(1900-1900)',
+            title: 'Фамилия Имя Отчество2',
+            biography: {
+                title: 'Биография пилота 2',
+            },
+            quotes: { title: 'цитата пилота 2' },
+            awards: [{ title: 'награда пилота 2' }],
+            gallery: [{ src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 2' }],
         },
     ],
     engineers: [
         {
-            date: '1900-1900',
-            src: '',
-            title: 'Фамилия Имя Отчество',
+            id: 'engineer-0',
+            date: '(1900-1900)',
+            title: 'Фамилия Имя Отчество1',
             biography: {
-                date: '1900-1900',
-                src: '',
-                title: 'Фамилия Имя Отчество',
+                title: 'Биография инженера 1',
             },
-            quotes: [{ date: '1900-1900', src: '', title: 'Фамилия Имя Отчество' }],
-            awards: [{}],
+            quotes: { title: 'цитата инженера 1' },
+            awards: [{ title: 'награда инженера 1' }],
             gallery: [
                 {
                     src: 'https://thumbs.dreamstime.com/b/happy-young-businessman-architect-white-background-holding-blueprints-31418941.jpg',
                     title: 'инженер 1',
                 },
+            ],
+        },
+        {
+            id: 'engineer-1',
+            date: '(1900-1900)',
+            title: 'Фамилия Имя Отчество2',
+            biography: {
+                title: 'Биография инженера 2',
+            },
+            quotes: { title: 'цитата инженера 2' },
+            awards: [{ title: 'награда инженера 2' }],
+            gallery: [
                 {
                     src: 'https://thumbs.dreamstime.com/b/happy-young-businessman-architect-white-background-holding-blueprints-31418941.jpg',
                     title: 'инженер 2',
@@ -108,24 +122,34 @@ export const personali = {
     ],
     researchers: [
         {
-            date: '1900-1900',
-            src: '',
-            title: 'Фамилия Имя Отчество',
+            id: 'researcher-0',
+            date: '(1900-1900)',
+            title: 'Фамилия Имя Отчество1',
             biography: {
-                date: '1900-1900',
-                src: '',
-                title: 'Фамилия Имя Отчество',
+                title: 'Биография исследователя 1',
             },
-            quotes: [{ date: '1900-1900', src: '', title: 'Фамилия Имя Отчество' }],
-            awards: [{}],
+            quotes: { title: 'цитата исследователя 1' },
+            awards: [{ title: 'награда исследователя 1' }],
             gallery: [
                 {
                     src: 'https://www.akulchev.ru/local/templates/main/images/product-quality_2.jpg',
-                    title: 'исследователь 1',
+                    title: 'исследователя 1',
                 },
+            ],
+        },
+        {
+            id: 'researcher-1',
+            date: '(1900-1900)',
+            title: 'Фамилия Имя Отчество1',
+            biography: {
+                title: 'Биография исследователя 2',
+            },
+            quotes: { title: 'цитата исследователя 2' },
+            awards: [{ title: 'награда исследователя 2' }],
+            gallery: [
                 {
                     src: 'https://www.akulchev.ru/local/templates/main/images/product-quality_2.jpg',
-                    title: 'исследователь 2',
+                    title: 'исследователя 2',
                 },
             ],
         },

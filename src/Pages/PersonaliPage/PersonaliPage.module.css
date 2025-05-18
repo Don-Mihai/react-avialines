@@ -50,9 +50,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    justify-content: center;
-    margin: 150px auto 0;
-    max-width: 1200px;
+
+    margin: 30px auto 0;
     padding: 20px;
     width: 100%;
 }
@@ -60,44 +59,64 @@
 .imageCard {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
     overflow: hidden;
+    height: 600px;
 }
 
 .image {
     width: 100%;
-    height: 200px;
+    max-width: 350px;
+    height: 471px;
+    outline: solid 2px rgba(24, 54, 60, 1) !important;
+    box-shadow: 0px 7px 11px 0px rgba(34, 60, 80, 0.3);
+    outline-offset: 13px;
     object-fit: cover;
     cursor: pointer;
 }
 
 .imageInfo {
-    padding: 10px;
     text-align: center;
+    font-style: oblique;
+    font-weight: normal;
+    color: rgba(33, 56, 62, 1);
+    font-size: 30px;
+    margin-top: 14px;
     width: 100%;
 }
 
 .pagination {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 5px;
-    margin: 20px 0;
-    padding: 20px;
+    gap: 1rem;
 }
 
-.pagination button {
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    cursor: pointer;
+.pagenationCounter {
+    font-size: 1.2rem;
+    min-width: 50px;
+    text-align: center;
 }
 
-.pagination button.activePage {
-    background: #007bff;
-    color: white;
-    border-color: #007bff;
+.arrowButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    outline: 2px solid rgba(25, 54, 60, 1) !important;
+    outline-offset: 4px;
+    border: none;
+    width: 57px;
+    height: 57px;
+    background: rgba(63, 78, 83, 1);
+    color: #fff;
+}
+
+.arrowButton:disabled {
+    opacity: 0.5;
+    transform: none;
+    cursor: not-allowed;
 }
 
 .noImages {

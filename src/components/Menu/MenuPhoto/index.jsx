@@ -3,6 +3,7 @@ import { useState } from 'react';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
+
 import ImageModal from './imageModal';
 
 const MenuPhoto = ({ images }) => {
@@ -31,7 +32,7 @@ const MenuPhoto = ({ images }) => {
                     <h3 className={styles.title}>{images[currentPhoto - 1]?.title || 'Название фото'}</h3>
                     <img className={styles.img} src={images[currentPhoto - 1]?.src} alt="MenuPhoto" />
                     <div className={styles.controls}>
-                        <div className={styles.pagination_container}>
+                        <div className={styles.paginationContainer}>
                             <button className={styles.button} onClick={handlePrev} disabled={currentPhoto === 1}>
                                 <ArrowLeftIcon style={{ width: '70px', height: '70px' }} />
                             </button>
