@@ -1,5 +1,5 @@
 import styles from './Historical.module.css';
-import { Link, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';

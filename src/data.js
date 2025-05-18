@@ -43,10 +43,14 @@ export const nordic = {
         { text: 'Текстовое описание8', src: '/videos/preview.mp4', title: 'название видео8' },
     ],
     audios: [
-        { text: 'Текстовое описание1', src: '', title: 'название аудио' },
-        { text: 'Текстовое описание2', src: '', title: 'название аудио' },
-        { text: 'Текстовое описание3', src: '', title: 'название аудио' },
-        { text: 'Текстовое описание4', src: '', title: 'название аудио' },
+        { text: 'Текстовое описание1', src: '/audios/preview.mp3', title: 'название аудио' },
+        { text: 'Текстовое описание2', src: '/audios/preview.mp3', title: 'название аудио' },
+        { text: 'Текстовое описание3', src: '/audios/preview.mp3', title: 'название аудио' },
+        { text: 'Текстовое описание4', src: '/audios/preview.mp3', title: 'название аудио' },
+        { text: 'Текстовое описание5', src: '/audios/preview.mp3', title: 'название аудио' },
+        { text: 'Текстовое описание6', src: '/audios/preview.mp3', title: 'название аудио' },
+        { text: 'Текстовое описание7', src: '/audios/preview.mp3', title: 'название аудио' },
+        { text: 'Текстовое описание8', src: '/audios/preview.mp3', title: 'название аудио' },
     ],
 };
 
@@ -55,4 +59,75 @@ export const cheliuskina = {
     images: [{ text: 'текст', src: '', title: 'название фото' }],
     videos: [{ text: 'текст', src: '', title: 'название видео' }],
     audios: [{ text: 'текст', src: '', title: 'название аудио' }],
+};
+
+export const personali = {
+    pilots: [
+        {
+            date: '1900-1900',
+            src: '',
+            title: 'Фамилия Имя Отчество',
+            biography: {
+                date: '1900-1900',
+                src: '',
+                title: 'Фамилия Имя Отчество',
+            },
+            quotes: [{ title: 'цитата' }],
+            awards: [{}],
+            gallery: [
+                { src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 1' },
+                { src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 2' },
+                { src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 2' },
+                { src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 2' },
+            ],
+        },
+    ],
+    engineers: [
+        {
+            date: '1900-1900',
+            src: '',
+            title: 'Фамилия Имя Отчество',
+            biography: {
+                date: '1900-1900',
+                src: '',
+                title: 'Фамилия Имя Отчество',
+            },
+            quotes: [{ date: '1900-1900', src: '', title: 'Фамилия Имя Отчество' }],
+            awards: [{}],
+            gallery: [
+                {
+                    src: 'https://thumbs.dreamstime.com/b/happy-young-businessman-architect-white-background-holding-blueprints-31418941.jpg',
+                    title: 'инженер 1',
+                },
+                {
+                    src: 'https://thumbs.dreamstime.com/b/happy-young-businessman-architect-white-background-holding-blueprints-31418941.jpg',
+                    title: 'инженер 2',
+                },
+            ],
+        },
+    ],
+    researchers: [
+        {
+            date: '1900-1900',
+            src: '',
+            title: 'Фамилия Имя Отчество',
+            biography: {
+                date: '1900-1900',
+                src: '',
+                title: 'Фамилия Имя Отчество',
+            },
+            quotes: [{ date: '1900-1900', src: '', title: 'Фамилия Имя Отчество' }],
+            awards: [{}],
+            gallery: [
+                {
+                    src: 'https://www.akulchev.ru/local/templates/main/images/product-quality_2.jpg',
+                    title: 'исследователь 1',
+                },
+                {
+                    src: 'https://www.akulchev.ru/local/templates/main/images/product-quality_2.jpg',
+                    title: 'исследователь 2',
+                },
+            ],
+        },
+    ],
 };

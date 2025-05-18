@@ -4,35 +4,50 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 
 const MenuAudio = ({ audios }) => {
-    const [currentAudio, setCurrentAudio] = useState(1);
-    const totalAudios = 2;
+    const [currentPage, setCurrentPage] = useState(1);
+    const audiosPerPage = 4;
+    const totalPages = Math.ceil(audios.length / audiosPerPage);
+
+    const startIndex = (currentPage - 1) * audiosPerPage;
+    const currentAudios = audios.slice(startIndex, startIndex + audiosPerPage);
 
     const handlePrev = () => {
-        setCurrentAudio(prev => Math.max(prev - 1, 1));
+        setCurrentPage(prev => Math.max(prev - 1, 1));
     };
 
     const handleNext = () => {
-        setCurrentAudio(prev => Math.min(prev + 1, totalAudios));
+        setCurrentPage(prev => Math.min(prev + 1, totalPages));
     };
 
     return (
         <>
             <div className={styles.container}>
-                <div className={styles.text}>
-                    <span>{audios[currentAudio - 1]?.text}</span>
+                <div className={styles.textSection}>
+                    {currentAudios.map((audio, index) => (
+                        <div key={index} className={styles.textBlock}>
+                            <p className={styles.audioText}>{audio.text || 'Описание Аудио'}</p>
+                        </div>
+                    ))}
                 </div>
                 <div className={styles.content}>
-                    <h3 className={styles.title}>{audios[currentAudio - 1]?.title || 'Название Аудио'}</h3>
-                    <img className={styles.img} src={audios[currentAudio - 1]?.src} alt="MenuAudio" />
+                    <div className={styles.audioGrid}>
+                        {currentAudios.map((audio, index) => (
+                            <div key={index} className={styles.audioCard}>
+                                <audio controls className={styles.audio} src={audio.src || 'fallback-audio.mp3'} alt="MenuAudio" />
+                                <h3 className={styles.title}>{audio.title || 'Название Аудио'}</h3>
+                            </div>
+                        ))}
+                    </div>
+
                     <div className={styles.controls}>
                         <div className={styles.pagination_container}>
-                            <button className={styles.button} onClick={handlePrev} disabled={currentAudio === 1}>
+                            <button className={styles.button} onClick={handlePrev} disabled={currentPage === 1}>
                                 <ArrowLeftIcon style={{ width: '70px', height: '70px' }} />
                             </button>
                             <span className={styles.pagination}>
-                                {currentAudio}/{totalAudios}
+                                {currentPage}/{totalPages}
                             </span>
-                            <button className={styles.button} onClick={handleNext} disabled={currentAudio === totalAudios}>
+                            <button className={styles.button} onClick={handleNext} disabled={currentPage === totalPages}>
                                 <ArrowRightIcon style={{ width: '70px', height: '70px' }} />
                             </button>
                         </div>
