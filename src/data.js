@@ -65,13 +65,13 @@ export const personali = {
     pilots: [
         {
             id: 'pilot',
-            date: '(1900-1900)',
-            title: 'Фамилия Имя Отчество1',
+            date: '(05.10.1908 г.-12.03.1982 г.)',
+            title: 'Каманин Николай Петрович',
             biography: {
-                title: 'Биография пилота 1',
+                title: 'Советский летчик, генерал-полковник авиции, один из первых семи Героев Советского Союза',
             },
             quotes: { title: 'цитата пилота 1' },
-            awards: [{ title: 'награда пилота 1' }],
+            awards: [{ title: 'достижения пилота 1' }],
             gallery: [{ src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 1' }],
         },
         {
@@ -82,7 +82,7 @@ export const personali = {
                 title: 'Биография пилота 2',
             },
             quotes: { title: 'цитата пилота 2' },
-            awards: [{ title: 'награда пилота 2' }],
+            awards: [{ title: 'достижения пилота 2' }],
             gallery: [{ src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 2' }],
         },
     ],
@@ -95,7 +95,7 @@ export const personali = {
                 title: 'Биография инженера 1',
             },
             quotes: { title: 'цитата инженера 1' },
-            awards: [{ title: 'награда инженера 1' }],
+            awards: [{ title: 'достижения инженера 1' }],
             gallery: [
                 {
                     src: 'https://thumbs.dreamstime.com/b/happy-young-businessman-architect-white-background-holding-blueprints-31418941.jpg',
@@ -111,7 +111,7 @@ export const personali = {
                 title: 'Биография инженера 2',
             },
             quotes: { title: 'цитата инженера 2' },
-            awards: [{ title: 'награда инженера 2' }],
+            awards: [{ title: 'достижения инженера 2' }],
             gallery: [
                 {
                     src: 'https://thumbs.dreamstime.com/b/happy-young-businessman-architect-white-background-holding-blueprints-31418941.jpg',
@@ -129,7 +129,7 @@ export const personali = {
                 title: 'Биография исследователя 1',
             },
             quotes: { title: 'цитата исследователя 1' },
-            awards: [{ title: 'награда исследователя 1' }],
+            awards: [{ title: 'достижения исследователя 1' }],
             gallery: [
                 {
                     src: 'https://www.akulchev.ru/local/templates/main/images/product-quality_2.jpg',
@@ -145,7 +145,7 @@ export const personali = {
                 title: 'Биография исследователя 2',
             },
             quotes: { title: 'цитата исследователя 2' },
-            awards: [{ title: 'награда исследователя 2' }],
+            awards: [{ title: 'достижения исследователя 2' }],
             gallery: [
                 {
                     src: 'https://www.akulchev.ru/local/templates/main/images/product-quality_2.jpg',

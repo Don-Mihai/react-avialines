@@ -1,12 +1,33 @@
+import { useState } from 'react';
 import { useParams } from 'react-router';
 import styles from './PersonDetail.module.css';
 import { personali } from '../../../data';
 
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
+import TabsMenu from './TabsMenu';
+import Biography from './TabsMenu/Biography';
+import Achievements from './TabsMenu/Achievements';
+import Quote from './TabsMenu/Quote';
+import Gallery from './TabsMenu/Gallery';
+
+const TABS = {
+    BIOGRAPHY: 'biography',
+    ACHIEVEMENTS: 'achievements',
+    QUOTE: 'quote',
+    GALLERY: 'gallery',
+};
+
+const TABS_CONFIG = [
+    { key: TABS.BIOGRAPHY, label: 'Биография' },
+    { key: TABS.ACHIEVEMENTS, label: 'Достижения' },
+    { key: TABS.QUOTE, label: 'Цитата' },
+    { key: TABS.GALLERY, label: 'Галерея' },
+];
 
 const PersonDetail = () => {
     const { id } = useParams();
+    const [activeTab, setActiveTab] = useState(TABS.BIOGRAPHY);
 
     const categoryMap = {
         pilot: 'pilots',
@@ -14,7 +35,7 @@ const PersonDetail = () => {
         researcher: 'researchers',
     };
 
-    const [categoryPrefix, index] = id.split('-');
+    const [categoryPrefix] = id.split('-');
     const category = categoryMap[categoryPrefix];
     const person = personali[category]?.find(p => p.id === id);
 
@@ -22,52 +43,36 @@ const PersonDetail = () => {
         return <div className={styles.error}>Персона не найдена</div>;
     }
 
+    const renderContent = () => {
+        switch (activeTab) {
+            case 'biography':
+                return <Biography data={person.biography} />;
+            case 'achievements':
+                return <Achievements awards={person.awards} />;
+            case 'quote':
+                return <Quote quote={person.quote} />;
+            case 'gallery':
+                return <Gallery images={person.gallery} />;
+            default:
+                return null;
+        }
+    };
+
     return (
         <div className={styles.container}>
             <Header />
-            <div className={styles.header}>
-                <h1>{person.title}</h1>
-                <p className={styles.dates}>{person.date}</p>
-            </div>
+            <h2 className={styles.title}>Персоналии</h2>
+
+            <TabsMenu activeTab={activeTab} onTabChange={setActiveTab} tabs={TABS_CONFIG} />
 
             <div className={styles.content}>
                 <section className={styles.mainSection}>
-                    <div className={styles.biography}>
-                        <h2>Биография</h2>
-                        <p>{person.biography.title}</p>
+                    <div className={styles.header}>
+                        <h1>{person.title}</h1>
+                        <p className={styles.dates}>{person.date}</p>
                     </div>
 
-                    <div className={styles.details}>
-                        <div className={styles.column}>
-                            <div className={styles.awards}>
-                                <h3>Награды</h3>
-                                {person.awards.map((award, index) => (
-                                    <div key={index} className={styles.awardItem}>
-                                        {award.title || 'Название награды не указано'}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className={styles.column}>
-                            <div className={styles.quotes}>
-                                <h3>Цитаты</h3>
-                                <blockquote>"{person.quotes.title || 'Нет доступных цитат'}"</blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section className={styles.gallerySection}>
-                    <h2>Галерея</h2>
-                    <div className={styles.galleryGrid}>
-                        {person.gallery.map((img, index) => (
-                            <div key={index} className={styles.galleryItem}>
-                                <img src={img.src} alt={img.title} className={styles.galleryImage} />
-                                <p className={styles.imageCaption}>{img.title}</p>
-                            </div>
-                        ))}
-                    </div>
+                    <div className={styles.tabContent}>{renderContent()}</div>
                 </section>
             </div>
             <Footer />
