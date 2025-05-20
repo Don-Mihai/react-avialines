@@ -9,6 +9,18 @@
     background-repeat: no-repeat;
 }
 
+.content {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+}
+
+.header {
+    padding: 50px 0 20px 50px;
+    width: 747px;
+}
+
 .title {
     display: inline;
     margin: 15px 15px 0 15px;
@@ -21,12 +33,13 @@
     color: rgba(34, 57, 65, 1);
 }
 
-.content {
+.subtitle {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+    font-family: 'Snowstorm', arial;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 42px;
+    color: rgba(159, 5, 5, 1);
 }
 
 .buttons {

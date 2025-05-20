@@ -46,11 +46,11 @@ const PersonDetail = () => {
     const renderContent = () => {
         switch (activeTab) {
             case 'biography':
-                return <Biography data={person.biography} />;
+                return <Biography data={person.biography} images={person.gallery} />;
             case 'achievements':
-                return <Achievements awards={person.awards} />;
+                return <Achievements awards={person.awards} images={person.gallery} />;
             case 'quote':
-                return <Quote quote={person.quote} />;
+                return <Quote quotes={person.quotes} images={person.gallery} />;
             case 'gallery':
                 return <Gallery images={person.gallery} />;
             default:
@@ -66,14 +66,11 @@ const PersonDetail = () => {
             <TabsMenu activeTab={activeTab} onTabChange={setActiveTab} tabs={TABS_CONFIG} />
 
             <div className={styles.content}>
-                <section className={styles.mainSection}>
-                    <div className={styles.header}>
-                        <h1>{person.title}</h1>
-                        <p className={styles.dates}>{person.date}</p>
-                    </div>
-
-                    <div className={styles.tabContent}>{renderContent()}</div>
-                </section>
+                <span className={styles.header}>
+                    <h1 className={styles.subtitle}>{person.title}</h1>
+                    <span className={styles.subtitle}>{person.date}</span>
+                </span>
+                <div className={styles.tabContent}>{renderContent()}</div>
             </div>
             <Footer />
         </div>

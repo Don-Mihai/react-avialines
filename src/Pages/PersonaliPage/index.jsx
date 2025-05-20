@@ -86,13 +86,13 @@ const PersonaliPage = ({ data = personali }) => {
                 </div>
                 <div className={styles.pagination}>
                     <button onClick={handlePrevious} disabled={currentPage === 1} className={styles.arrowButton}>
-                        <ArrowLeftIcon />
+                        <ArrowLeftIcon style={{ width: '70px', height: '70px' }} />
                     </button>
                     <span className={styles.pageCounter}>
                         {currentPage} / {totalPages}
                     </span>
                     <button onClick={handleNext} disabled={currentPage === totalPages} className={styles.arrowButton}>
-                        <ArrowRightIcon />
+                        <ArrowRightIcon style={{ width: '70px', height: '70px' }} />
                     </button>
                 </div>
                 <Footer />

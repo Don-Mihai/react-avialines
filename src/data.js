@@ -68,11 +68,17 @@ export const personali = {
             date: '(05.10.1908 г.-12.03.1982 г.)',
             title: 'Каманин Николай Петрович',
             biography: {
-                title: 'Советский летчик, генерал-полковник авиции, один из первых семи Героев Советского Союза',
+                title: 'Советский летчик, генерал-полковник авиции, один  из первых семи Героев Советского Союза',
+                content: 'Прикоснитесь к точке на тайм-лайне, чтобы узнать подробнее',
             },
-            quotes: { title: 'цитата пилота 1' },
+            quotes: { title: 'Цитата цитата цитата цитата цитата цитата цитата цитата цитата' },
             awards: [{ title: 'достижения пилота 1' }],
-            gallery: [{ src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 1' }],
+            gallery: [
+                { src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'Название фото' },
+                { src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 1_1' },
+                { src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 1_2' },
+                { src: 'https://bisonstore.ru/d/aviation-helmet.jpg', title: 'пилот 1_3' },
+            ],
         },
         {
             id: 'pilot-1',
