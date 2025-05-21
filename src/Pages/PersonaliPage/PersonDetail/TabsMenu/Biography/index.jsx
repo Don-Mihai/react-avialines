@@ -35,7 +35,7 @@ const Biography = ({ data, images }) => {
                     {currentImages.map((img, index) => (
                         <div key={index} className={styles.galleryItem}>
                             <img className={styles.galleryImage} src={img.src} alt={img.title} />
-                            <p>{img.title}</p>
+                            {/* <p>{img.title}</p> */}
                         </div>
                     ))}
                     <div className={styles.arrowContainer}>

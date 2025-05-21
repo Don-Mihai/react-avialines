@@ -146,7 +146,7 @@ export const personali = {
         {
             id: 'researcher-1',
             date: '(1900-1900)',
-            title: 'Фамилия Имя Отчество1',
+            title: 'Фамилия Имя Отчество2',
             biography: {
                 title: 'Биография исследователя 2',
             },
@@ -158,6 +158,53 @@ export const personali = {
                     title: 'исследователя 2',
                 },
             ],
+        },
+    ],
+};
+
+export const library = {
+    films: [
+        {
+            title: 'Название фильма',
+            src: '',
+        },
+        {
+            title: 'Название фильма',
+            src: '',
+        },
+        {
+            title: 'Название фильма',
+            src: '',
+        },
+        {
+            title: 'Название фильма',
+            src: '',
+        },
+        {
+            title: 'Название фильма',
+            src: '',
+        },
+        {
+            title: 'Название фильма6',
+            src: '',
+        },
+    ],
+    audioBooks: [
+        {
+            title: 'Название аудиокниги',
+            src: '',
+        },
+    ],
+    lectures: [
+        {
+            title: 'Название лекции',
+            src: '',
+        },
+    ],
+    books: [
+        {
+            title: 'Название книги',
+            src: '',
         },
     ],
 };

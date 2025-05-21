@@ -8,40 +8,41 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { personali } from '../../data';
 
+const categoryTranslations = {
+    pilots: 'летчики',
+    engineers: 'инженеры',
+    researchers: 'исследователи',
+};
+
 const PersonaliPage = ({ data = personali }) => {
     const navigate = useNavigate();
     const [currentCategory, setCurrentCategory] = useState('pilots');
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(4);
-    const [currentImages, setCurrentImages] = useState([]);
+    const [currentPersons, setCurrentPersons] = useState([]);
     const [totalPages, setTotalPages] = useState(1);
 
     useEffect(() => {
-        const loadImages = () => {
-            const images = data[currentCategory]
-                .flatMap(
-                    person =>
-                        person.gallery?.map((img, idx) => ({
-                            ...img,
-                            personId: person.id,
-                            personTitle: person.title,
-                            date: person.date,
-                            id: `${person.id}-${idx}`,
-                        })) || []
-                )
-                .filter(img => img.src);
+        const loadPersons = () => {
+            const persons = data[currentCategory]
+                .map(person => ({
+                    ...person,
+                    // Берем только первую фотографию из галереи
+                    mainImage: person.gallery?.[0] || null,
+                }))
+                .filter(person => person.mainImage); // Фильтруем персон без фотографий
 
-            setCurrentImages(images);
-            setTotalPages(Math.ceil(images.length / itemsPerPage));
+            setCurrentPersons(persons);
+            setTotalPages(Math.ceil(persons.length / itemsPerPage));
             setCurrentPage(1);
         };
 
-        loadImages();
+        loadPersons();
     }, [currentCategory, data, itemsPerPage]);
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = currentImages.slice(indexOfFirstItem, indexOfLastItem);
+    const currentItems = currentPersons.slice(indexOfFirstItem, indexOfLastItem);
 
     const handlePrevious = () => {
         if (currentPage > 1) {
@@ -63,25 +64,29 @@ const PersonaliPage = ({ data = personali }) => {
                 <div className={styles.categorySelector}>
                     {Object.keys(data).map(category => (
                         <button key={category} onClick={() => setCurrentCategory(category)} className={currentCategory === category ? styles.active : ''}>
-                            {category.toUpperCase()}
+                            {categoryTranslations[category] || category.toUpperCase()}
                         </button>
                     ))}
                 </div>
-
                 <div className={styles.imageGrid}>
                     {currentItems.length > 0 ? (
-                        currentItems.map(image => (
-                            <div key={image.id} className={styles.imageCard} onClick={() => navigate(`/personali/${image.personId}`)}>
-                                <img src={image.src} alt={image.title} className={styles.image} />
+                        currentItems.map(person => (
+                            <div key={person.id} className={styles.imageCard}>
+                                <img
+                                    onClick={() => navigate(`/personali/${person.id}`)}
+                                    src={person.mainImage.src}
+                                    alt={person.mainImage.title}
+                                    className={styles.image}
+                                />
                                 <div className={styles.imageInfo}>
-                                    <h4 style={{ fontWeight: 'normal' }}>{image.personTitle}</h4>
-                                    <p>{image.date}</p>
-                                    <p style={{ fontSize: '14px' }}>{image.title}</p>
+                                    <h4 style={{ fontWeight: 'normal' }}>{person.title}</h4>
+                                    <p>{person.date}</p>
+                                    {/* <p style={{ fontSize: '14px' }}>{person.mainImage.title}</p> */}
                                 </div>
                             </div>
                         ))
                     ) : (
-                        <div className={styles.noImages}>No images available</div>
+                        <div className={styles.noImages}>Нет доступных изображений</div>
                     )}
                 </div>
                 <div className={styles.pagination}>
