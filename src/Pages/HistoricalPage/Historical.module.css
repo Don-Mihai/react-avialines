@@ -10,20 +10,38 @@
     background-repeat: no-repeat;
 }
 
-.nordic {
+.ruslan {
     position: absolute;
-    top: 26%;
-    left: 5%;
-    width: 580px;
-    height: 350px;
+    bottom: 9%;
+    left: 22%;
+    width: 460px;
+    height: 160px;
     cursor: pointer;
 }
 
-.cheliuskina {
+.cheluskina {
     position: absolute;
-    bottom: 10%;
-    right: 12%;
-    width: 580px;
-    height: 350px;
+    bottom: 31%;
+    right: 18%;
+    width: 670px;
+    height: 160px;
+    cursor: pointer;
+}
+
+.alex {
+    position: absolute;
+    top: 36%;
+    right: 27%;
+    width: 640px;
+    height: 125px;
+    cursor: pointer;
+}
+
+.italy {
+    position: absolute;
+    top: 16%;
+    left: 22%;
+    width: 690px;
+    height: 160px;
     cursor: pointer;
 }

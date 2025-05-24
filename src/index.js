@@ -4,14 +4,19 @@ import { createBrowserRouter, RouterProvider } from 'react-router';
 import './styles/index.scss';
 
 import MainPage from './Pages/MainPage/index.jsx';
-import HistoricalPage from './Pages/HistoricalPage/index.jsx';
-import Preview from './Pages/Preview/Preview.jsx';
-import CheliuskinaPage from './Pages/HistoricalPage/CheliuskinaPage/index.jsx';
-import NordicPage from './Pages/HistoricalPage/NordicPage/index.jsx';
-import PersonaliPage from './Pages/PersonaliPage/index.jsx';
 import GamesPage from './Pages/GamesPage/index.jsx';
 import FilmsPage from './Pages/FilmsPage/index.jsx';
+import Preview from './Pages/Preview/Preview.jsx';
+
+import HistoricalPage from './Pages/HistoricalPage/index.jsx';
+
+import PersonaliPage from './Pages/PersonaliPage/index.jsx';
 import PersonDetail from './Pages/PersonaliPage/PersonDetail/index.jsx';
+
+import CheluskinaPage from './Pages/HistoricalPage/CheluskinaPage/index.jsx';
+import RuslanPage from './Pages/HistoricalPage/RuslanPage/index.jsx';
+import ItalyPage from './Pages/HistoricalPage/ItalyPage/index.jsx';
+import AlexPage from './Pages/HistoricalPage/AlexPage/index.jsx';
 
 const router = createBrowserRouter([
     {
@@ -27,12 +32,20 @@ const router = createBrowserRouter([
         element: <HistoricalPage />,
     },
     {
-        path: 'nordic',
-        element: <NordicPage />,
+        path: 'ruslan',
+        element: <RuslanPage />,
     },
     {
-        path: 'cheliuskina',
-        element: <CheliuskinaPage />,
+        path: 'cheluskina',
+        element: <CheluskinaPage />,
+    },
+    {
+        path: 'italy',
+        element: <ItalyPage />,
+    },
+    {
+        path: 'alex',
+        element: <AlexPage />,
     },
     {
         path: 'personali',

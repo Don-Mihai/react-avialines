@@ -1,8 +1,8 @@
-export const nordic = {
+export const ruslan = {
     title: (
         <>
-            спасение «север», «анадырь», <br />
-            «хабаровск»
+            гибель спасательного <br />
+            судна «руслан»
         </>
     ),
     images: [
@@ -54,8 +54,31 @@ export const nordic = {
     ],
 };
 
-export const cheliuskina = {
-    title: <>спасение «челюскина»,</>,
+export const cheluskina = {
+    title: (
+        <>
+            спасение экипажа и пассажиров <br />
+            парохода «челюскин»,
+        </>
+    ),
+    images: [{ text: 'текст', src: '', title: 'название фото' }],
+    videos: [{ text: 'текст', src: '', title: 'название видео' }],
+    audios: [{ text: 'текст', src: '', title: 'название аудио' }],
+};
+
+export const italy = {
+    title: (
+        <>
+            спасение экипажа <br />и пассажиров дирижабль «италия»,
+        </>
+    ),
+    images: [{ text: 'текст', src: '', title: 'название фото' }],
+    videos: [{ text: 'текст', src: '', title: 'название видео' }],
+    audios: [{ text: 'текст', src: '', title: 'название аудио' }],
+};
+
+export const alex = {
+    title: <>пароход «александр сибиряков»,</>,
     images: [{ text: 'текст', src: '', title: 'название фото' }],
     videos: [{ text: 'текст', src: '', title: 'название видео' }],
     audios: [{ text: 'текст', src: '', title: 'название аудио' }],

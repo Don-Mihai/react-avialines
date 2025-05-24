@@ -7,19 +7,30 @@ import Footer from '../../components/Footer';
 const HistoricalPage = () => {
     const navigate = useNavigate();
 
-    const handleNordicClick = () => {
-        navigate('/nordic');
+    const handleRuslanClick = () => {
+        navigate('/ruslan');
     };
 
-    const handleCheliuskinaClick = () => {
-        navigate('/cheliuskina');
+    const handleCheluskinaClick = () => {
+        navigate('/cheluskina');
     };
+
+    const handleItalyClick = () => {
+        navigate('/italy');
+    };
+
+    const handleAlexClick = () => {
+        navigate('/alex');
+    };
+
     return (
         <>
             <div className={styles.container}>
                 <Header />
-                <div className={styles.nordic} onClick={handleNordicClick}></div>
-                <div className={styles.cheliuskina} onClick={handleCheliuskinaClick}></div>
+                <div className={styles.ruslan} onClick={handleRuslanClick}></div>
+                <div className={styles.cheluskina} onClick={handleCheluskinaClick}></div>
+                <div className={styles.italy} onClick={handleItalyClick}></div>
+                <div className={styles.alex} onClick={handleAlexClick}></div>
                 <Footer />
             </div>
         </>

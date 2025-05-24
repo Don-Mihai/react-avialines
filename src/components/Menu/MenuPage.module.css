@@ -28,6 +28,7 @@
 
 .subtitle {
     display: flex;
+    align-items: center;
     margin: 10px 15px 15px 15px;
     font-family: 'Snowstorm', arial;
     text-transform: uppercase;
