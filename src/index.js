@@ -18,6 +18,10 @@ import RuslanPage from './Pages/HistoricalPage/RuslanPage/index.jsx';
 import ItalyPage from './Pages/HistoricalPage/ItalyPage/index.jsx';
 import AlexPage from './Pages/HistoricalPage/AlexPage/index.jsx';
 
+import QuizPage from './Pages/GamesPage/QuizPage/index.jsx';
+import CrosswordPage from './Pages/GamesPage/CrosswordPage/index.jsx';
+import PuzzlePage from './Pages/GamesPage/PuzzlePage/index.jsx';
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -67,6 +71,18 @@ const router = createBrowserRouter([
     {
         path: 'games',
         element: <GamesPage />,
+    },
+    {
+        path: 'puzzle',
+        element: <PuzzlePage />,
+    },
+    {
+        path: 'quiz',
+        element: <QuizPage />,
+    },
+    {
+        path: 'crossword',
+        element: <CrosswordPage />,
     },
     {
         path: '*',
