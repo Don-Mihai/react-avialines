@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 
 import HomeIcon from '@mui/icons-material/Home';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -6,6 +6,7 @@ import styles from './Footer.module.css';
 
 const Footer = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const isMainPage = location.pathname === '/main';
 
     return (
@@ -15,7 +16,7 @@ const Footer = () => {
                     <HomeIcon style={{ width: '50px', height: '50px' }} />
                 </Link>
                 {!isMainPage && (
-                    <Link to="/main" className={`${styles.button_footer} ${isMainPage ? styles.button_footer_main : ''}`}>
+                    <Link onClick={() => navigate(-1)} className={`${styles.button_footer} ${isMainPage ? styles.button_footer_main : ''}`}>
                         <ArrowBackIcon style={{ width: '50px', height: '50px' }} />
                     </Link>
                 )}

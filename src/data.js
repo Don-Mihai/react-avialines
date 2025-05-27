@@ -117,7 +117,7 @@ export const personali = {
     ],
     engineers: [
         {
-            id: 'engineer-0',
+            id: 'engineer',
             date: '(1900-1900)',
             title: 'Фамилия Имя Отчество1',
             biography: {
@@ -151,7 +151,7 @@ export const personali = {
     ],
     researchers: [
         {
-            id: 'researcher-0',
+            id: 'researcher',
             date: '(1900-1900)',
             title: 'Фамилия Имя Отчество1',
             biography: {
