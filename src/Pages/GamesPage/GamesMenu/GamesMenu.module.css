@@ -33,7 +33,7 @@
     gap: 20px;
 }
 
-.ansvers {
+.answers {
     padding: 15px;
     text-transform: uppercase;
     font-size: 35px;
@@ -66,4 +66,11 @@
     outline-offset: 7px;
     color: rgba(255, 255, 255, 1);
     box-shadow: 4px 4px 41px 0px rgba(34, 60, 80, 0.46);
+}
+
+.active {
+    outline: solid 2px rgb(255, 255, 255) !important;
+    outline-offset: 4px;
+    border: solid 4px rgb(34, 60, 80, 0.46);
+    box-shadow: 0px 5px 8px 14px rgba(255, 255, 255, 0.38);
 }

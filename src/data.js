@@ -231,3 +231,29 @@ export const library = {
         },
     ],
 };
+
+export const quizData = [
+    {
+        id: 1,
+        question: 'для чего в 1930-е годы в ссср была создана полярная авиация',
+        info: '(выберите один или несколько правильных ответов)',
+        answers: [
+            { id: 'a', text: 'помогала осваивать америку', correct: false },
+            { id: 'b', text: 'снабжение дрейфующих и полярных станций', correct: true },
+            { id: 'c', text: 'помогала осваивать артику', correct: false },
+            { id: 'd', text: 'перевозка пассажиров и грузов в районах крайнего севера', correct: true },
+        ],
+        multiAnswer: true,
+    },
+    {
+        id: 2,
+        question: 'модель какого самолета рассматривает летчик василий молоков с женой надеждой',
+        image: './assets/answer_img.png',
+        answers: [
+            { id: 'a', text: 'р-5', correct: true },
+            { id: 'b', text: 'ш-2', correct: false },
+            { id: 'c', text: 'у-2', correct: false },
+        ],
+        multiAnswer: false,
+    },
+];
