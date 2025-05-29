@@ -1,9 +1,12 @@
 import styles from './PuzzlePage.module.css';
+import GamesMenu from '../GamesMenu/index.jsx';
 
 const PuzzlePage = () => {
     return (
         <>
-            <div className={styles.container}>puzzle page</div>
+            <div className={styles.container}>
+                <GamesMenu />
+            </div>
         </>
     );
 };
