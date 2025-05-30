@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../../assets/literacy_bg_img.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

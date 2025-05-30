@@ -15,7 +15,7 @@ const QuizModal = ({ isCorrect, onTryAgain, onRevealAnswer, onNextQuestion }) =>
                         </button>
                     </div>
                 ) : (
-                    <button className={styles.modalButton} onClick={onNextQuestion}>
+                    <button className={styles.nextButton} onClick={onNextQuestion}>
                         далее
                     </button>
                 )}

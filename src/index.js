@@ -22,6 +22,10 @@ import QuizPage from './Pages/GamesPage/QuizPage/index.jsx';
 import CrosswordPage from './Pages/GamesPage/CrosswordPage/index.jsx';
 import PuzzlePage from './Pages/GamesPage/PuzzlePage/index.jsx';
 
+import CongratsPage from './Pages/GamesPage/CongratsPage/index.jsx';
+import CertificateFormPage from './Pages/GamesPage/CertificateFormPage/index.jsx';
+import ThanksPage from './Pages/GamesPage/ThanksPage/index.jsx';
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -83,6 +87,18 @@ const router = createBrowserRouter([
     {
         path: 'crossword',
         element: <CrosswordPage />,
+    },
+    {
+        path: 'congrats',
+        element: <CongratsPage />,
+    },
+    {
+        path: 'certificate-form',
+        element: <CertificateFormPage />,
+    },
+    {
+        path: 'thanks',
+        element: <ThanksPage />,
     },
     {
         path: '*',

@@ -2,12 +2,11 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router';
 import styles from './GamesMenu.module.css';
 
-const GamesMenu = () => {
-    const [seconds, setSeconds] = useState(0);
+const GamesMenu = ({ correctAnswersCount = 0, totalQuestions = 10, activeGame: activeGameFromProps, freezeStats = false, initialSeconds = 0 }) => {
+    const [seconds, setSeconds] = useState(initialSeconds);
     const [isRunning, setIsRunning] = useState(false);
     const location = useLocation();
 
-    // Определяем активную игру на основе URL
     const getActiveGameFromPath = () => {
         if (location.pathname.includes('/puzzle')) return 'пазлы';
         if (location.pathname.includes('/crossword')) return 'кроссворд';
@@ -15,19 +14,21 @@ const GamesMenu = () => {
         return null;
     };
 
-    const activeGame = getActiveGameFromPath();
+    const activeGame = activeGameFromProps || getActiveGameFromPath();
 
-    // Форматирование времени в MM:SS
     const formatTime = totalSeconds => {
         const minutes = Math.floor(totalSeconds / 60);
         const seconds = totalSeconds % 60;
         return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     };
 
-    // Запуск/остановка таймера при изменении активной игры
     useEffect(() => {
-        let interval;
+        if (freezeStats) {
+            setIsRunning(false);
+            return;
+        }
 
+        let interval;
         if (activeGame) {
             setIsRunning(true);
             interval = setInterval(() => {
@@ -38,12 +39,10 @@ const GamesMenu = () => {
         }
 
         return () => {
-            clearInterval(interval);
-            if (!activeGame) {
-                setSeconds(0);
-            }
+            if (interval) clearInterval(interval);
+            if (!activeGame) setSeconds(0);
         };
-    }, [activeGame]);
+    }, [activeGame, freezeStats]);
 
     const getAnswersText = () => {
         switch (activeGame) {
@@ -52,7 +51,7 @@ const GamesMenu = () => {
             case 'кроссворд':
                 return 'угадано 0 / 10';
             case 'викторина':
-                return 'верных ответов 0/10';
+                return `верных ответов ${correctAnswersCount}/${totalQuestions}`;
             default:
                 return 'выберите игру';
         }
@@ -65,9 +64,10 @@ const GamesMenu = () => {
                 <button className={`${styles.button} ${activeGame === 'кроссворд' ? styles.active : ''}`}>кроссворд</button>
                 <button className={`${styles.button} ${activeGame === 'викторина' ? styles.active : ''}`}>викторина</button>
             </div>
+
             <div className={styles.timer}>
                 <span className={styles.answers}>{getAnswersText()}</span>
-                <span className={styles.time}>{activeGame ? formatTime(seconds) : '00:00'}</span>
+                <span className={styles.time}>{formatTime(seconds)}</span>
                 <button className={styles.ru}>ru</button>
             </div>
         </div>

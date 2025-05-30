@@ -1,16 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
 import styles from './QuizPage.module.css';
-import GamesMenu from '../GamesMenu/index.jsx';
+import GamesMenu from '../../../components/GamesMenu/index.jsx';
 import Footer from '../../../components/Footer/index.jsx';
 import { quizData } from '../../../data.js';
 import QuizModal from './QuizModal';
 
 const QuizPage = () => {
+    const navigate = useNavigate();
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedAnswers, setSelectedAnswers] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
     const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
+    const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
+    const [gameSeconds, setGameSeconds] = useState(0); // Добавляем состояние для времени
 
     const currentQuestion = quizData[currentQuestionIndex];
 
@@ -33,18 +37,39 @@ const QuizPage = () => {
 
         setIsCorrect(isAnswerCorrect);
         setShowModal(true);
+
+        // Увеличиваем счетчик, если ответ правильный
+        if (isAnswerCorrect) {
+            setCorrectAnswersCount(prev => prev + 1);
+        }
     };
 
     const handleNextQuestion = () => {
         setSelectedAnswers([]);
         setShowModal(false);
         setShowCorrectAnswer(false);
+
         if (currentQuestionIndex < quizData.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else {
-            alert('Викторина завершена!');
+            // Переходим на страницу поздравления с передачей статистики
+            navigate('/congrats', {
+                state: {
+                    game: 'викторина',
+                    score: correctAnswersCount,
+                    total: quizData.length,
+                    time: gameSeconds, // Передаем затраченное время
+                },
+            });
         }
     };
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setGameSeconds(prev => prev + 1);
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, []);
 
     const handleTryAgain = () => {
         setShowModal(false);
@@ -58,7 +83,7 @@ const QuizPage = () => {
     return (
         <>
             <div className={styles.container}>
-                <GamesMenu />
+                <GamesMenu correctAnswersCount={correctAnswersCount} totalQuestions={quizData.length} />
                 <div className={styles.content}>
                     <div className={styles.question}>
                         <h3 className={styles.number}>вопрос №{currentQuestion.id}</h3>
@@ -112,7 +137,6 @@ const QuizPage = () => {
                 <Footer />
             </div>
 
-            {/* Используем компонент Modal */}
             {showModal && (
                 <QuizModal isCorrect={isCorrect} onTryAgain={handleTryAgain} onRevealAnswer={revealCorrectAnswer} onNextQuestion={handleNextQuestion} />
             )}
