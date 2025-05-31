@@ -14,15 +14,14 @@
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-    text-align: center;
+    text-transform: uppercase;
     margin-bottom: 20px;
-    color: #333;
+    font-size: 35px;
+    font-weight: bold;
+    color: #ffffff;
 }
 
 .puzzles {
@@ -44,12 +43,10 @@
 
 .puzzleCard:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .puzzleCard.selected {
     border-color: #4caf50;
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
 }
 
 .puzzleImage {
@@ -74,20 +71,24 @@
     font-size: 14px;
 }
 
-.difficultyLevels {
+.difficultyContainer {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.difficultyLevels {
+    display: flex;
+    flex-direction: column;
     gap: 15px;
     margin-bottom: 30px;
 }
 
 .difficultyButton {
-    padding: 15px 25px;
     border: 2px solid #ddd;
     border-radius: 8px;
-    background: white;
     cursor: pointer;
-    transition: all 0.2s ease;
+    font-size: 25px;
     text-align: center;
 }
 
@@ -115,38 +116,39 @@
     display: block;
     margin: 0 auto;
     padding: 12px 40px;
-    background: #4caf50;
-    color: white;
     border: none;
-    border-radius: 30px;
-    font-size: 18px;
-    font-weight: bold;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.25);
+    outline: solid 2px #1d5969 !important;
+    outline-offset: 6px;
+    color: white;
     cursor: pointer;
-    transition: background 0.3s ease;
+    font-size: 35px;
+    font-weight: bold;
 }
 
-.startButton:hover {
+/* .startButton:hover {
     background: #45a049;
-}
+} */
 
 .startButton:disabled {
-    background: #cccccc;
+    background: #5c5b5b;
+    outline: solid 2px #5c5b5b !important;
+    outline-offset: 6px;
     cursor: not-allowed;
 }
 
 .gameContainer {
-    display: flex;
-    flex-direction: column;
-    max-width: 1200px;
-    height: 700px;
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
     padding: 20px;
-    position: relative;
 }
 
 .backButton {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 0;
+    right: 0;
     background: #2196f3;
     color: white;
     border: none;
