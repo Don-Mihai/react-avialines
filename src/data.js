@@ -257,3 +257,54 @@ export const quizData = [
         multiAnswer: false,
     },
 ];
+
+export const puzzleData = [
+    {
+        id: 1,
+        title: 'Горы',
+        imageSrc:
+            'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+        description: 'Живописный горный пейзаж',
+        completed: false,
+    },
+    {
+        id: 2,
+        title: 'Океан',
+        imageSrc:
+            'https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2533&q=80',
+        description: 'Вид на океан с высоты птичьего полета',
+        completed: false,
+    },
+    {
+        id: 3,
+        title: 'Лес',
+        imageSrc:
+            'https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+        description: 'Тропический лес с водопадом',
+        completed: false,
+    },
+];
+
+export const difficultyLevels = [
+    {
+        id: 'easy',
+        name: 'Легкий',
+        rows: 3,
+        columns: 4,
+        description: '12 деталей',
+    },
+    {
+        id: 'medium',
+        name: 'Средний',
+        rows: 4,
+        columns: 6,
+        description: '24 детали',
+    },
+    {
+        id: 'hard',
+        name: 'Сложный',
+        rows: 6,
+        columns: 8,
+        description: '48 деталей',
+    },
+];

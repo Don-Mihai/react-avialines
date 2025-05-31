@@ -2,7 +2,16 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router';
 import styles from './GamesMenu.module.css';
 
-const GamesMenu = ({ correctAnswersCount = 0, totalQuestions = 10, activeGame: activeGameFromProps, freezeStats = false, initialSeconds = 0 }) => {
+const GamesMenu = ({
+    correctAnswersCount = 0,
+    totalQuestions = 10,
+    completedPuzzles = 0,
+    totalPuzzles = 3,
+    activeGame: activeGameFromProps,
+    freezeStats = false,
+    initialSeconds = 0,
+    hideStats = false, // Новый пропс для скрытия статистики
+}) => {
     const [seconds, setSeconds] = useState(initialSeconds);
     const [isRunning, setIsRunning] = useState(false);
     const location = useLocation();
@@ -23,7 +32,7 @@ const GamesMenu = ({ correctAnswersCount = 0, totalQuestions = 10, activeGame: a
     };
 
     useEffect(() => {
-        if (freezeStats) {
+        if (freezeStats || hideStats) {
             setIsRunning(false);
             return;
         }
@@ -42,12 +51,12 @@ const GamesMenu = ({ correctAnswersCount = 0, totalQuestions = 10, activeGame: a
             if (interval) clearInterval(interval);
             if (!activeGame) setSeconds(0);
         };
-    }, [activeGame, freezeStats]);
+    }, [activeGame, freezeStats, hideStats]);
 
     const getAnswersText = () => {
         switch (activeGame) {
             case 'пазлы':
-                return 'собрано 0 / 24';
+                return `собрано ${completedPuzzles}/${totalPuzzles}`;
             case 'кроссворд':
                 return 'угадано 0 / 10';
             case 'викторина':
@@ -66,8 +75,12 @@ const GamesMenu = ({ correctAnswersCount = 0, totalQuestions = 10, activeGame: a
             </div>
 
             <div className={styles.timer}>
-                <span className={styles.answers}>{getAnswersText()}</span>
-                <span className={styles.time}>{formatTime(seconds)}</span>
+                {!hideStats && (
+                    <>
+                        <span className={styles.answers}>{getAnswersText()}</span>
+                        <span className={styles.time}>{formatTime(seconds)}</span>
+                    </>
+                )}
                 <button className={styles.ru}>ru</button>
             </div>
         </div>

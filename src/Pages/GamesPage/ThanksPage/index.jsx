@@ -1,11 +1,12 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import GamesMenu from '../../../components/GamesMenu/index.jsx';
+import Footer from '../../../components/Footer/index.jsx';
 import styles from './ThanksPage.module.css';
 
 const ThanksPage = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const { game, score, total, time } = location.state || {};
+    const { game } = location.state || {};
 
     const gamePaths = {
         пазлы: '/puzzle',
@@ -23,15 +24,21 @@ const ThanksPage = () => {
 
     return (
         <div className={styles.container}>
-            <GamesMenu activeGame={game} correctAnswersCount={score} totalQuestions={total} freezeStats={true} initialSeconds={time} />
+            {/* Передаем hideStats=true чтобы скрыть статистику */}
+            <GamesMenu activeGame={game} hideStats={true} />
+
             <div className={styles.content}>
-                <h1>Благодарим за участие!</h1>
-                <p>Ваша заявка на получение грамоты принята.</p>
+                <h1 className={styles.title}>Благодарим за участие!</h1>
                 <div className={styles.buttons}>
-                    <button onClick={handleGoToMainMenu}>В главное меню</button>
-                    <button onClick={handlePlayAgain}>Играть снова</button>
+                    <button className={styles.button} onClick={handleGoToMainMenu}>
+                        В главное меню
+                    </button>
+                    <button className={styles.button} onClick={handlePlayAgain}>
+                        Играть снова
+                    </button>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };
