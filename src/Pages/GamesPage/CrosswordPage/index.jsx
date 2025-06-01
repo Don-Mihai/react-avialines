@@ -108,13 +108,13 @@ const CrosswordPage = () => {
             setGrid(newGrid);
 
             // Если все слова решены, переходим на страницу поздравления
-            if (newSolvedCount === 10) {
+            if (newSolvedCount === 15) {
                 setTimeout(() => {
                     navigate('/congrats', {
                         state: {
                             game: 'кроссворд',
-                            score: 10,
-                            total: 10,
+                            score: 15,
+                            total: 15,
                         },
                     });
                 }, 1500);
