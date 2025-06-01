@@ -49,6 +49,20 @@
     font-weight: bold;
 }
 
+.nextButton {
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    text-transform: uppercase;
+    background-color: rgba(24, 54, 60, 0.3);
+    outline: solid 2px #1d5969 !important;
+    outline-offset: 6px;
+    color: #18363c;
+    cursor: pointer;
+    font-size: 35px;
+    font-weight: bold;
+}
+
 .modalButton:hover {
     background-color: #45a049;
 }
