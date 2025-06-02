@@ -10,7 +10,9 @@ const GamesMenu = ({
     activeGame: activeGameFromProps,
     freezeStats = false,
     initialSeconds = 0,
-    hideStats = false, // Новый пропс для скрытия статистики
+    hideStats = false,
+    solvedCrosswords = 0,
+    totalCrosswords = 10,
 }) => {
     const [seconds, setSeconds] = useState(initialSeconds);
     const [isRunning, setIsRunning] = useState(false);
@@ -58,7 +60,7 @@ const GamesMenu = ({
             case 'пазлы':
                 return `собрано ${completedPuzzles}/${totalPuzzles}`;
             case 'кроссворд':
-                return 'угадано 0 / 10';
+                return `угадано ${solvedCrosswords}/${totalCrosswords}`;
             case 'викторина':
                 return `верных ответов ${correctAnswersCount}/${totalQuestions}`;
             default:

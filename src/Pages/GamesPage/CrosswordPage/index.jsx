@@ -12,6 +12,7 @@ const CrosswordPage = () => {
     const [message, setMessage] = useState(null);
     const [solvedCount, setSolvedCount] = useState(0);
     const [allRevealed, setAllRevealed] = useState(false);
+    const [words, setWords] = useState([...crosswordData.words]);
 
     const initializeGrid = useCallback(() => {
         const newGrid = Array(crosswordData.size)
@@ -76,51 +77,46 @@ const CrosswordPage = () => {
         if (!selectedClue) return;
 
         if (inputValue.toUpperCase() === selectedClue.word) {
-            // Помечаем слово как решенное
-            crosswordData.words.forEach(w => {
-                if (w.id === selectedClue.id) {
-                    w.solved = true;
-                }
-            });
+            // Обновляем состояние слов
+            setWords(prevWords => prevWords.map(w => (w.id === selectedClue.id ? { ...w, solved: true } : w)));
 
             const newSolvedCount = solvedCount + 1;
             setSolvedCount(newSolvedCount);
 
             setMessage(`Верно! Осталось разгадать ${10 - newSolvedCount} слов из 10`);
 
-            // Обновляем сетку с решенным словом
-            const newGrid = [...grid];
-            const { start, direction, word: text } = selectedClue;
-            let { row, col } = start;
+            // Обновляем сетку
+            setGrid(prevGrid => {
+                const newGrid = JSON.parse(JSON.stringify(prevGrid));
+                const { start, direction, word: text } = selectedClue;
+                let { row, col } = start;
 
-            for (let i = 0; i < text.length; i++) {
-                if (row < crosswordData.size && col < crosswordData.size) {
-                    newGrid[row][col] = {
-                        ...newGrid[row][col],
-                        solved: true,
-                    };
+                for (let i = 0; i < text.length; i++) {
+                    if (row < crosswordData.size && col < crosswordData.size) {
+                        newGrid[row][col] = {
+                            ...newGrid[row][col],
+                            solved: true,
+                        };
+                    }
+
+                    direction === 'horizontal' ? col++ : row++;
                 }
+                return newGrid;
+            });
 
-                if (direction === 'horizontal') col++;
-                else row++;
-            }
-
-            setGrid(newGrid);
-
-            // Если все слова решены, переходим на страницу поздравления
-            if (newSolvedCount === 15) {
+            // Переход на страницу поздравления
+            if (newSolvedCount === 10) {
                 setTimeout(() => {
                     navigate('/congrats', {
                         state: {
                             game: 'кроссворд',
-                            score: 15,
-                            total: 15,
+                            score: 10,
+                            total: 10,
                         },
                     });
                 }, 1500);
             }
 
-            // Сбрасываем выбранную подсказку
             setTimeout(() => {
                 setSelectedClue(null);
                 setMessage(null);
@@ -128,31 +124,32 @@ const CrosswordPage = () => {
         } else {
             setMessage('Неверно, попробуйте снова');
         }
-    }, [selectedClue, inputValue, solvedCount, grid, navigate, crosswordData.size]);
+    }, [selectedClue, inputValue, solvedCount, navigate]);
 
     // Показать все ответы
     const revealAllAnswers = () => {
         setAllRevealed(true);
-        const newGrid = [...grid];
+        setGrid(prevGrid => {
+            const newGrid = JSON.parse(JSON.stringify(prevGrid));
 
-        crosswordData.words.forEach(word => {
-            const { start, direction, word: text } = word;
-            let { row, col } = start;
+            words.forEach(word => {
+                const { start, direction, word: text } = word;
+                let { row, col } = start;
 
-            for (let i = 0; i < text.length; i++) {
-                if (row < crosswordData.size && col < crosswordData.size) {
-                    newGrid[row][col] = {
-                        ...newGrid[row][col],
-                        revealed: true,
-                    };
+                for (let i = 0; i < text.length; i++) {
+                    if (row < crosswordData.size && col < crosswordData.size) {
+                        newGrid[row][col] = {
+                            ...newGrid[row][col],
+                            revealed: true,
+                        };
+                    }
+
+                    direction === 'horizontal' ? col++ : row++;
                 }
+            });
 
-                if (direction === 'horizontal') col++;
-                else row++;
-            }
+            return newGrid;
         });
-
-        setGrid(newGrid);
     };
 
     // Обработка отправки формы
@@ -172,7 +169,7 @@ const CrosswordPage = () => {
 
     return (
         <div className={styles.container}>
-            <GamesMenu activeGame="кроссворд" />
+            <GamesMenu activeGame="кроссворд" solvedCrosswords={solvedCount} totalCrosswords={10} />
 
             <div className={styles.crosswordContainer}>
                 <div className={styles.grid}>
@@ -228,7 +225,7 @@ const CrosswordPage = () => {
                                 <div>
                                     <h4>По горизонтали:</h4>
                                     <ul>
-                                        {crosswordData.words
+                                        {words
                                             .filter(word => word.direction === 'horizontal')
                                             .map((word, index) => (
                                                 <li
@@ -248,7 +245,7 @@ const CrosswordPage = () => {
                                 <div>
                                     <h4>По вертикали:</h4>
                                     <ul>
-                                        {crosswordData.words
+                                        {words
                                             .filter(word => word.direction === 'vertical')
                                             .map((word, index) => (
                                                 <li
