@@ -733,89 +733,89 @@ export const difficultyLevels = [
 ];
 
 export const crosswordData = {
-    size: 24,
+    size: 19,
     words: [
         // Горизонтальные слова
         {
             id: 'h1',
-            word: 'ГИДРОСАМОЛЕТ',
-            clue: 'Летательный аппарат, способный садиться на воду',
+            word: '123456',
+            clue: 'шесть',
             direction: 'horizontal',
-            start: { row: 2, col: 8 },
+            start: { row: 13, col: 13 },
             solved: false,
         },
         {
             id: 'h2',
-            word: 'КОСТРОМА',
-            clue: 'Город в Центральной России на берегу Волги',
+            word: '123456789',
+            clue: 'девять',
             direction: 'horizontal',
-            start: { row: 4, col: 1 },
+            start: { row: 11, col: 5 },
             solved: false,
         },
         {
             id: 'h3',
-            word: 'АРТИКА',
-            clue: 'Море в Северном Ледовитом океане',
+            word: '123456789',
+            clue: 'девять',
             direction: 'horizontal',
-            start: { row: 6, col: 7 },
+            start: { row: 9, col: 2 },
             solved: false,
         },
         {
             id: 'h4',
-            word: 'ШМИДТ',
-            clue: 'Фамилия известного советского исследователя Арктики',
+            word: '1234567',
+            clue: 'семь',
             direction: 'horizontal',
-            start: { row: 10, col: 5 },
-            solved: false,
-        },
-        {
-            id: 'h5',
-            word: 'МОЛОКОВ',
-            clue: 'Фамилия советского лётчика, Героя Советского Союза',
-            direction: 'horizontal',
-            start: { row: 14, col: 7 },
-            solved: false,
-        },
-        {
-            id: 'h6',
-            word: 'АВИАПЕРЕВОЗКИ',
-            clue: 'Транспортировка грузов и пассажиров воздушным путём',
-            direction: 'horizontal',
-            start: { row: 23, col: 0 },
+            start: { row: 5, col: 3 },
             solved: false,
         },
 
         // Вертикальные слова
         {
             id: 'v1',
-            word: 'МОСКВА',
-            clue: 'Столица Российской Федерации',
+            word: '1234567',
+            clue: 'семь',
             direction: 'vertical',
-            start: { row: 1, col: 12 },
+            start: { row: 12, col: 18 },
             solved: false,
         },
         {
             id: 'v2',
-            word: 'АЭРОГИДРОПОРТ',
-            clue: 'Комплекс сооружений для приёма гидросамолётов',
+            word: '12345',
+            clue: 'пять',
             direction: 'vertical',
-            start: { row: 4, col: 8 },
+            start: { row: 11, col: 16 },
             solved: false,
         },
         {
             id: 'v3',
-            word: 'СЕВЕРНЫЙ',
-            clue: 'Направление, полярный регион',
+            word: '12345678',
+            clue: 'восемь',
             direction: 'vertical',
-            start: { row: 12, col: 13 },
+            start: { row: 10, col: 13 },
             solved: false,
         },
         {
             id: 'v4',
-            word: 'КРАСНОЯРСК',
-            clue: 'Город в Сибири с развитой промышленностью',
+            word: '1234567',
+            clue: 'семь',
             direction: 'vertical',
-            start: { row: 14, col: 11 },
+            start: { row: 5, col: 5 },
+            solved: false,
+        },
+        {
+            id: 'v5',
+            word: '12345678',
+            clue: 'восемь',
+            direction: 'vertical',
+            start: { row: 3, col: 3 },
+            solved: false,
+        },
+        {
+            id: 'v6',
+            word: '1234567',
+            clue: 'семь',
+            direction: 'vertical',
+            start: { row: 3, col: 7 },
             solved: false,
         },
     ],
@@ -1183,46 +1183,25 @@ export const historicalData = [
             { src: '../images/Italy3.jpg', name: 'Дирижабль Италия' },
             { src: '../images/Italy4.jpg', name: 'Моторные гондолы «Италии»' },
         ],
-        video: [
-            { src: '../images/1.jpg', name: '1.jpg' },
-            
-        ],
-        audio: [
-            { src: '../images/1.jpg', name: '1.jpg' },
-            
-        ],
+        video: [{ src: '../images/1.jpg', name: '1.jpg' }],
+        audio: [{ src: '../images/1.jpg', name: '1.jpg' }],
     },
     {
         id: 2,
         title: 'пароход «александр сибиряков»',
         description:
             'Календарь: 1932 гг. Место: Арктика, мыс Джэнрэтлен 28 июля 1932 года ледокольный пароход «Александр Сибиряков» начал путешествие по Северному морскому пути и сделал то, чего ранее никому не удавалось: совершил первое сквозное плавание за одну навигацию. Судно едва уцелело во льдах, однако экипажу все же удалось совершить, казалось бы, невозможное – не только выжить, но и сохранить судно. После путешествия «Александр Сибирякова» использовали ещё десять лет, после чего он героически погиб во время Великой Отечественной войны.',
-        photo: [
-            { src: '../images/1.jpg', name: '1.jpg' },
-            
-        ],
-        video: [
-            { src: '../images/1.jpg', name: '1.jpg' },
-            
-        ],
-        audio: [
-            { src: '../images/1.jpg', name: '1.jpg' },
-            
-        ],
+        photo: [{ src: '../images/1.jpg', name: '1.jpg' }],
+        video: [{ src: '../images/1.jpg', name: '1.jpg' }],
+        audio: [{ src: '../images/1.jpg', name: '1.jpg' }],
     },
     {
         id: 3,
         title: 'спасение экипажа и пассажиров парохода «челюскин»',
         description:
             'Календарь: 1933-1934 гг. Место: Арктика, Берингов пролив, поблизости от островов Диомида. 13 февраля 1934 года в результате сильного сжатия «Челюскин» был раздавлен льдами и затонул в течение двух часов. Операция по спасению ста четырех человек, дрейфующих на льдине, заняла у советских авиаторов два месяца. Сквозь лед, туман и арктический холод летчики пробирались к людям.',
-        photo: [
-            { src: '../images/1.jpg', name: '1.jpg' },
-            
-        ],
-        video: [
-            { src: 'https://rutube.ru/video/2681f8efa5ee0634627d85be7c7e2bdc/?r=plemwd', name: 'Челюскин' },
-           
-        ],
+        photo: [{ src: '../images/1.jpg', name: '1.jpg' }],
+        video: [{ src: 'https://rutube.ru/video/2681f8efa5ee0634627d85be7c7e2bdc/?r=plemwd', name: 'Челюскин' }],
         audio: [
             { src: '../audio/Chelyuskin1.mp3', name: 'Chelyuskin1.mp3' },
             { src: '../audio/Chelyuskin2.mp3', name: 'Chelyuskin2.mp3' },
@@ -1240,14 +1219,8 @@ export const historicalData = [
         description:
             'Календарь: 1933 г. Место: в районе Шпицбергена. 25 апреля 1933 года затонул в результате обледенения у Южного мыса, архипелага Шпицберген, Баренцево море. Судно (капитан Н. Клюев) участвовало в спасении ледокольного парохода «Малыгин», севшего на камни у острова Шпицберген. После успешного завершения операции 24 апреля «Руслан» вместе с другими спасательными судами и спасенным «Малыгиным» вышел в Мурманск. В ожидании ледокола «Красин», на буксире которого он должен был совершить переход, «Руслан» следовал малым ходом позади каравана. В ночь на 25 апреля в связи с сильным ветром и снежными зарядами началось обледенение судна. Его остойчивость резко упала. При постановке лагом к волне судно получило большой крен и не выпрямилось. Экипаж скалывал образовавшийся лед. Поворотом носом на волну, крен удавалось на время ликвидировать, однако к вечеру 25 апреля с ростом обмерзания, все предпринятые меры не давали результата. «Руслан» лег на борт. Вода затопила машинное отделение. Около полуночи судно затонуло. Из 22 членов экипажа, пересевших в шлюпки, спаслись лишь трое моряков, подобранных норвежским промысловым судном через 5 суток после гибели «Руслана».',
         photo: [{ src: '../images/ruslan.JPG', name: 'Спасательный буксир Руслан' }],
-        video: [
-            { src: '../images/1.jpg', name: '1.jpg' },
-            
-        ],
-        audio: [
-            { src: '../images/1.jpg', name: '1.jpg' },
-            
-        ],
+        video: [{ src: '../images/1.jpg', name: '1.jpg' }],
+        audio: [{ src: '../images/1.jpg', name: '1.jpg' }],
     },
 ];
 
@@ -1292,8 +1265,12 @@ export const booksfilmsData = [
                 id: 3,
                 name: '«Челюскин»',
                 data: [
-                    { id: 1, title: '«Челюскин. В плену ледяной пустыни» Михаил Калашников', src: 'https://books.yandex.ru/audiobooks/FOFQwPrN?utm_place=content_audio_menu_item' },
-                     ],
+                    {
+                        id: 1,
+                        title: '«Челюскин. В плену ледяной пустыни» Михаил Калашников',
+                        src: 'https://books.yandex.ru/audiobooks/FOFQwPrN?utm_place=content_audio_menu_item',
+                    },
+                ],
             },
         ],
         lektions: [],
@@ -1323,6 +1300,3 @@ export const booksfilmsData = [
         ],
     },
 ];
-
-
-
