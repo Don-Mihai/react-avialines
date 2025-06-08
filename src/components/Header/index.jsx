@@ -1,10 +1,18 @@
 import { useLocation } from 'react-router';
 import styles from './Header.module.css';
 
+import { useState } from 'react';
+import CatalogModal from './CatalogModal';
+import ExhibitDetailModal from './CatalogModal/ExhibitDetailModal';
+
 const Header = () => {
     const location = useLocation();
     const isMainPage = location.pathname === '/main';
     const isGamesPage = location.pathname === '/games';
+
+    // Состояния для управления модальными окнами
+    const [isCatalogOpen, setIsCatalogOpen] = useState(false);
+    const [selectedExhibit, setSelectedExhibit] = useState(null);
 
     return (
         <div className={styles.header}>
@@ -14,7 +22,7 @@ const Header = () => {
                     <button className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>
                         Версия для <br /> слабовидящих
                     </button>
-                    <button className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>
+                    <button onClick={() => setIsCatalogOpen(true)} className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>
                         каталог <br /> экспонатов
                     </button>
                     <button className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>
@@ -30,6 +38,11 @@ const Header = () => {
             >
                 ru
             </button>
+            {/* Модальное окно каталога */}
+            {isCatalogOpen && <CatalogModal onClose={() => setIsCatalogOpen(false)} onSelectExhibit={setSelectedExhibit} />}
+
+            {/* Модальное окно деталей экспоната */}
+            {selectedExhibit && <ExhibitDetailModal exhibit={selectedExhibit} onClose={() => setSelectedExhibit(null)} />}
         </div>
     );
 };
