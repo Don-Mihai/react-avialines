@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from '../Header.module.css';
 import { exhibitsData } from '../../../data';
+import ClearIcon from '@mui/icons-material/Clear';
 
 const CatalogModal = ({ onClose, onSelectExhibit }) => {
     const [visibleCount, setVisibleCount] = useState(4);
@@ -20,22 +21,33 @@ const CatalogModal = ({ onClose, onSelectExhibit }) => {
         };
     }, [onClose]);
 
+    const handleExhibitClick = exhibit => {
+        onSelectExhibit(exhibit);
+        onClose(); // Закрываем каталог при выборе экспоната
+    };
+
     return (
         <div className={styles.modalOverlay}>
             <div ref={modalRef} className={styles.catalogModal}>
-                {/* Кнопка закрытия в верхнем правом углу */}
-                <button className={styles.closeButton} onClick={onClose}>
-                    ×
-                </button>
+                {/* Шапка модального окна */}
+                <div className={styles.modalHeader}>
+                    <span className={styles.title}>спасательные операции. каталог экспонатов</span>
+                    <div className={styles.navButtons}>
+                        <button onClick={onClose} className={styles.closeButton}>
+                            <ClearIcon />
+                        </button>
+                    </div>
+                </div>
 
                 <div className={styles.modalContent}>
-                    <h2 className={styles.catalogTitle}>Каталог экспонатов</h2>
-
                     <div className={styles.exhibitsGrid}>
                         {exhibitsData.slice(0, visibleCount).map(exhibit => (
-                            <div key={exhibit.id} className={styles.exhibitCard} onClick={() => onSelectExhibit(exhibit)}>
+                            <div key={exhibit.id} className={styles.exhibitCard} onClick={() => handleExhibitClick(exhibit)}>
                                 <img src={exhibit.images[0]} alt={exhibit.name} className={styles.thumbnail} />
-                                <div className={styles.exhibitName}>{exhibit.name}</div>
+                                {/* Отдельный блок для названия с собственным классом */}
+                                <div className={styles.exhibitNameContainer}>
+                                    <span className={styles.exhibitName}>{exhibit.name}</span>
+                                </div>
                             </div>
                         ))}
                     </div>

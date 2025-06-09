@@ -1,7 +1,6 @@
 import { useLocation } from 'react-router';
-import styles from './Header.module.css';
-
 import { useState } from 'react';
+import styles from './Header.module.css';
 import CatalogModal from './CatalogModal';
 import ExhibitDetailModal from './CatalogModal/ExhibitDetailModal';
 
@@ -39,10 +38,27 @@ const Header = () => {
                 ru
             </button>
             {/* Модальное окно каталога */}
-            {isCatalogOpen && <CatalogModal onClose={() => setIsCatalogOpen(false)} onSelectExhibit={setSelectedExhibit} />}
+            {isCatalogOpen && (
+                <CatalogModal
+                    onClose={() => setIsCatalogOpen(false)}
+                    onSelectExhibit={exhibit => {
+                        setSelectedExhibit(exhibit);
+                        // Каталог автоматически закроется при выборе экспоната
+                    }}
+                />
+            )}
 
             {/* Модальное окно деталей экспоната */}
-            {selectedExhibit && <ExhibitDetailModal exhibit={selectedExhibit} onClose={() => setSelectedExhibit(null)} />}
+            {selectedExhibit && (
+                <ExhibitDetailModal
+                    exhibit={selectedExhibit}
+                    onClose={() => setSelectedExhibit(null)}
+                    onBackToCatalog={() => {
+                        setSelectedExhibit(null);
+                        setIsCatalogOpen(true);
+                    }}
+                />
+            )}
         </div>
     );
 };
