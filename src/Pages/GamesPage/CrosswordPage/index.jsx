@@ -1,9 +1,12 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router';
 import GamesMenu from '../../../components/GamesMenu';
 import styles from './CrosswordPage.module.css';
 import { crosswordData } from '../../../data';
 import Footer from '../../../components/Footer';
+import Keyboard from 'react-simple-keyboard';
+import 'react-simple-keyboard/build/css/index.css';
+import BackspaceOutlinedIcon from '@mui/icons-material/BackspaceOutlined';
 
 const CrosswordPage = () => {
     const navigate = useNavigate();
@@ -13,7 +16,19 @@ const CrosswordPage = () => {
     const [message, setMessage] = useState(null);
     const [solvedCount, setSolvedCount] = useState(0);
     const [allRevealed, setAllRevealed] = useState(false);
-    const [words, setWords] = useState([...crosswordData.words]);
+    const keyboardRef = useRef(null);
+
+    // Преобразуем слова в верхний регистр при инициализации
+    const crosswordWords = useMemo(
+        () =>
+            crosswordData.words.map(word => ({
+                ...word,
+                word: word.word.toUpperCase(),
+            })),
+        []
+    );
+
+    const [words, setWords] = useState([...crosswordWords]);
 
     const initializeGrid = useCallback(() => {
         const newGrid = Array(crosswordData.size)
@@ -29,7 +44,7 @@ const CrosswordPage = () => {
                     }))
             );
 
-        crosswordData.words.forEach(word => {
+        crosswordWords.forEach(word => {
             const { start, direction, word: text, id } = word;
             let { row, col } = start;
 
@@ -37,7 +52,7 @@ const CrosswordPage = () => {
                 if (row < crosswordData.size && col < crosswordData.size) {
                     newGrid[row][col] = {
                         ...newGrid[row][col],
-                        value: text[i],
+                        value: text[i].toUpperCase(), // Всегда верхний регистр
                         clueIds: [...newGrid[row][col].clueIds, id],
                     };
                 }
@@ -48,7 +63,7 @@ const CrosswordPage = () => {
         });
 
         return newGrid;
-    }, [crosswordData.size, crosswordData.words]);
+    }, [crosswordData.size, crosswordWords]);
 
     useEffect(() => {
         setGrid(initializeGrid());
@@ -72,7 +87,10 @@ const CrosswordPage = () => {
     const checkWord = useCallback(() => {
         if (!selectedClue) return;
 
-        if (inputValue.toUpperCase() === selectedClue.word) {
+        // Убираем пробелы и преобразуем в верхний регистр
+        const userInput = inputValue.replace(/\s+/g, '').toUpperCase();
+
+        if (userInput === selectedClue.word) {
             setWords(prevWords => prevWords.map(w => (w.id === selectedClue.id ? { ...w, solved: true } : w)));
 
             const newSolvedCount = solvedCount + 1;
@@ -119,14 +137,16 @@ const CrosswordPage = () => {
         }
     }, [selectedClue, inputValue, solvedCount, navigate, words]);
 
-    // НОВАЯ ФУНКЦИЯ: Показать несколько букв выбранного слова
     const revealPartialHint = () => {
         if (!selectedClue || selectedClue.solved) return;
 
         const { start, direction, word: text } = selectedClue;
         let { row, col } = start;
 
-        // Находим неоткрытые позиции
+        // Рассчитываем количество букв для открытия:
+        // 30% от длины слова, но не менее 3 и не более 5
+        const hintCount = Math.min(5, Math.max(3, Math.floor(text.length * 0.3)));
+
         const hiddenIndices = [];
         for (let i = 0; i < text.length; i++) {
             const cell = grid[row]?.[col];
@@ -138,8 +158,7 @@ const CrosswordPage = () => {
 
         if (hiddenIndices.length === 0) return;
 
-        // Выбираем случайные позиции для открытия (1-2 буквы)
-        const lettersToReveal = Math.min(2, hiddenIndices.length);
+        const lettersToReveal = Math.min(hintCount, hiddenIndices.length);
         const indicesToReveal = [];
         for (let i = 0; i < lettersToReveal; i++) {
             const randomIndex = Math.floor(Math.random() * hiddenIndices.length);
@@ -147,7 +166,6 @@ const CrosswordPage = () => {
             hiddenIndices.splice(randomIndex, 1);
         }
 
-        // Обновляем сетку
         setGrid(prevGrid => {
             const newGrid = JSON.parse(JSON.stringify(prevGrid));
             let r = start.row;
@@ -166,7 +184,31 @@ const CrosswordPage = () => {
             return newGrid;
         });
 
-        setMessage(`Открыто ${lettersToReveal} буквы в слове!`);
+        setMessage(`Открыто ${lettersToReveal} букв(ы) в слове!`);
+    };
+
+    // Функция для открытия всех ответов
+    const revealAllAnswers = () => {
+        setGrid(prevGrid => {
+            const newGrid = JSON.parse(JSON.stringify(prevGrid));
+            return newGrid.map(row => row.map(cell => (cell.value ? { ...cell, solved: true, revealed: true } : cell)));
+        });
+
+        setWords(prevWords => prevWords.map(word => ({ ...word, solved: true })));
+
+        setSolvedCount(10);
+        setAllRevealed(true);
+        setMessage('Все ответы открыты!');
+
+        setTimeout(() => {
+            navigate('/congrats', {
+                state: {
+                    game: 'кроссворд',
+                    score: 10,
+                    total: 10,
+                },
+            });
+        }, 1500);
     };
 
     const handleSubmit = e => {
@@ -176,9 +218,14 @@ const CrosswordPage = () => {
         }
     };
 
-    const handleKeyDown = e => {
-        if (e.key === 'Enter') {
-            handleSubmit(e);
+    // Обработчики клавиатуры
+    const onKeyboardChange = input => {
+        setInputValue(input);
+    };
+
+    const onKeyPress = button => {
+        if (button === '{bksp}') {
+            setInputValue(prev => prev.slice(0, -1));
         }
     };
 
@@ -225,16 +272,33 @@ const CrosswordPage = () => {
                             <p>{selectedClue.clue}</p>
 
                             <div className={styles.inputGroup}>
-                                <input type="text" value={inputValue} onChange={e => setInputValue(e.target.value)} onKeyDown={handleKeyDown} autoFocus />
+                                <input
+                                    type="text"
+                                    value={inputValue}
+                                    onChange={e => setInputValue(e.target.value)}
+                                    autoFocus
+                                    // Добавляем авто-регистр
+                                    style={{ textTransform: 'uppercase' }}
+                                />
                             </div>
 
                             <div className={styles.buttonGroup}>
-                                <button type="submit" className={styles.submitButton}>
-                                    Проверить
-                                </button>
-                                <button type="button" className={styles.hintButton} onClick={revealPartialHint} disabled={selectedClue.solved}>
-                                    Подсказка (1-2 буквы)
-                                </button>
+                                <div className={styles.allButtons}>
+                                    <button type="button" className={styles.button} onClick={() => setSelectedClue(null)}>
+                                        отмена
+                                    </button>
+                                    <button type="button" className={styles.button} onClick={revealPartialHint} disabled={selectedClue.solved}>
+                                        открыть подсказку
+                                    </button>
+                                </div>
+                                <div className={styles.allButtons}>
+                                    <button type="submit" className={styles.button}>
+                                        ок
+                                    </button>
+                                    <button className={styles.button} onClick={revealAllAnswers} disabled={allRevealed}>
+                                        Открыть все ответы
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     ) : (
@@ -252,6 +316,41 @@ const CrosswordPage = () => {
                             {message.includes('Неверно') && <p className={styles.hint}>Нажмите на любое загаданное слово, чтобы продолжить игру</p>}
                         </div>
                     )}
+
+                    {/* Виртуальная клавиатура */}
+                    <div className={styles.keyboardWrapper}>
+                        <Keyboard
+                            keyboardRef={r => (keyboardRef.current = r)}
+                            layout={{
+                                default: ['й ц у к е н г ш щ з х ъ', 'ф ы в а п р о л д ж э', 'я ч с м и т ь б ю {bksp}'],
+                            }}
+                            onChange={onKeyboardChange}
+                            onKeyPress={onKeyPress}
+                            display={{
+                                '{bksp}': '<BackspaceOutlinedIcon />', // Используем кастомное отображение
+                            }}
+                            buttonTheme={[
+                                {
+                                    class: styles.keyboardDeleteBtn,
+                                    buttons: '{bksp}',
+                                },
+                            ]}
+                            theme={`hg-theme-default ${styles.keyboardTheme}`}
+                            renderButton={(button, keyboard) => {
+                                // Кастомный рендер для кнопки удаления
+                                if (button === '{bksp}') {
+                                    return (
+                                        <button className="hg-button hg-button-bksp" onClick={() => keyboard.handleButtonClicked(button)}>
+                                            <BackspaceOutlinedIcon />
+                                        </button>
+                                    );
+                                }
+                                return button;
+                            }}
+                        />
+                    </div>
+
+                    {/* Кнопка открытия всех ответов */}
                 </div>
             </div>
             <Footer />
