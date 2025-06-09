@@ -111,7 +111,7 @@ export const alex = {
 export const personali = {
   pilots: [
     {
-      id: '1',
+      id: 'pilot',
       date: '(1895-1982)',
       title: 'В.С. Молоков',
       biography: [
@@ -201,7 +201,7 @@ export const personali = {
       ],
     },
     {
-      id: '2',
+      id: 'pilot-2',
       date: '(1899-1980)',
       title: 'М.В. Водопьянов',
       biography: [
@@ -288,7 +288,7 @@ export const personali = {
       ],
     },
     {
-      id: '3',
+      id: 'pilot-3',
       date: '(1908-1982)',
       title: 'Н.П. Каманин',
       biography: [
