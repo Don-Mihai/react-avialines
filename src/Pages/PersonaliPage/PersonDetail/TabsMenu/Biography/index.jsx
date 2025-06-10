@@ -25,25 +25,13 @@ const Biography = ({ data, images }) => {
     }
   };
 
-  const events = [
-    { date: '01.01.2025', content: <div>Событие 1</div> },
-    { date: '05.01.2025', content: <div>Событие 2</div> },
-    { date: '10.01.2025', content: <div>Событие 3</div> },
-    { date: '01.01.2025', content: <div>Событие 1</div> },
-    { date: '05.01.2025', content: <div>Событие 2</div> },
-    { date: '10.01.2025', content: <div>Событие 3</div> },
-    { date: '01.01.2025', content: <div>Событие 1</div> },
-    { date: '05.01.2025', content: <div>Событие 2</div> },
-    { date: '10.01.2025', content: <div>Событие 3</div> },
-  ];
-
   return (
     <>
       <div className={styles.container}>
         <div className={styles.biography}>
           <h3 className={styles.title}>{data.title}</h3>
           <p className={styles.content}>{data.content}</p>
-          <SnakeTimeline events={events} />
+          <SnakeTimeline events={data.awards} />
         </div>
         <div className={styles.galleryGrid}>
           {currentImages.map((img, index) => (
