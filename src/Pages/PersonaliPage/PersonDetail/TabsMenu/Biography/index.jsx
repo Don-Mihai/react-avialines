@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from './Biography.module.css';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
-import SnakeTimeline from './SnakeTimeline';
+import SnakeTimeline from '../../../../../components/SnakeTimeline';
 
 const Biography = ({ data, images }) => {
   const [currentPage, setCurrentPage] = useState(1);
