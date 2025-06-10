@@ -90,7 +90,7 @@ const SnakeTimeline = ({ events = [], columns = 3, rowGap = 80, columnGap = 120,
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            {events[selectedIndex].content}
+            {events[selectedIndex].description}
             <div style={{ textAlign: 'right', marginTop: '12px' }}>
               <button onClick={() => setSelectedIndex(null)}>Закрыть</button>
             </div>
