@@ -6,7 +6,7 @@ import { crosswordData } from '../../../data';
 import Footer from '../../../components/Footer';
 import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
-import BackspaceOutlinedIcon from '@mui/icons-material/BackspaceOutlined';
+import BackspaceIcon from '@mui/icons-material/Backspace';
 
 const CrosswordPage = () => {
     const navigate = useNavigate();
@@ -17,8 +17,8 @@ const CrosswordPage = () => {
     const [solvedCount, setSolvedCount] = useState(0);
     const [allRevealed, setAllRevealed] = useState(false);
     const keyboardRef = useRef(null);
+    const [hintVisible, setHintVisible] = useState(false); // Состояние видимости подсказки
 
-    // Преобразуем слова в верхний регистр при инициализации
     const crosswordWords = useMemo(
         () =>
             crosswordData.words.map(word => ({
@@ -52,7 +52,7 @@ const CrosswordPage = () => {
                 if (row < crosswordData.size && col < crosswordData.size) {
                     newGrid[row][col] = {
                         ...newGrid[row][col],
-                        value: text[i].toUpperCase(), // Всегда верхний регистр
+                        value: text[i].toUpperCase(),
                         clueIds: [...newGrid[row][col].clueIds, id],
                     };
                 }
@@ -80,6 +80,7 @@ const CrosswordPage = () => {
                 setSelectedClue(clue);
                 setInputValue('');
                 setMessage(null);
+                setHintVisible(false); // Сбрасываем видимость подсказки при выборе нового слова
             }
         }
     };
@@ -87,7 +88,6 @@ const CrosswordPage = () => {
     const checkWord = useCallback(() => {
         if (!selectedClue) return;
 
-        // Убираем пробелы и преобразуем в верхний регистр
         const userInput = inputValue.replace(/\s+/g, '').toUpperCase();
 
         if (userInput === selectedClue.word) {
@@ -131,63 +131,88 @@ const CrosswordPage = () => {
             setTimeout(() => {
                 setSelectedClue(null);
                 setMessage(null);
+                setHintVisible(false); // Сбрасываем видимость подсказки при решении
             }, 1500);
         } else {
             setMessage('Неверно, попробуйте снова');
         }
     }, [selectedClue, inputValue, solvedCount, navigate, words]);
 
-    const revealPartialHint = () => {
+    // Обновленная функция для управления подсказками
+    const toggleHint = () => {
         if (!selectedClue || selectedClue.solved) return;
 
-        const { start, direction, word: text } = selectedClue;
-        let { row, col } = start;
+        if (hintVisible) {
+            // Закрываем подсказку - скрываем все открытые буквы
+            setGrid(prevGrid => {
+                const newGrid = JSON.parse(JSON.stringify(prevGrid));
+                const { start, direction, word: text } = selectedClue;
+                let { row, col } = start;
 
-        // Рассчитываем количество букв для открытия:
-        // 30% от длины слова, но не менее 3 и не более 5
-        const hintCount = Math.min(5, Math.max(3, Math.floor(text.length * 0.3)));
+                for (let i = 0; i < text.length; i++) {
+                    if (row < crosswordData.size && col < crosswordData.size) {
+                        if (!newGrid[row][col].solved) {
+                            newGrid[row][col] = {
+                                ...newGrid[row][col],
+                                revealed: false,
+                            };
+                        }
+                    }
 
-        const hiddenIndices = [];
-        for (let i = 0; i < text.length; i++) {
-            const cell = grid[row]?.[col];
-            if (cell && !cell.revealed && !cell.solved) {
-                hiddenIndices.push(i);
-            }
-            direction === 'horizontal' ? col++ : row++;
-        }
-
-        if (hiddenIndices.length === 0) return;
-
-        const lettersToReveal = Math.min(hintCount, hiddenIndices.length);
-        const indicesToReveal = [];
-        for (let i = 0; i < lettersToReveal; i++) {
-            const randomIndex = Math.floor(Math.random() * hiddenIndices.length);
-            indicesToReveal.push(hiddenIndices[randomIndex]);
-            hiddenIndices.splice(randomIndex, 1);
-        }
-
-        setGrid(prevGrid => {
-            const newGrid = JSON.parse(JSON.stringify(prevGrid));
-            let r = start.row;
-            let c = start.col;
-
-            for (let i = 0; i < text.length; i++) {
-                if (indicesToReveal.includes(i)) {
-                    newGrid[r][c] = {
-                        ...newGrid[r][c],
-                        revealed: true,
-                    };
+                    direction === 'horizontal' ? col++ : row++;
                 }
+                return newGrid;
+            });
+            setHintVisible(false);
+            setMessage('Подсказка скрыта');
+        } else {
+            // Открываем подсказку - показываем несколько букв
+            const { start, direction, word: text } = selectedClue;
+            let { row, col } = start;
 
-                direction === 'horizontal' ? c++ : r++;
+            const hiddenIndices = [];
+            for (let i = 0; i < text.length; i++) {
+                const cell = grid[row]?.[col];
+                if (cell && !cell.revealed && !cell.solved) {
+                    hiddenIndices.push(i);
+                }
+                direction === 'horizontal' ? col++ : row++;
             }
-            return newGrid;
-        });
 
-        setMessage(`Открыто ${lettersToReveal} букв(ы) в слове!`);
+            if (hiddenIndices.length === 0) return;
+
+            const hintCount = Math.min(5, Math.max(3, Math.floor(text.length * 0.3)));
+            const lettersToReveal = Math.min(hintCount, hiddenIndices.length);
+            const indicesToReveal = [];
+            for (let i = 0; i < lettersToReveal; i++) {
+                const randomIndex = Math.floor(Math.random() * hiddenIndices.length);
+                indicesToReveal.push(hiddenIndices[randomIndex]);
+                hiddenIndices.splice(randomIndex, 1);
+            }
+
+            setGrid(prevGrid => {
+                const newGrid = JSON.parse(JSON.stringify(prevGrid));
+                let r = start.row;
+                let c = start.col;
+
+                for (let i = 0; i < text.length; i++) {
+                    if (indicesToReveal.includes(i)) {
+                        newGrid[r][c] = {
+                            ...newGrid[r][c],
+                            revealed: true,
+                        };
+                    }
+
+                    direction === 'horizontal' ? c++ : r++;
+                }
+                return newGrid;
+            });
+
+            setHintVisible(true);
+            setMessage(`Открыто ${lettersToReveal} букв(ы) в слове!`);
+        }
     };
 
-    // Функция для открытия всех ответов
     const revealAllAnswers = () => {
         setGrid(prevGrid => {
             const newGrid = JSON.parse(JSON.stringify(prevGrid));
@@ -218,7 +243,6 @@ const CrosswordPage = () => {
         }
     };
 
-    // Обработчики клавиатуры
     const onKeyboardChange = input => {
         setInputValue(input);
     };
@@ -277,7 +301,6 @@ const CrosswordPage = () => {
                                     value={inputValue}
                                     onChange={e => setInputValue(e.target.value)}
                                     autoFocus
-                                    // Добавляем авто-регистр
                                     style={{ textTransform: 'uppercase' }}
                                 />
                             </div>
@@ -287,8 +310,8 @@ const CrosswordPage = () => {
                                     <button type="button" className={styles.button} onClick={() => setSelectedClue(null)}>
                                         отмена
                                     </button>
-                                    <button type="button" className={styles.button} onClick={revealPartialHint} disabled={selectedClue.solved}>
-                                        открыть подсказку
+                                    <button type="button" className={styles.button} onClick={toggleHint} disabled={selectedClue.solved || allRevealed}>
+                                        {hintVisible ? 'Скрыть подсказку' : 'Открыть подсказку'}
                                     </button>
                                 </div>
                                 <div className={styles.allButtons}>
@@ -317,40 +340,47 @@ const CrosswordPage = () => {
                         </div>
                     )}
 
-                    {/* Виртуальная клавиатура */}
-                    <div className={styles.keyboardWrapper}>
-                        <Keyboard
-                            keyboardRef={r => (keyboardRef.current = r)}
-                            layout={{
-                                default: ['й ц у к е н г ш щ з х ъ', 'ф ы в а п р о л д ж э', 'я ч с м и т ь б ю {bksp}'],
-                            }}
-                            onChange={onKeyboardChange}
-                            onKeyPress={onKeyPress}
-                            display={{
-                                '{bksp}': '<BackspaceOutlinedIcon />', // Используем кастомное отображение
-                            }}
-                            buttonTheme={[
-                                {
-                                    class: styles.keyboardDeleteBtn,
-                                    buttons: '{bksp}',
-                                },
-                            ]}
-                            theme={`hg-theme-default ${styles.keyboardTheme}`}
-                            renderButton={(button, keyboard) => {
-                                // Кастомный рендер для кнопки удаления
-                                if (button === '{bksp}') {
+                    {/* Клавиатура отображается только при выборе слова */}
+                    {selectedClue && (
+                        <div className={styles.keyboardWrapper}>
+                            <Keyboard
+                                keyboardRef={r => (keyboardRef.current = r)}
+                                layout={{
+                                    default: ['Й Ц У К Е Н Г Ш Щ З Х Ъ', 'Ф Ы В А П Р О Л Д Ж Э', 'Я Ч С М И Т Ь Б Ю {bksp}'],
+                                }}
+                                onChange={onKeyboardChange}
+                                onKeyPress={onKeyPress}
+                                buttonTheme={[
+                                    {
+                                        class: styles.keyboardDefaultBtn, // Ваш класс для обычных кнопок
+                                        buttons: 'Й Ц У К Е Н Г Ш Щ З Х Ъ Ф Ы В А П Р О Л Д Ж Э Я Ч С М И Т Ь Б Ю',
+                                    },
+                                    {
+                                        class: `${styles.keyboardDeleteBtn} hg-button hg-button-bksp`, // Добавлены обязательные классы
+                                        buttons: '{bksp}',
+                                    },
+                                ]}
+                                theme={`hg-theme-default ${styles.keyboardTheme}`}
+                                renderButton={(button, _k, handleButtonClick) => {
+                                    if (button === '{bksp}') {
+                                        return (
+                                            <button
+                                                className={`hg-button hg-button-bksp ${styles.keyboardDeleteBtn}`}
+                                                onClick={() => handleButtonClick('{bksp}')}
+                                            >
+                                                <BackspaceIcon style={{ color: 'white', width: 24, height: 24 }} />
+                                            </button>
+                                        );
+                                    }
                                     return (
-                                        <button className="hg-button hg-button-bksp" onClick={() => keyboard.handleButtonClicked(button)}>
-                                            <BackspaceOutlinedIcon />
+                                        <button className={`hg-button ${styles.keyboardDefaultBtn}`} onClick={e => handleButtonClick(button, e)}>
+                                            {button}
                                         </button>
                                     );
-                                }
-                                return button;
-                            }}
-                        />
-                    </div>
-
-                    {/* Кнопка открытия всех ответов */}
+                                }}
+                            />
+                        </div>
+                    )}
                 </div>
             </div>
             <Footer />
