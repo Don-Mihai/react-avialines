@@ -1,70 +1,6 @@
-export const ruslan = {
-  title: (
-    <>
-      гибель спасательного <br />
-      судна «руслан»
-    </>
-  ),
-  images: [
-    {
-      text: 'Текстовое описание1',
-      src: 'https://avatars.mds.yandex.net/i?id=a51c3d3a415cc5ebbe255b4d64d4576f1e0e699f-4745534-images-thumbs&n=13',
-      title: 'название фото1',
-    },
-    {
-      text: 'Текстовое описание2',
-      src: 'https://yastatic.net/naydex/yandex-search/EOMek8518/3276245F8wL7/yezO2fUS0l7_7MrIX-AHzGFjVjBOGksSzQYlZHYC2dB4fIQ6JzjK6uHW4vGUlib2Pyh01JPsXaZf9wqK4WMDi_0oCs309xd63jmKSG-wJhm1Ukf17l-atujDwSGjsnmgfr9DvWBLDVyzYcUDQGOzQ0oM9UHSKv5w',
-      title: 'название фото2',
-    },
-    {
-      text: 'Текстовое описание3',
-      src: 'https://yandex-images.clstorage.net/qTUO95399/a81390yGmk/tRngXlEg1FUctfSDNR8AdXPMAftbnW7FDYqScQm_6TOlxlIphxF8WfUNSamlTm7Oj_YxWFUkGK4zPkNpcoIk8KdA8hIXZs4OTPLs1z0cBXdukULqR8dqmBfIziwatuI8opFsFfI0CjaPbjXXj2EnloKibRlPIFaSDiwiQxeWL7GMNNhGVwm1dS2QkbQHPyp7Taw17m7eU5gwvvUIJOztQurLfwzXASQek1UZ9pVpL5iZsFgIIipniQhBI3kuvgKqqRr5e2gRi2EtgrGtITUcSEeSA_xn2Uu5LJbLBjDh9ULF0GMm0BovM5ZdCNqhShiEqK1GMRssWp4-RCBkL7IItLsd5VFaPZRNOqqRoi0cNkNzly3kaPBmlQKN2REP3f1K4MRCOfwHCyW1fTfEkUANsYmjeDYoJU29EEI2RgCPBbOaHNZLYj2jdgGgk4wDHCVEbrEsz0nHba8rv-ovKOvpaNjqZiT8IQ8ai10b45NLL66th10XMANbohl4J0kUlTehhDv8UXsQjHITiI6xEycrSnyEBepf4nGTFIz3ACja3mj25FkD4yceELJOJP-CSBGlhIdeKhg7baEhZA9pOp4ViqwXxVxlAIhuPrCCjTk5NEZgtyDRXsBPqyCD3hcn6N5U9PNdJN4nPwerVS3UsnomtJmjRiklGna1Fk0EbQ-UA5GHEf5-dACLfA2Ws749EBN2Z68h9ljzXZIDtuwsOO_KctDBRy7ADQUetWYt37ZXN7OCqFkNGTtmlTJgEUcQrQejtQ_ycFEDv20PsKmPEyEmQkGpPO5k91ODPKHiIwnByEbJ7lkb4C07OadOPfGkfySmqqlpLDQuaqoieCFeCbIlrYcV3nBuOJBcAre2ohwHPUV9iz3dWehush2lwA0s-s1mx_R8HPk0HRuhZRTRrmEwsaSNThMZL2SvFGIZRRqJD4iLC9p3eiefURapg5YaGw9EfI0e-VfWabsjnf05PN8',
-      title: 'название фото3',
-    },
-    {
-      text: 'Текстовое описание4',
-      src: 'https://avatars.mds.yandex.net/i?id=add9bc9090648d7589beff9004598cd5926a2bed-4119342-images-thumbs&n=13',
-      title: 'название фото4',
-    },
-    {
-      text: 'Текстовое описание5',
-      src: 'https://avatars.mds.yandex.net/i?id=329c8dec894981c895d034368f296251cddd708f-9882580-images-thumbs&n=13',
-      title: 'название фото5',
-    },
-  ],
-  videos: [
-    { text: 'Текстовое описание1', src: '/videos/preview.mp4', title: 'название видео1' },
-    { text: 'Текстовое описание2', src: '/videos/preview.mp4', title: 'название видео2' },
-    { text: 'Текстовое описание3', src: '/videos/preview.mp4', title: 'название видео3' },
-    { text: 'Текстовое описание4', src: '/videos/preview.mp4', title: 'название видео4' },
-    { text: 'Текстовое описание5', src: '/videos/preview.mp4', title: 'название видео5' },
-    { text: 'Текстовое описание6', src: '/videos/preview.mp4', title: 'название видео6' },
-    { text: 'Текстовое описание7', src: '/videos/preview.mp4', title: 'название видео7' },
-    { text: 'Текстовое описание8', src: '/videos/preview.mp4', title: 'название видео8' },
-  ],
-  audios: [
-    { text: 'Текстовое описание1', src: '/audios/preview.mp3', title: 'название аудио' },
-    { text: 'Текстовое описание2', src: '/audios/preview.mp3', title: 'название аудио' },
-    { text: 'Текстовое описание3', src: '/audios/preview.mp3', title: 'название аудио' },
-    { text: 'Текстовое описание4', src: '/audios/preview.mp3', title: 'название аудио' },
-    { text: 'Текстовое описание5', src: '/audios/preview.mp3', title: 'название аудио' },
-    { text: 'Текстовое описание6', src: '/audios/preview.mp3', title: 'название аудио' },
-    { text: 'Текстовое описание7', src: '/audios/preview.mp3', title: 'название аудио' },
-    { text: 'Текстовое описание8', src: '/audios/preview.mp3', title: 'название аудио' },
-  ],
-};
 
-export const cheluskina = {
-  title: (
-    <>
-      спасение экипажа и пассажиров <br />
-      парохода «челюскин»,
-    </>
-  ),
-  images: [{ text: 'текст', src: '', title: 'название фото' }],
-  videos: [{ text: 'текст', src: '', title: 'название видео' }],
-  audios: [{ text: 'текст', src: '', title: 'название аудио' }],
-};
+
+
 
 export const italy = {
   title: (
@@ -91,34 +27,35 @@ export const alex = {
   audios: [{ text: 'текст', src: '', title: 'название аудио' }],
 };
 
-export const cheluskin = {
-  title: (
-    <>
-      спасение экипажа <br />и пассажиров парохода «челюскин»,
-    </>
-  ),
+export const cheluskina = {
+    title: (
+        <>
+            спасение экипажа и пассажиров
+            <br /> парохода «челюскин»,
+        </>
+    ),
 
-  text: 'Календарь: 1933-1934 гг. Место: Арктика, Берингов пролив, поблизости от островов Диомида. 13 февраля 1934 года в результате сильного сжатия «Челюскин» был раздавлен льдами и затонул в течение двух часов. Операция по спасению ста четырех человек, дрейфующих на льдине, заняла у советских авиаторов два месяца. Сквозь лед, туман и арктический холод летчики пробирались к людям.',
-  images: [{ src: '../images/1.jpg', name: '1.jpg' }],
-  videos: [{ src: 'https://rutube.ru/video/2681f8efa5ee0634627d85be7c7e2bdc/?r=plemwd', name: 'Челюскин' }],
-  audios: [
-    { src: '../audio/Chelyuskin1.mp3', name: 'Chelyuskin1.mp3' },
-    { src: '../audio/Chelyuskin2.mp3', name: 'Chelyuskin2.mp3' },
-    { src: '../audio/Chelyuskin3.mp3', name: 'Chelyuskin3.mp3' },
-    { src: '../audio/Chelyuskin4.mp3', name: 'Chelyuskin4.mp3' },
-    { src: '../audio/Chelyuskin5.mp3', name: 'Chelyuskin5.mp3' },
-    { src: '../audio/Chelyuskin6.mp3', name: 'Chelyuskin6.mp3' },
-    { src: '../audio/Chelyuskin7.mp3', name: 'Chelyuskin7.mp3' },
-    { src: '../audio/Chelyuskin8.mp3', name: 'Chelyuskin8.mp3' },
-  ],
+    text: 'Календарь: 1933-1934 гг. Место: Арктика, Берингов пролив, поблизости от островов Диомида. 13 февраля 1934 года в результате сильного сжатия «Челюскин» был раздавлен льдами и затонул в течение двух часов. Операция по спасению ста четырех человек, дрейфующих на льдине, заняла у советских авиаторов два месяца. Сквозь лед, туман и арктический холод летчики пробирались к людям.',
+    images: [{ src: '../images/1.jpg', name: '1.jpg' }],
+    videos: [{ src: 'https://rutube.ru/video/2681f8efa5ee0634627d85be7c7e2bdc/?r=plemwd', name: 'Челюскин' }],
+    audios: [
+        { src: '../audio/Chelyuskin1.mp3', name: 'Chelyuskin1.mp3' },
+        { src: '../audio/Chelyuskin2.mp3', name: 'Chelyuskin2.mp3' },
+        { src: '../audio/Chelyuskin3.mp3', name: 'Chelyuskin3.mp3' },
+        { src: '../audio/Chelyuskin4.mp3', name: 'Chelyuskin4.mp3' },
+        { src: '../audio/Chelyuskin5.mp3', name: 'Chelyuskin5.mp3' },
+        { src: '../audio/Chelyuskin6.mp3', name: 'Chelyuskin6.mp3' },
+        { src: '../audio/Chelyuskin7.mp3', name: 'Chelyuskin7.mp3' },
+        { src: '../audio/Chelyuskin8.mp3', name: 'Chelyuskin8.mp3' },
+    ],
 };
 
-export const ruuslan = {
+export const ruslan = {
   title: <>гибель спасательного судна «руслан»</>,
   text: 'Календарь: 1933 г. Место: в районе Шпицбергена. 25 апреля 1933 года затонул в результате обледенения у Южного мыса, архипелага Шпицберген, Баренцево море. Судно (капитан Н. Клюев) участвовало в спасении ледокольного парохода «Малыгин», севшего на камни у острова Шпицберген. После успешного завершения операции 24 апреля «Руслан» вместе с другими спасательными судами и спасенным «Малыгиным» вышел в Мурманск. В ожидании ледокола «Красин», на буксире которого он должен был совершить переход, «Руслан» следовал малым ходом позади каравана. В ночь на 25 апреля в связи с сильным ветром и снежными зарядами началось обледенение судна. Его остойчивость резко упала. При постановке лагом к волне судно получило большой крен и не выпрямилось. Экипаж скалывал образовавшийся лед. Поворотом носом на волну, крен удавалось на время ликвидировать, однако к вечеру 25 апреля с ростом обмерзания, все предпринятые меры не давали результата. «Руслан» лег на борт. Вода затопила машинное отделение. Около полуночи судно затонуло. Из 22 членов экипажа, пересевших в шлюпки, спаслись лишь трое моряков, подобранных норвежским промысловым судном через 5 суток после гибели «Руслана».',
   photos: [{ src: '../images/ruslan.JPG', name: 'Спасательный буксир Руслан' }],
-  videos: [{ src: '../images/1.jpg', name: '1.jpg' }],
-  audios: [{ src: '../images/1.jpg', name: '1.jpg' }],
+  videos: [{ src: '../video/1.jpg', name: '1.jpg' }],
+  audios: [{ src: '../audio/1.jpg', name: '1.jpg' }],
 };
 
 export const personali = {
@@ -206,9 +143,9 @@ export const personali = {
                 },
             ],
             gallery: [
-                { src: '../images/405556797_1112841.jpg', title: '405556797_1112841.jpg' },
-                { src: '../images/Molokov_Vasiliy_Sergeevich.jpg', name: 'Molokov_Vasiliy_Sergeevich.jpg' },
-                { src: '../images/fotografiya_v.s._molokova._ne_ranee_1943_g.jpg', name: 'fotografiya_v.s._molokova._ne_ranee_1943_g.jpg' },
+                { src: '/images/molokov1.jpg', name: 'molokov1.jpg' },
+                { src: '/images/molokov2.jpg', name: 'molokov2.jpg' },
+                { src: '/images/molokov3.jpg', name: 'molokov3.jpg' },
             ],
         },
         {
@@ -292,9 +229,9 @@ export const personali = {
             ],
             gallery: [
                 [
-                    { src: '../images/водопьянов.jpg', name: 'водопьянов.jpg' },
-                    { src: '../images/Кренкель и Водопьянов.jpg', name: 'Кренкель и Водопьянов.jpg' },
-                    { src: '../images/Водопьянов 5.png', name: 'Водопьянов 5.png' },
+                    { src: '/images/vodopyanov1.jpg', name: 'vodopyanov1.jpg' },
+                    { src: '/images/vodopyanov2.jpg', name: 'vodopyanov2.jpg' },
+                    { src: '/images/vodopyanov3.jpg', name: 'vodopyanov3.jpg' },
                 ],
             ],
         },
@@ -418,8 +355,8 @@ export const personali = {
             ],
             gallery: [
                 [
-                    { src: '../images/Н. П. Каманин.JPG', name: 'Н. П. Каманин.JPG' },
-                    { src: '../images/Н.П. Каманин и Ю.А. Гагарин.JPG', name: 'Н.П. Каманин и Ю.А. Гагарин.JPG' },
+                    { src: '/images/kamanin1.JPG', name: 'kamanin1.JPG' },
+                    { src: '/images/kamanin2.JPG', name: 'kamanin2.JPG' },
                 ],
             ],
         },
@@ -495,110 +432,76 @@ export const personali = {
 };
 
 export const library = {
-  films: [
-    {
-      title: 'Название фильма1',
-      src: '/videos/preview.mp4',
-    },
-    {
-      title: 'Название фильма2',
-      src: '/videos/preview.mp4',
-    },
-    {
-      title: 'Название фильма3',
-      src: '/videos/preview.mp4',
-    },
-    {
-      title: 'Название фильма4',
-      src: '/videos/preview.mp4',
-    },
-    {
-      title: 'Название фильма5',
-      src: '/videos/preview.mp4',
-    },
-    {
-      title: 'Название фильма6',
-      src: '/videos/preview.mp4',
-    },
-  ],
-  audioBooks: [
-    {
-      title: 'Название аудиокниги1',
-      src: '/audios/Chelyuskin1.mp3',
-    },
-    {
-      title: 'Название аудиокниги2',
-      src: '/audios/Chelyuskin2.mp3',
-    },
-    {
-      title: 'Название аудиокниги3',
-      src: '/audios/Chelyuskin3.mp3',
-    },
-    {
-      title: 'Название аудиокниги4',
-      src: '/audios/Chelyuskin4.mp3',
-    },
-    {
-      title: 'Название аудиокниги5',
-      src: '/audios/Chelyuskin5.mp3',
-    },
-    {
-      title: 'Название аудиокниги6',
-      src: '/audios/Chelyuskin6.mp3',
-    },
-  ],
-  lectures: [
-    {
-      title: 'Название лекции1',
-      src: '/videos/preview.mp4',
-    },
-    {
-      title: 'Название лекции2',
-      src: '/videos/preview.mp4',
-    },
-    {
-      title: 'Название лекции3',
-      src: '/videos/preview.mp4',
-    },
-    {
-      title: 'Название лекции4',
-      src: '/videos/preview.mp4',
-    },
-    {
-      title: 'Название лекции5',
-      src: '/videos/preview.mp4',
-    },
-    {
-      title: 'Название лекции6',
-      src: '/videos/preview.mp4',
-    },
-  ],
-  books: [
-    {
-      title: 'Название книги1',
-      src: 'https://i.pinimg.com/736x/9f/93/d4/9f93d4b14e18ef78b431259448614c50.jpg',
-    },
-    {
-      title: 'Название книги2',
-      src: 'https://i.pinimg.com/736x/9f/93/d4/9f93d4b14e18ef78b431259448614c50.jpg',
-    },
-    {
-      title: 'Название книги3',
-      src: 'https://i.pinimg.com/736x/9f/93/d4/9f93d4b14e18ef78b431259448614c50.jpg',
-    },
-    {
-      title: 'Название книги4',
-      src: 'https://i.pinimg.com/736x/9f/93/d4/9f93d4b14e18ef78b431259448614c50.jpg',
-    },
-    {
-      title: 'Название книги5',
-      src: 'https://i.pinimg.com/736x/9f/93/d4/9f93d4b14e18ef78b431259448614c50.jpg',
-    },
-    {
-      title: 'Название книги6',
-      src: 'https://i.pinimg.com/736x/9f/93/d4/9f93d4b14e18ef78b431259448614c50.jpg',
-    },
-  ],
+    films: [
+        {
+            title: 'Челюскинцы (СССР, 1985 г., режиссер – Михаил Иванович Ершов)',
+            src: '/videos/cheluskin-video1.mp4',
+        },
+        {
+            title: 'Челюскин. Первые (Россия, 2024 г., режиссер – Степан Коршунов)',
+            src: '/videos/preview.mp4',
+        },
+        {
+            title: 'Гибель «Челюскина». Спасение «челюскинцев». 1934 год',
+            src: '/videos/preview.mp4',
+        },
+        {
+            title: '«Александр Сибиряков»: Биография парохода (Россия, 2014 г., режиссер – Владимир Плешаков,',
+            src: '/videos/preview.mp4',
+        },
+        {
+            title: 'Поход «Сибирякова» (СССР, 1933 г., режиссеры – Владимир Шнейдеров, Яков Купер)',
+            src: '/videos/preview.mp4',
+        },
+        {
+            title: '«Подвиг во льдах» (Ленинград, 1928 г., режиссеры – Георгий Васильев, Сергей Васильев)',
+            src: '/videos/preview.mp4',
+        },
+        {
+            title: '«Красная палатка» (Италия, 1969г., режиссер –Михаил Калатозов)',
+            src: '/videos/preview.mp4',
+        },
+        
+    ],
+    audioBooks: [
+        {
+            title: '«Челюскин. В плену ледяной пустыни» Михаил Калашников',
+            src: '/audios/cheluskin-audio-book1.mp3',
+        },
+    ],
+    lectures: [
+        {
+            title: 'Название лекции1',
+            src: '/videos/preview.mp4',
+        },
+        
+    ],
+    books: [
+        {
+            title: '«Спасение челюскинцев» С. К. Сафонов, Юрий Бурлаков',
+            src: '../images/book1.jpg',
+        },
+        {
+            title: '«Челюскинцы. Первые в Арктике» А. А. Замостьянов',
+            src: '../images/book2.jpg',
+        },
+        {
+            title: '«В тени первых Героев. Белые пятна челюскинской эпопеи» Николай Велигжанин',
+            src: '../images/book3.jpg',
+        },
+        {
+            title: 'Экспедиция на «Сибирякове» Сергей Александрович Семенов (1933 г.)',
+            src: '../images/book4.jpg',
+        },
+        {
+            title: 'Крушение "Италии": История арктической экспедиции Умберто Нобиле. Марк Пайсинг',
+            src: '../images/book5.jpg',
+        },
+        {
+            title: 'Умберто Нобиле и «Италия» на Северном полюсе. Сиколо Клаудио',
+            src: '../images/book6.jpg',
+        },
+    ],
 };
 
 export const quizData = [
