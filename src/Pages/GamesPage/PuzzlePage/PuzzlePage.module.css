@@ -71,45 +71,52 @@
     font-size: 14px;
 }
 
-.difficultyContainer {
+/* .difficultyWrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
-}
+    width: 100%;
+    margin-bottom: 20px;
+} */
 
-.difficultyLevels {
+.difficultyContainerVertical {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-bottom: 30px;
+    width: 100%;
+    max-width: 400px;
+    color: rgba(255, 255, 255, 1);
 }
 
-.difficultyButton {
-    border: 2px solid #ddd;
-    border-radius: 8px;
+.difficultyItem {
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
-    font-size: 25px;
-    text-align: center;
 }
 
-.difficultyButton:hover {
-    border-color: #2196f3;
+.difficultyLabel {
+    display: flex;
+    align-items: center;
 }
 
-.difficultyButton.active {
-    border-color: #2196f3;
-    background-color: #e3f2fd;
+.arrowIcon {
+    font-size: 60px !important;
 }
 
 .difficultyName {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 25px;
     font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
 }
 
-.difficultyDesc {
-    font-size: 14px;
-    color: #666;
+.selectedText {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.difficultyDescription {
+    font-size: 35px;
 }
 
 .startButton {
@@ -127,9 +134,14 @@
     font-weight: bold;
 }
 
-/* .startButton:hover {
-    background: #45a049;
-} */
+.scrollButton {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    color: #333;
+}
 
 .startButton:disabled {
     background: #5c5b5b;
@@ -139,28 +151,60 @@
 }
 
 .gameContainer {
-    margin: 0 auto;
-    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     padding: 20px;
 }
 
 .backButton {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: #2196f3;
-    color: white;
+    align-self: flex-start;
+    background: none;
     border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
+    color: #333;
     cursor: pointer;
-    z-index: 10;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
 }
 
 .puzzleWrapper {
-    background: white;
-    padding: 5px;
-    border-radius: 8px;
+    flex: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: solid 2px #fff;
+}
+
+.puzzleArea {
+    display: flex;
+    gap: 20px;
+    width: 74%;
+}
+
+.hintPanel {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hintToggle {
+    padding: 15px;
+    width: 100%;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.25);
+    outline: solid 2px rgb(35, 71, 78) !important;
+    outline-offset: 7px;
+    border: none;
+    font-size: 31px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+}
+
+.hintImage {
+    width: 100%;
+    border: solid 2px #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
