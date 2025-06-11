@@ -6,6 +6,9 @@
   top: 22%;
   left: 0;
   margin-left: 50px;
+  height: 550px;
+  width: 950px;
+  overflow-y: auto;
 }
 .awardItem {
   position: absolute;
