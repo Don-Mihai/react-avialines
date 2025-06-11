@@ -1,5 +1,7 @@
 import { useLocation } from 'react-router';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleAccessibility, setColorScheme } from '../../store/accessibilitySlice';
 import styles from './Header.module.css';
 import CatalogModal from './CatalogModal';
 import ExhibitDetailModal from './CatalogModal/ExhibitDetailModal';
@@ -9,16 +11,52 @@ const Header = () => {
     const isMainPage = location.pathname === '/main';
     const isGamesPage = location.pathname === '/games';
 
+    const dispatch = useDispatch();
+    const { isEnabled, colorScheme, schemes } = useSelector(state => state.accessibility);
+    const [showColorPicker, setShowColorPicker] = useState(false);
+    const handleSchemeChange = scheme => {
+        dispatch(setColorScheme(scheme));
+        setShowColorPicker(false);
+    };
+
     // Состояния для управления модальными окнами
     const [isCatalogOpen, setIsCatalogOpen] = useState(false);
     const [selectedExhibit, setSelectedExhibit] = useState(null);
 
     return (
         <div className={styles.header}>
+            {showColorPicker && (
+                <div className={styles.colorPicker}>
+                    {Object.entries(schemes).map(
+                        ([key, [bgColor, textColor]]) =>
+                            key !== 'default' && (
+                                <button
+                                    key={key}
+                                    className={styles.colorCircle}
+                                    style={{
+                                        backgroundColor: bgColor,
+                                        border: colorScheme === key ? '2px solid #ff0000' : '1px solid #ccc',
+                                    }}
+                                    onClick={() => handleSchemeChange(key)}
+                                    title={`Схема ${key.replace('scheme', '')}`}
+                                >
+                                    <span style={{ color: textColor }}>Ц</span>
+                                </button>
+                            )
+                    )}
+                </div>
+            )}
             {/* Показываем первые три кнопки везде, кроме /games */}
             {!isGamesPage && (
                 <>
-                    <button className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>
+                    <button
+                        onClick={() => {
+                            dispatch(toggleAccessibility());
+                            if (!isEnabled) setShowColorPicker(true);
+                            else setShowColorPicker(false);
+                        }}
+                        className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}
+                    >
                         Версия для <br /> слабовидящих
                     </button>
                     <button onClick={() => setIsCatalogOpen(true)} className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>

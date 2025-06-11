@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import './styles/index.scss';
 
+import { Provider } from 'react-redux';
+import store from './store/store';
+import AccessibilityHandler from './components/AccessibilityHandler';
+
 import MainPage from './Pages/MainPage/index.jsx';
 import GamesPage from './Pages/GamesPage/index.jsx';
 import FilmsPage from './Pages/FilmsPage/index.jsx';
@@ -109,6 +113,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <Provider store={store}>
+            <AccessibilityHandler />
+            <RouterProvider router={router} />
+        </Provider>
     </React.StrictMode>
 );
