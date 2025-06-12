@@ -16,8 +16,8 @@ const CrosswordPage = () => {
   const [message, setMessage] = useState(null);
   const [solvedCount, setSolvedCount] = useState(0);
   const [allRevealed, setAllRevealed] = useState(false);
-  const keyboardRef = useRef(null);
   const [hintVisible, setHintVisible] = useState(false); // Состояние видимости подсказки
+  const keyboardRef = useRef(null);
 
   const crosswordWords = useMemo(
     () =>
@@ -344,6 +344,9 @@ const CrosswordPage = () => {
                 }}
                 onChange={onKeyboardChange}
                 onKeyPress={onKeyPress}
+                display={{
+                  '{bksp}': '⌫'
+                }}
                 buttonTheme={[
                   {
                     class: styles.keyboardDefaultBtn, // Ваш класс для обычных кнопок
@@ -355,20 +358,6 @@ const CrosswordPage = () => {
                   }
                 ]}
                 theme={`hg-theme-default ${styles.keyboardTheme}`}
-                renderButton={(button, _k, handleButtonClick) => {
-                  if (button === '{bksp}') {
-                    return (
-                      <button className={`hg-button hg-button-bksp ${styles.keyboardDeleteBtn}`} onClick={() => handleButtonClick('{bksp}')}>
-                        <BackspaceIcon style={{ color: 'white', width: 24, height: 24 }} />
-                      </button>
-                    );
-                  }
-                  return (
-                    <button className={`hg-button ${styles.keyboardDefaultBtn}`} onClick={(e) => handleButtonClick(button, e)}>
-                      {button}
-                    </button>
-                  );
-                }}
               />
             </div>
           )}
