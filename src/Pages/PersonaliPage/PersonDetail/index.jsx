@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams } from 'react-router';
 import styles from './PersonDetail.module.css';
-import { personali } from '../../../data';
+import { personali } from '../../../data/data';
 
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
@@ -15,14 +15,14 @@ const TABS = {
   BIOGRAPHY: 'biography',
   ACHIEVEMENTS: 'achievements',
   QUOTE: 'quote',
-  GALLERY: 'gallery',
+  GALLERY: 'gallery'
 };
 
 const TABS_CONFIG = [
   { key: TABS.BIOGRAPHY, label: 'Биография' },
   { key: TABS.ACHIEVEMENTS, label: 'Достижения' },
   { key: TABS.QUOTE, label: 'Цитата' },
-  { key: TABS.GALLERY, label: 'Галерея' },
+  { key: TABS.GALLERY, label: 'Галерея' }
 ];
 
 const PersonDetail = () => {
@@ -32,7 +32,7 @@ const PersonDetail = () => {
   const categoryMap = {
     pilot: 'pilots',
     engineer: 'engineers',
-    researcher: 'researchers',
+    researcher: 'researchers'
   };
 
   const [categoryPrefix] = id.split('-');

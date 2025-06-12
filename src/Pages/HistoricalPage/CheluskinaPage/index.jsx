@@ -1,8 +1,8 @@
 import Menu from '../../../components/Menu';
-import { cheluskina } from '../../../data';
+import { cheluskina } from '../../../data/data';
 
 const CheluskinaPage = () => {
-    return <Menu data={cheluskina} />;
+  return <Menu data={cheluskina} />;
 };
 
 export default CheluskinaPage;
