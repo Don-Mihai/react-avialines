@@ -31,91 +31,89 @@ import CertificateFormPage from './Pages/GamesPage/CertificateFormPage/index.jsx
 import ThanksPage from './Pages/GamesPage/ThanksPage/index.jsx';
 
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Preview />,
-    },
-    {
-        path: 'main',
-        element: <MainPage />,
-    },
-    {
-        path: 'history',
-        element: <HistoricalPage />,
-    },
-    {
-        path: 'ruslan',
-        element: <RuslanPage />,
-    },
-    {
-        path: 'cheluskina',
-        element: <CheluskinaPage />,
-    },
-    {
-        path: 'italy',
-        element: <ItalyPage />,
-    },
-    {
-        path: 'alex',
-        element: <AlexPage />,
-    },
-    {
-        path: 'personali',
-        children: [
-            {
-                index: true,
-                element: <PersonaliPage />,
-            },
-            {
-                path: ':id',
-                element: <PersonDetail />,
-            },
-        ],
-    },
-    {
-        path: 'films',
-        element: <FilmsPage />,
-    },
-    {
-        path: 'games',
-        element: <GamesPage />,
-    },
-    {
-        path: 'puzzle',
-        element: <PuzzlePage />,
-    },
-    {
-        path: 'quiz',
-        element: <QuizPage />,
-    },
-    {
-        path: 'crossword',
-        element: <CrosswordPage />,
-    },
-    {
-        path: 'congrats',
-        element: <CongratsPage />,
-    },
-    {
-        path: 'certificate-form',
-        element: <CertificateFormPage />,
-    },
-    {
-        path: 'thanks',
-        element: <ThanksPage />,
-    },
-    {
-        path: '*',
-        element: <div>Страница не найдена</div>,
-    },
+  {
+    path: '/',
+    element: <Preview />
+  },
+  {
+    path: 'main',
+    element: <MainPage />
+  },
+  {
+    path: 'history',
+    element: <HistoricalPage />
+  },
+  {
+    path: 'ruslan',
+    element: <RuslanPage />
+  },
+  {
+    path: 'cheluskina',
+    element: <CheluskinaPage />
+  },
+  {
+    path: 'italy',
+    element: <ItalyPage />
+  },
+  {
+    path: 'alex',
+    element: <AlexPage />
+  },
+  {
+    path: 'personali',
+    children: [
+      {
+        index: true,
+        element: <PersonaliPage />
+      },
+      {
+        path: ':id',
+        element: <PersonDetail />
+      }
+    ]
+  },
+  {
+    path: 'films',
+    element: <FilmsPage />
+  },
+  {
+    path: 'games',
+    element: <GamesPage />
+  },
+  {
+    path: 'puzzle',
+    element: <PuzzlePage />
+  },
+  {
+    path: 'quiz',
+    element: <QuizPage />
+  },
+  {
+    path: 'crossword',
+    element: <CrosswordPage />
+  },
+  {
+    path: 'congrats',
+    element: <CongratsPage />
+  },
+  {
+    path: 'certificate-form',
+    element: <CertificateFormPage />
+  },
+  {
+    path: 'thanks',
+    element: <ThanksPage />
+  },
+  {
+    path: '*',
+    element: <div>Страница не найдена</div>
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <AccessibilityHandler />
-            <RouterProvider router={router} />
-        </Provider>
-    </React.StrictMode>
+  <Provider store={store}>
+    <AccessibilityHandler />
+    <RouterProvider router={router} />
+  </Provider>
 );
