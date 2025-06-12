@@ -365,24 +365,8 @@ export const personali = {
       awards: [{ title: 'достижения инженера 1' }],
       gallery: [
         {
-          src: 'https://thumbs.dreamstime.com/b/happy-young-businessman-architect-white-background-holding-blueprints-31418941.jpg',
+          src: '/images/image.png',
           title: 'инженер 1'
-        }
-      ]
-    },
-    {
-      id: 'engineer-1',
-      date: '(1900-1900)',
-      title: 'Фамилия Имя Отчество2',
-      biography: {
-        title: 'Биография инженера 2'
-      },
-      quotes: { title: 'цитата инженера 2' },
-      awards: [{ title: 'достижения инженера 2' }],
-      gallery: [
-        {
-          src: 'https://thumbs.dreamstime.com/b/happy-young-businessman-architect-white-background-holding-blueprints-31418941.jpg',
-          title: 'инженер 2'
         }
       ]
     }
@@ -399,24 +383,8 @@ export const personali = {
       awards: [{ title: 'достижения исследователя 1' }],
       gallery: [
         {
-          src: 'https://www.akulchev.ru/local/templates/main/images/product-quality_2.jpg',
+          src: '/images/image.png',
           title: 'исследователя 1'
-        }
-      ]
-    },
-    {
-      id: 'researcher-1',
-      date: '(1900-1900)',
-      title: 'Фамилия Имя Отчество2',
-      biography: {
-        title: 'Биография исследователя 2'
-      },
-      quotes: { title: 'цитата исследователя 2' },
-      awards: [{ title: 'достижения исследователя 2' }],
-      gallery: [
-        {
-          src: 'https://www.akulchev.ru/local/templates/main/images/product-quality_2.jpg',
-          title: 'исследователя 2'
         }
       ]
     }
