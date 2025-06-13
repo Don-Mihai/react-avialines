@@ -19,6 +19,10 @@ const MenuPhoto = ({ images }) => {
     setCurrentPhoto((prev) => Math.min(prev + 1, totalPhotos));
   };
 
+  if (totalPhotos === 0) {
+    return <div className={styles.content}>Нет фотографий</div>;
+  }
+
   return (
     <>
       <ImageModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
