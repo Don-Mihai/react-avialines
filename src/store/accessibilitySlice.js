@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// Цветовые схемы в формате [фон, цвет текста]
 const COLOR_SCHEMES = {
     default: ['#ffffff', '#000000'],
     scheme1: ['#ffffff', '#000000'], // Белый фон, черный текст
@@ -22,11 +21,14 @@ export const accessibilitySlice = createSlice({
     reducers: {
         toggleAccessibility: state => {
             state.isEnabled = !state.isEnabled;
+            // Сбрасываем схему при выключении
             if (!state.isEnabled) state.colorScheme = 'default';
         },
         setColorScheme: (state, action) => {
-            state.colorScheme = action.payload;
-            state.isEnabled = true;
+            const scheme = action.payload;
+            state.colorScheme = scheme;
+            // Автоматически включаем доступность при выборе нестандартной схемы
+            state.isEnabled = scheme !== 'default';
         },
     },
 });

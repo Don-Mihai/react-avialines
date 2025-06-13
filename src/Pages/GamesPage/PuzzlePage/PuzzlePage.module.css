@@ -34,19 +34,16 @@
 
 .puzzleCard {
     border: 2px solid #ddd;
-    border-radius: 8px;
+    padding: 10px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.3s ease;
     width: 300px;
 }
 
-.puzzleCard:hover {
-    transform: translateY(-5px);
-}
-
 .puzzleCard.selected {
-    border-color: #4caf50;
+    width: 320px;
+    height: 210px;
 }
 
 .puzzleImage {

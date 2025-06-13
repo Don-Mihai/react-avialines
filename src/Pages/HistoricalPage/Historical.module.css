@@ -45,3 +45,29 @@
     height: 160px;
     cursor: pointer;
 }
+
+/* версия слабовидящих включена */
+
+.content{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap: 25px;
+    top: 20%;
+    left: 6%;
+    text-transform: uppercase;
+}
+.title{
+    font-size: 46px;
+    font-weight: bold;
+}
+.subTitle{
+    font-size: 28px; 
+}
+.info{
+    font-size: 26px;
+    font-weight: bold;
+    border-bottom: solid rgba(0, 0, 0, 1) 2px;
+    width: 225px;
+    cursor: pointer;
+}

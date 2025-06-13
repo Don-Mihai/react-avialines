@@ -13,10 +13,8 @@ const Header = () => {
 
     const dispatch = useDispatch();
     const { isEnabled, colorScheme, schemes } = useSelector(state => state.accessibility);
-    const [showColorPicker, setShowColorPicker] = useState(false);
     const handleSchemeChange = scheme => {
         dispatch(setColorScheme(scheme));
-        setShowColorPicker(false);
     };
 
     // Состояния для управления модальными окнами
@@ -25,7 +23,8 @@ const Header = () => {
 
     return (
         <div className={styles.header}>
-            {showColorPicker && (
+            {/* Всегда отображаем colorPicker при включенной доступности */}
+            {isEnabled && (
                 <div className={styles.colorPicker}>
                     {Object.entries(schemes).map(
                         ([key, [bgColor, textColor]]) =>
@@ -50,14 +49,12 @@ const Header = () => {
             {!isGamesPage && (
                 <>
                     <button
-                        onClick={() => {
-                            dispatch(toggleAccessibility());
-                            if (!isEnabled) setShowColorPicker(true);
-                            else setShowColorPicker(false);
-                        }}
+                        onClick={() => dispatch(toggleAccessibility())}
                         className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}
                     >
-                        Версия для <br /> слабовидящих
+                        {isEnabled ? 'Обычная версия' : 'Версия для'}
+                        <br />
+                        {isEnabled ? 'приложения' : 'слабовидящих'}
                     </button>
                     <button onClick={() => setIsCatalogOpen(true)} className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>
                         каталог <br /> экспонатов

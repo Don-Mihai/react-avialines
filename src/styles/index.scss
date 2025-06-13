@@ -19,10 +19,12 @@ body {
     /* Стандартные цвета */
     --main-bg: #ffffff;
     --main-text: #000000;
+    --main-outline: 2px solid #000000;
 
     /* Доступность */
     --accessibility-bg: var(--main-bg);
     --accessibility-text: var(--main-text);
+    --accessibility-outline: var(--main-outline);
 }
 
 /* Применяем только когда включен режим доступности */
@@ -33,6 +35,19 @@ body {
         transition: background-color 0.3s, color 0.3s;
     }
 
+    div {
+        background-image: var(--accessibility-bg) !important;
+    }
+    
+    button {
+       background-color: var(--accessibility-bg) !important;
+    }
+
+    span{
+        border-color: var(--accessibility-text) !important;
+    }
+    
+
     a,
     button,
     h1,
@@ -41,7 +56,9 @@ body {
     h4,
     h5,
     h6 {
+        background-color: var(--accessibility-bg) !important;
         color: var(--accessibility-text) !important;
+        outline: var(--accessibility-outline) !important;
     }
 
     .header,
