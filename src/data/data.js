@@ -11,8 +11,8 @@ export const italy = {
     { src: '../images/Italy3.jpg', title: 'Дирижабль Италия' },
     { src: '../images/Italy4.jpg', title: 'Моторные гондолы «Италии»' }
   ],
-  videos: [{ src: '/videos/preview.mp4', title: 'название видео1' }],
-  audios: [{ src: '/audios/preview.mp3', title: 'название аудио1' }]
+  videos: [],
+  audios: []
 };
 
 export const alex = {
@@ -428,12 +428,7 @@ export const library = {
       src: '/audios/cheluskin-audio-book1.mp3'
     }
   ],
-  lectures: [
-    {
-      title: 'Название лекции1',
-      src: '/videos/preview.mp4'
-    }
-  ],
+  lectures: [],
   books: [
     {
       title: '«Спасение челюскинцев» С. К. Сафонов, Юрий Бурлаков',
