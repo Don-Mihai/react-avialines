@@ -31,6 +31,10 @@ const MenuAudio = ({ audios }) => {
     setCurrentPage((prev) => Math.min(prev + 1, totalPages));
   };
 
+  if (audios?.length === 0) {
+    return <div className={styles.contentEmpty}>Нет аудио</div>;
+  }
+
   return (
     <>
       <div className={styles.container}>

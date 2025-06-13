@@ -72,6 +72,15 @@
     max-width: 910px;
 }
 
+.contentEmpty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 910px;
+    
+}
+
 .pagination {
     font-size: 1.2rem;
     min-width: 50px;

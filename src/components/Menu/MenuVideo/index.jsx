@@ -20,6 +20,10 @@ const MenuVideo = ({ videos }) => {
     setCurrentPage((prev) => Math.min(prev + 1, totalPages));
   };
 
+  if (videos?.length === 0) {
+    return <div className={styles.content}>Нет видео</div>;
+  }
+
   return (
     <>
       <div className={styles.container}>
