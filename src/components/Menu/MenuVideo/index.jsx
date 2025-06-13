@@ -28,7 +28,7 @@ const MenuVideo = ({ videos }) => {
             {currentVideos.map((video, index) => (
               <div key={index} className={styles.videoCard}>
                 <video loop playsInline controls className={styles.video} src={video.src} alt="MenuVideo" />
-                <h3 className={styles.title}>{video.name || 'Название видео'}</h3>
+                <h3 className={styles.title}>{video.title || 'Название видео'}</h3>
               </div>
             ))}
           </div>

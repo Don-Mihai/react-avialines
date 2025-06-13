@@ -29,7 +29,7 @@ const MenuPhoto = ({ images }) => {
         <img className={styles.imageFullscreen} src={images[currentPhoto - 1]?.src} alt="Fullscreen" />
       </ImageModal>
       <div className={styles.content}>
-        <h3 className={styles.title}>{images[currentPhoto - 1]?.name || 'Название фото'}</h3>
+        <h3 className={styles.title}>{images[currentPhoto - 1]?.title || 'Название фото'}</h3>
         <img className={styles.img} src={images[currentPhoto - 1]?.src} alt="MenuPhoto" />
         <div className={styles.controls}>
           <div className={styles.paginationContainer}>

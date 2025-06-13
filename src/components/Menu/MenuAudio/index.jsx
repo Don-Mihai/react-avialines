@@ -42,7 +42,7 @@ const MenuAudio = ({ audios }) => {
                 <audio ref={audioRef} src={audio.src || 'fallback-audio.mp3'} onEnded={() => setIsPlaying(false)} />
                 {/* Кликабельная картинка с иконкой управления */}
                 <div className={styles.audioCover} onClick={togglePlay}></div>
-                <h3 className={styles.title}>{audio.name || 'Название Аудио'}</h3>
+                <h3 className={styles.title}>{audio.title || 'Название Аудио'}</h3>
               </div>
             ))}
           </div>

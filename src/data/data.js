@@ -33,25 +33,25 @@ export const cheluskina = {
 
   text: 'Календарь: 1933-1934 гг. Место: Арктика, Берингов пролив, поблизости от островов Диомида. 13 февраля 1934 года в результате сильного сжатия «Челюскин» был раздавлен льдами и затонул в течение двух часов. Операция по спасению ста четырех человек, дрейфующих на льдине, заняла у советских авиаторов два месяца. Сквозь лед, туман и арктический холод летчики пробирались к людям.',
   images: [],
-  videos: [{ src: 'https://rutube.ru/video/2681f8efa5ee0634627d85be7c7e2bdc/?r=plemwd', name: 'Челюскин' }],
+  videos: [{ src: 'https://rutube.ru/video/2681f8efa5ee0634627d85be7c7e2bdc/?r=plemwd', title: 'Челюскин' }],
   audios: [
-    { src: '../audio/Chelyuskin1.mp3', name: 'Chelyuskin1.mp3' },
-    { src: '../audio/Chelyuskin2.mp3', name: 'Chelyuskin2.mp3' },
-    { src: '../audio/Chelyuskin3.mp3', name: 'Chelyuskin3.mp3' },
-    { src: '../audio/Chelyuskin4.mp3', name: 'Chelyuskin4.mp3' },
-    { src: '../audio/Chelyuskin5.mp3', name: 'Chelyuskin5.mp3' },
-    { src: '../audio/Chelyuskin6.mp3', name: 'Chelyuskin6.mp3' },
-    { src: '../audio/Chelyuskin7.mp3', name: 'Chelyuskin7.mp3' },
-    { src: '../audio/Chelyuskin8.mp3', name: 'Chelyuskin8.mp3' }
+    { src: '../audio/Chelyuskin1.mp3', title: 'Chelyuskin1.mp3' },
+    { src: '../audio/Chelyuskin2.mp3', title: 'Chelyuskin2.mp3' },
+    { src: '../audio/Chelyuskin3.mp3', title: 'Chelyuskin3.mp3' },
+    { src: '../audio/Chelyuskin4.mp3', title: 'Chelyuskin4.mp3' },
+    { src: '../audio/Chelyuskin5.mp3', title: 'Chelyuskin5.mp3' },
+    { src: '../audio/Chelyuskin6.mp3', title: 'Chelyuskin6.mp3' },
+    { src: '../audio/Chelyuskin7.mp3', title: 'Chelyuskin7.mp3' },
+    { src: '../audio/Chelyuskin8.mp3', title: 'Chelyuskin8.mp3' }
   ]
 };
 
 export const ruslan = {
   title: <>гибель спасательного судна «руслан»</>,
   text: 'Календарь: 1933 г. Место: в районе Шпицбергена. 25 апреля 1933 года затонул в результате обледенения у Южного мыса, архипелага Шпицберген, Баренцево море. Судно (капитан Н. Клюев) участвовало в спасении ледокольного парохода «Малыгин», севшего на камни у острова Шпицберген. После успешного завершения операции 24 апреля «Руслан» вместе с другими спасательными судами и спасенным «Малыгиным» вышел в Мурманск. В ожидании ледокола «Красин», на буксире которого он должен был совершить переход, «Руслан» следовал малым ходом позади каравана. В ночь на 25 апреля в связи с сильным ветром и снежными зарядами началось обледенение судна. Его остойчивость резко упала. При постановке лагом к волне судно получило большой крен и не выпрямилось. Экипаж скалывал образовавшийся лед. Поворотом носом на волну, крен удавалось на время ликвидировать, однако к вечеру 25 апреля с ростом обмерзания, все предпринятые меры не давали результата. «Руслан» лег на борт. Вода затопила машинное отделение. Около полуночи судно затонуло. Из 22 членов экипажа, пересевших в шлюпки, спаслись лишь трое моряков, подобранных норвежским промысловым судном через 5 суток после гибели «Руслана».',
-  images: [{ src: '../images/ruslan1.JPG', name: 'Спасательный буксир Руслан' }],
-  videos: [{ src: '../video/1.jpg', name: '1.jpg' }],
-  audios: [{ src: '../audio/1.jpg', name: '1.jpg' }]
+  images: [{ src: '../images/ruslan1.JPG', title: 'Спасательный буксир Руслан' }],
+  videos: [{ src: '../video/1.jpg', title: '1.jpg' }],
+  audios: [{ src: '../audio/1.jpg', title: '1.jpg' }]
 };
 
 export const personali = {
