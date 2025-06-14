@@ -34,6 +34,12 @@
     background-image: url('../../../assets/button_audio_img.png');
 }
 
+/* версия слабовидящих включена */
+
+.enabledAudioCover{
+    background-image: url('../../../assets/button_audio_enabled_img.png');
+}
+
 .audioGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

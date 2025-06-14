@@ -29,7 +29,7 @@ const Biography = ({ data, images }) => {
     <>
       <div className={styles.container}>
         <div className={styles.biography}>
-          <h3 className={styles.title}>{data.title}</h3>
+          <p className={styles.title}>{data.title}</p>
           <p className={styles.content}>{data.content}</p>
           <SnakeTimeline events={data.awards} />
         </div>

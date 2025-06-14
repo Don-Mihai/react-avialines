@@ -46,6 +46,19 @@
     box-shadow: none;
 }
 
+
+/* версия слабовидящих включена */
+
+.categorySelector .enabledActive{
+  border-bottom: 2px solid rgba(34, 57, 65, 1);
+}
+
+.categorySelector .enabledButton{
+  box-shadow: none;
+}
+
+/* версия слабовидящих включена */
+
 .imageGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -124,3 +137,4 @@
     color: #666;
     padding: 40px;
 }
+

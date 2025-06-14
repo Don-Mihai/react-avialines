@@ -30,7 +30,6 @@ const HistoricalPage = () => {
             <div className={styles.container}>
                 <Header />
                 {isEnabled ? (
-                    
                         <div className={styles.content}>
                             <span className={styles.title}>ИСТОРИЧЕСКИЙ ОБЗОР</span>
                             
@@ -48,9 +47,7 @@ const HistoricalPage = () => {
                             
                                 <span className={styles.subTitle} >гибель спасательного судна "руслан"</span>
                                 <span className={styles.info} onClick={handleRuslanClick}>узнать подробнее</span>
-                           
                         </div>
-                    
                 ) : (
                 <>
                     <div className={styles.ruslan} onClick={handleRuslanClick}></div>

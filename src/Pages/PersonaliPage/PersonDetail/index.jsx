@@ -67,7 +67,7 @@ const PersonDetail = () => {
 
       <div className={styles.content}>
         <span className={styles.header}>
-          <h1 className={styles.subtitle}>{person.title}</h1>
+          <span className={styles.subtitle}>{person.title}</span>
           <span className={styles.subtitle}>{person.date}</span>
         </span>
         <div className={styles.tabContent}>{renderContent()}</div>

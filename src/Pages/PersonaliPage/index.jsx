@@ -1,8 +1,11 @@
 import styles from './PersonaliPage.module.css';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
+
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+
+import { useSelector } from 'react-redux';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -15,12 +18,13 @@ const categoryTranslations = {
 };
 
 const PersonaliPage = ({ data = personali }) => {
-  const navigate = useNavigate();
+  const { isEnabled  } = useSelector(state => state.accessibility);
   const [currentCategory, setCurrentCategory] = useState('pilots');
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(4);
   const [currentPersons, setCurrentPersons] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadPersons = () => {
@@ -56,14 +60,17 @@ const PersonaliPage = ({ data = personali }) => {
     }
   };
 
+  const enabledClass = isEnabled ? styles.enabledButton : '';
+
+
   return (
     <>
       <div className={styles.container}>
         <Header />
-        <h1 className={styles.title}>Персонали</h1>
+        <span className={styles.title}>Персоналии</span>
         <div className={styles.categorySelector}>
           {Object.keys(data).map((category) => (
-            <button key={category} onClick={() => setCurrentCategory(category)} className={currentCategory === category ? styles.active : ''}>
+            <button  key={category} onClick={() => setCurrentCategory(category)} className={currentCategory === category ? (isEnabled ? styles.enabledActive : styles.active) : ''}>
               {categoryTranslations[category] || category.toUpperCase()}
             </button>
           ))}
@@ -74,7 +81,7 @@ const PersonaliPage = ({ data = personali }) => {
               <div key={person.id} className={styles.imageCard}>
                 <img onClick={() => navigate(`/personali/${person.id}`)} src={person.mainImage.src} alt={person.mainImage.title} className={styles.image} />
                 <div className={styles.imageInfo}>
-                  <h4 style={{ fontWeight: 'normal' }}>{person.title}</h4>
+                  <span style={{ fontWeight: 'normal' }}>{person.title}</span>
                   <p>{person.date}</p>
                   {/* <p style={{ fontSize: '14px' }}>{person.mainImage.title}</p> */}
                 </div>

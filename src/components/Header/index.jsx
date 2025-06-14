@@ -29,7 +29,7 @@ const Header = () => {
                     {Object.entries(schemes).map(
                         ([key, [bgColor, textColor]]) =>
                             key !== 'default' && (
-                                <button
+                                <span
                                     key={key}
                                     className={styles.colorCircle}
                                     style={{
@@ -40,7 +40,7 @@ const Header = () => {
                                     title={`Схема ${key.replace('scheme', '')}`}
                                 >
                                     <span style={{ color: textColor }}>Ц</span>
-                                </button>
+                                </span>
                             )
                     )}
                 </div>

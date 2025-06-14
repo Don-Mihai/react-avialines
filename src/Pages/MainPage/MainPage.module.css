@@ -19,6 +19,19 @@
   transform: translate(-50%, 15%);
 }
 
+/* версия слабовидящих включена */
+
+.main_enabled{
+  display: flex;
+  position: absolute;
+  gap: 15px;
+  top: 35%;
+  left: 50%;
+}
+
+/* версия слабовидящих включена */
+
+
 .button_main {
   display: flex;
   align-items: center;

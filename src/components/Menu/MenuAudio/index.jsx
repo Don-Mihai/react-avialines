@@ -1,10 +1,14 @@
 import { useState, useRef } from 'react';
+
+import { useSelector } from 'react-redux';
+
 import styles from './MenuAudio.module.css';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
-import audio from '../../../assets/audio_img.png';
+
 
 const MenuAudio = ({ audios }) => {
+  const { isEnabled  } = useSelector(state => state.accessibility);
   const [currentPage, setCurrentPage] = useState(1);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
@@ -13,6 +17,9 @@ const MenuAudio = ({ audios }) => {
 
   const startIndex = (currentPage - 1) * audiosPerPage;
   const currentAudios = audios.slice(startIndex, startIndex + audiosPerPage);
+
+  const baseClass = styles.audioCover
+  const enabledClass = isEnabled ? styles.enabledAudioCover : '';
 
   const togglePlay = () => {
     if (isPlaying) {
@@ -45,8 +52,8 @@ const MenuAudio = ({ audios }) => {
                 {/* Скрытый аудиоэлемент */}
                 <audio ref={audioRef} src={audio.src || 'fallback-audio.mp3'} onEnded={() => setIsPlaying(false)} />
                 {/* Кликабельная картинка с иконкой управления */}
-                <div className={styles.audioCover} onClick={togglePlay}></div>
-                <h3 className={styles.title}>{audio.title || 'Название Аудио'}</h3>
+                <span className={`${baseClass} ${enabledClass}`} onClick={togglePlay}></span>
+                <p className={styles.title}>{audio.title || 'Название Аудио'}</p>
               </div>
             ))}
           </div>

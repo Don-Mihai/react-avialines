@@ -10,10 +10,16 @@ const Footer = ({ link }) => {
   const isMainPage = location.pathname === '/main';
   const { isEnabled  } = useSelector(state => state.accessibility);
 
+
+  const baseClass = styles.button_footer;
+  const mainPageClass = isMainPage ? styles.button_footer_main : '';
+  const enabledClass = isEnabled ? styles.button_footer_enabled : '';
+
+
   return (
     <>
       <div className={styles.footer}>
-        <Link to={isMainPage ? '/' : '/main'} className={`${styles.button_footer} ${isMainPage ? styles.button_footer_main : ''}`}>
+        <Link to={isMainPage ? '/' : '/main'} className={`${baseClass} ${mainPageClass} ${enabledClass}`}>
            {isEnabled ? (
           'ДОМОЙ'
         ) : (
@@ -21,7 +27,7 @@ const Footer = ({ link }) => {
         )}
         </Link>
         {!isMainPage && (
-          <Link onClick={() => navigate(-1)} className={`${styles.button_footer} ${isMainPage ? styles.button_footer_main : ''}`}>
+          <Link onClick={() => navigate(-1)} className={`${baseClass} ${mainPageClass} ${enabledClass}`}>
             {isEnabled ? ( 'НАЗАД' ) : ( <ArrowBackIcon style={{ width: '50px', height: '50px' }} /> ) }
           </Link>
         )}

@@ -45,8 +45,12 @@ body {
 
     span{
         border-color: var(--accessibility-text) !important;
+        color: var(--accessibility-text) !important;
     }
     
+    p{
+        color: var(--accessibility-text) !important;
+    }
 
     a,
     button,
