@@ -1,11 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from '../Header.module.css';
-import { exhibitsData } from '../../../data/data';
+
 import ClearIcon from '@mui/icons-material/Clear';
+import { useLanguage } from '../../../LanguageContext';
 
 const CatalogModal = ({ onClose, onSelectExhibit }) => {
   const [visibleCount, setVisibleCount] = useState(4);
   const modalRef = useRef(null);
+  const { data } = useLanguage();
 
   // Закрытие модального окна при клике вне его области
   useEffect(() => {
@@ -41,7 +43,7 @@ const CatalogModal = ({ onClose, onSelectExhibit }) => {
 
         <div className={styles.modalContent}>
           <div className={styles.exhibitsGrid}>
-            {exhibitsData.slice(0, visibleCount).map((exhibit) => (
+            {data.exhibitsData.slice(0, visibleCount).map((exhibit) => (
               <div key={exhibit.id} className={styles.exhibitCard} onClick={() => handleExhibitClick(exhibit)}>
                 <img src={exhibit.images[0]} alt={exhibit.name} className={styles.thumbnail} />
                 {/* Отдельный блок для названия с собственным классом */}
@@ -52,7 +54,7 @@ const CatalogModal = ({ onClose, onSelectExhibit }) => {
             ))}
           </div>
 
-          {visibleCount < exhibitsData.length && (
+          {visibleCount < data.exhibitsData.length && (
             <button className={styles.loadMore} onClick={() => setVisibleCount((prev) => prev + 2)}>
               Показать еще
             </button>

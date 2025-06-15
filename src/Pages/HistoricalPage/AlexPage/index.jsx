@@ -1,8 +1,9 @@
 import Menu from '../../../components/Menu';
-import { alex } from '../../../data/data';
+import { useLanguage } from '../../../LanguageContext';
 
 const AlexPage = () => {
-  return <Menu data={alex} />;
+  const { data } = useLanguage();
+  return <Menu data={data.alex} />;
 };
 
 export default AlexPage;

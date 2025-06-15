@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { useParams } from 'react-router';
 import styles from './PersonDetail.module.css';
-import { personali } from '../../../data/data';
-
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import TabsMenu from './TabsMenu';
@@ -10,6 +8,7 @@ import Biography from './TabsMenu/Biography';
 import Achievements from './TabsMenu/Achievements';
 import Quote from './TabsMenu/Quote';
 import Gallery from './TabsMenu/Gallery';
+import { useLanguage } from '../../../LanguageContext';
 
 const TABS = {
   BIOGRAPHY: 'biography',
@@ -28,6 +27,7 @@ const TABS_CONFIG = [
 const PersonDetail = () => {
   const { id } = useParams();
   const [activeTab, setActiveTab] = useState(TABS.BIOGRAPHY);
+  const { data } = useLanguage();
 
   const categoryMap = {
     pilot: 'pilots',
@@ -37,7 +37,7 @@ const PersonDetail = () => {
 
   const [categoryPrefix] = id.split('-');
   const category = categoryMap[categoryPrefix];
-  const person = personali[category]?.find((p) => p.id === id);
+  const person = data.personali[category]?.find((p) => p.id === id);
 
   if (!person) {
     return <div className={styles.error}>Персона не найдена</div>;

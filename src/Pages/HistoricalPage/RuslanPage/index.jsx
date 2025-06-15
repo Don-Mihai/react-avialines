@@ -1,8 +1,9 @@
 import Menu from '../../../components/Menu';
-import { ruslan } from '../../../data/data';
+import { useLanguage } from '../../../LanguageContext';
 
 const RuslanPage = () => {
-  return <Menu data={ruslan} />;
+  const { data } = useLanguage();
+  return <Menu data={data.ruslan} />;
 };
 
 export default RuslanPage;

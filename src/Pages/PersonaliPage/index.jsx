@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import { personali } from '../../data/data';
+import { useLanguage } from '../../LanguageContext';
 
 const categoryTranslations = {
   pilots: 'летчики',
@@ -17,14 +17,16 @@ const categoryTranslations = {
   researchers: 'исследователи'
 };
 
-const PersonaliPage = ({ data = personali }) => {
-  const { isEnabled  } = useSelector(state => state.accessibility);
+const PersonaliPage = () => {
+  const { isEnabled } = useSelector((state) => state.accessibility);
   const [currentCategory, setCurrentCategory] = useState('pilots');
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(4);
   const [currentPersons, setCurrentPersons] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
   const navigate = useNavigate();
+  const { data: dataTranslation } = useLanguage();
+  const data = dataTranslation.personali;
 
   useEffect(() => {
     const loadPersons = () => {
@@ -62,7 +64,6 @@ const PersonaliPage = ({ data = personali }) => {
 
   const enabledClass = isEnabled ? styles.enabledButton : '';
 
-
   return (
     <>
       <div className={styles.container}>
@@ -70,7 +71,11 @@ const PersonaliPage = ({ data = personali }) => {
         <span className={styles.title}>Персоналии</span>
         <div className={styles.categorySelector}>
           {Object.keys(data).map((category) => (
-            <button  key={category} onClick={() => setCurrentCategory(category)} className={currentCategory === category ? (isEnabled ? styles.enabledActive : styles.active) : ''}>
+            <button
+              key={category}
+              onClick={() => setCurrentCategory(category)}
+              className={currentCategory === category ? (isEnabled ? styles.enabledActive : styles.active) : ''}
+            >
               {categoryTranslations[category] || category.toUpperCase()}
             </button>
           ))}
