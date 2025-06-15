@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import styles from './FilmsPage.module.css';
-import { library } from '../../data/data.js';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import FilmsTab from './FilmsTab';
 import AudioTab from './AudioTab/index.jsx';
 import BooksTab from './BooksTab';
+import { useLanguage } from '../../LanguageContext';
 
 const TABS = {
   FILMS: 'films',
@@ -16,6 +16,7 @@ const TABS = {
 
 const FilmsPage = () => {
   const [activeTab, setActiveTab] = useState(TABS.FILMS);
+  const { data } = useLanguage();
 
   // Сбрасываем состояние при размонтировании
   useEffect(() => {
@@ -33,13 +34,13 @@ const FilmsPage = () => {
   const renderTabContent = () => {
     switch (activeTab) {
       case TABS.FILMS:
-        return <FilmsTab items={library.films} typeName="Фильмов" />;
+        return <FilmsTab items={data.library.films} typeName="Фильмов" />;
       case TABS.AUDIOBOOKS:
-        return <AudioTab items={library.audioBooks} typeName="Аудиокниг" />;
+        return <AudioTab items={data.library.audioBooks} typeName="Аудиокниг" />;
       case TABS.LECTURES:
-        return <FilmsTab items={library.lectures} />;
+        return <FilmsTab items={data.library.lectures} />;
       case TABS.BOOKS:
-        return <BooksTab items={library.books} />;
+        return <BooksTab items={data.library.books} />;
       default:
         return null;
     }

@@ -6,6 +6,7 @@ import './styles/index.scss';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import AccessibilityHandler from './components/AccessibilityHandler';
+import { LanguageProvider } from './LanguageContext';
 
 import MainPage from './Pages/MainPage/index.jsx';
 import GamesPage from './Pages/GamesPage/index.jsx';
@@ -112,8 +113,10 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store}>
-    <AccessibilityHandler />
-    <RouterProvider router={router} />
-  </Provider>
+  <LanguageProvider>
+    <Provider store={store}>
+      <AccessibilityHandler />
+      <RouterProvider router={router} />
+    </Provider>
+  </LanguageProvider>
 );

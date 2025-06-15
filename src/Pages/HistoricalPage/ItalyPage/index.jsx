@@ -1,8 +1,9 @@
 import Menu from '../../../components/Menu';
-import { italy } from '../../../data/data';
+import { useLanguage } from '../../../LanguageContext';
 
 const ItalyPage = () => {
-  return <Menu data={italy} />;
+  const { data } = useLanguage();
+  return <Menu data={data.italy} />;
 };
 
 export default ItalyPage;
