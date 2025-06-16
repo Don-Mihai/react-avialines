@@ -6,7 +6,7 @@ import FullscreenIcon from '@mui/icons-material/Fullscreen';
 
 import ImageModal from './imageModal';
 
-const MenuPhoto = ({ images }) => {
+const MenuPhoto = ({ images = [] }) => {
   const [currentPhoto, setCurrentPhoto] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const totalPhotos = images.length;

@@ -4,62 +4,46 @@ import { useSelector } from 'react-redux';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { useLanguage } from '../../LanguageContext';
+import { operationStyles } from '../../data/data';
 
 const HistoricalPage = () => {
-    const { isEnabled  } = useSelector(state => state.accessibility);
-    const navigate = useNavigate();
+  const { isEnabled } = useSelector((state) => state.accessibility);
+  const navigate = useNavigate();
+  const { data } = useLanguage();
 
-    const handleRuslanClick = () => {
-        navigate('/ruslan');
-    };
+  const handleItemClick = (id) => {
+    navigate(`/history-item/${id}`);
+  };
 
-    const handleCheluskinaClick = () => {
-        navigate('/cheluskina');
-    };
+  return (
+    <>
+      <div className={styles.container}>
+        <Header />
+        {isEnabled ? (
+          <div className={styles.content}>
+            <span className={styles.title}>ИСТОРИЧЕСКИЙ ОБЗОР</span>
 
-    const handleItalyClick = () => {
-        navigate('/italy');
-    };
-
-    const handleAlexClick = () => {
-        navigate('/alex');
-    };
-
-    return (
-        <>
-            <div className={styles.container}>
-                <Header />
-                {isEnabled ? (
-                        <div className={styles.content}>
-                            <span className={styles.title}>ИСТОРИЧЕСКИЙ ОБЗОР</span>
-                            
-                                <span className={styles.subTitle} >спасение экипажа и пассажиров дирижабль "италия" </span>
-                                <span className={styles.info} onClick={handleItalyClick}>узнать подробнее</span>
-                            
-                            
-                                <span className={styles.subTitle} >пароход "александр сибиряков </span>
-                                <span className={styles.info} onClick={handleAlexClick}>узнать подробнее</span>
-                            
-                           
-                                <span className={styles.subTitle}>спасение экипажа и пассажиров парохода "челюскин"  </span>
-                                <span className={styles.info}  onClick={handleCheluskinaClick}>узнать подробнее</span>
-                            
-                            
-                                <span className={styles.subTitle} >гибель спасательного судна "руслан"</span>
-                                <span className={styles.info} onClick={handleRuslanClick}>узнать подробнее</span>
-                        </div>
-                ) : (
+            {data?.operations?.map?.((operation) => {
+              return (
                 <>
-                    <div className={styles.ruslan} onClick={handleRuslanClick}></div>
-                    <div className={styles.cheluskina} onClick={handleCheluskinaClick}></div>
-                    <div className={styles.italy} onClick={handleItalyClick}></div>
-                    <div className={styles.alex} onClick={handleAlexClick}></div>
+                  <span className={styles.subTitle}>{operation.title} </span>
+                  <span className={styles.info} onClick={() => handleItemClick(operation.id)}>
+                    узнать подробнее
+                  </span>
                 </>
-                )}
-                <Footer />
-            </div>
-        </>
-    );
+              );
+            })}
+          </div>
+        ) : (
+          data?.operations?.map((operation) => (
+            <div key={operation.id} className={styles.operation} style={operationStyles[operation.id]} onClick={() => handleItemClick(operation.id)} />
+          ))
+        )}
+        <Footer />
+      </div>
+    </>
+  );
 };
 
 export default HistoricalPage;
