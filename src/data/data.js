@@ -19,34 +19,18 @@ export const translations = {
 };
 
 export const operationStyles = {
-  ruslan: {
+  dorne: {
     position: 'absolute',
-    bottom: '9%',
-    left: '22%',
-    width: '460px',
-    height: '160px',
-    cursor: 'pointer'
-  },
-  cheluskina: {
-    position: 'absolute',
-    bottom: '31%',
-    right: '18%',
-    width: '670px',
-    height: '160px',
-    cursor: 'pointer'
-  },
-  alex: {
-    position: 'absolute',
-    top: '36%',
-    right: '27%',
+    top: '66%',
+    right: '17%',
     width: '640px',
-    height: '125px',
+    height: '177px',
     cursor: 'pointer'
   },
-  italy: {
+  tracks: {
     position: 'absolute',
-    top: '16%',
-    left: '22%',
+    top: '39%',
+    left: '3%',
     width: '690px',
     height: '160px',
     cursor: 'pointer'
