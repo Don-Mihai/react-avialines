@@ -30,21 +30,23 @@
 
 .alex {
     position: absolute;
-    top: 36%;
-    right: 27%;
+    top: 66%;
+    right: 17%;
     width: 640px;
-    height: 125px;
+    height: 177px;
     cursor: pointer;
 }
 
 .italy {
     position: absolute;
-    top: 16%;
-    left: 22%;
+    top: 39%;
+    left: 3%;
     width: 690px;
     height: 160px;
     cursor: pointer;
 }
+
+
 
 /* версия слабовидящих включена */
 

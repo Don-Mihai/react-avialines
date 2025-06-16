@@ -18,10 +18,8 @@ import HistoricalPage from './Pages/HistoricalPage/index.jsx';
 import PersonaliPage from './Pages/PersonaliPage/index.jsx';
 import PersonDetail from './Pages/PersonaliPage/PersonDetail/index.jsx';
 
-import CheluskinaPage from './Pages/HistoricalPage/CheluskinaPage/index.jsx';
-import RuslanPage from './Pages/HistoricalPage/RuslanPage/index.jsx';
-import ItalyPage from './Pages/HistoricalPage/ItalyPage/index.jsx';
-import AlexPage from './Pages/HistoricalPage/AlexPage/index.jsx';
+import DorniePage from './Pages/HistoricalPage/DorniePage/index.jsx';
+import TrackPage from './Pages/HistoricalPage/TrackPage/index.jsx';
 
 import QuizPage from './Pages/GamesPage/QuizPage/index.jsx';
 import CrosswordPage from './Pages/GamesPage/CrosswordPage/index.jsx';
@@ -45,20 +43,12 @@ const router = createBrowserRouter([
     element: <HistoricalPage />
   },
   {
-    path: 'ruslan',
-    element: <RuslanPage />
+    path: 'dornie',
+    element: <DorniePage />
   },
   {
-    path: 'cheluskina',
-    element: <CheluskinaPage />
-  },
-  {
-    path: 'italy',
-    element: <ItalyPage />
-  },
-  {
-    path: 'alex',
-    element: <AlexPage />
+    path: 'track',
+    element: <TrackPage />
   },
   {
     path: 'personali',
