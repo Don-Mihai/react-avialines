@@ -8,7 +8,7 @@ export const ru = {
         { src: '../images/dorne1.jpg', title: 'dorne1' },
         { src: '../images/dorne2.jpg', title: 'dorne2' }
       ],
-      videos: [{ src: '/videos/shhuna-video1.mp4', title: 'Новосибирские острова-загадки' }],
+      videos: [],
       audios: []
     },
     {
@@ -199,11 +199,11 @@ export const ru = {
     ]
   },
   library: {
-    films: [],
+    films: [{ src: '', title: '' }],
     audioBooks: [],
     lectures: [],
     books: []
   },
-  booksfilmsData: [],
+  
   exhibitsData: []
 };
