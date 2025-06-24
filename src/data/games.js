@@ -80,7 +80,7 @@ export const crosswordData = {
       word: 'Арктика',
       clue: 'Как называется район Земли, который примыкает к Северному полюсу?',
       direction: 'horizontal',
-      start: { row: 5, col: 8 },
+      start: { row: 6, col: 8 },
       solved: false
     },
     {
@@ -88,7 +88,7 @@ export const crosswordData = {
       word: 'Шмидт',
       clue: 'В 1932 году было образовано Главное управление Северного морского пути, назовите фамилию того, кто стал его руководителем?',
       direction: 'horizontal',
-      start: { row: 8, col: 7 },
+      start: { row: 9, col: 7 },
       solved: false
     },
     {
@@ -104,7 +104,7 @@ export const crosswordData = {
       word: 'Красноярск',
       clue: 'В каком городе начинался и заканчивался кольцевой маршрут, который совершили в июле 1936 года лётчики Г.Т. Побежимов и В.С. Молоков на летающей лодке Дорнье «Валь» облетев территорию Крайнего Севера?',
       direction: 'vertical',
-      start: { row: 13, col: 12 },
+      start: { row: 14, col: 12 },
       solved: false
     },
     {
@@ -112,7 +112,7 @@ export const crosswordData = {
       word: 'Молоков',
       clue: 'Фамилия летчика, впервые проложившего авиатрассу через весь Северный морской путь?',
       direction: 'horizontal',
-      start: { row: 13, col: 8 },
+      start: { row: 14, col: 8 },
       solved: false
     },
     {
@@ -120,7 +120,7 @@ export const crosswordData = {
       word: 'Авиаперевозки',
       clue: 'Что стало важным инструментом для транспортировки грузов, почты и пассажиров в арктическом регионе?',
       direction: 'horizontal',
-      start: { row: 23, col: 1 },
+      start: { row: 22, col: 1 },
       solved: false
     }
   ]
