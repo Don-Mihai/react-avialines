@@ -14,9 +14,10 @@
   display: flex;
   position: absolute;
   gap: 15px;
+
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 15%);
+  transform: translate(-50%, -10%);
 }
 
 /* версия слабовидящих включена */
@@ -30,7 +31,6 @@
 }
 
 /* версия слабовидящих включена */
-
 
 .button_main {
   display: flex;
