@@ -1,180 +1,123 @@
 export const en = {
-  operations: {
-    italy: {
-      title: (
-        <>
-          rescue of the crew <br />
-          and passengers of the airship "Italia",
-        </>
-      ),
-      text: 'Date: 1928. Location: 100 kilometers north of Spitsbergen. In the spring of 1928, the expedition on the airship "Italia" under the command of Umberto Nobile set out for the North Pole; the objective was achieved, but on the return journey the heroic saga of Arctic exploration turned into tragedy. On May 28, 1928, 100 kilometers north of Spitsbergen, the airship "Italia" crashed. Six countries and over 40 ships and aircraft took part in the rescue operations.',
+  operations: [
+    {
+      id: 'dorne',
+      title: <>Дорнье Валь</>,
+      text: ' «Валь» (также известен как «Кит») — двухмоторный гидросамолет Дорнье Do-J. Впервые поднялся в воздух 6 ноября 1922 года.  Некоторые характеристики:  Конструкция: моноплан-парасоль с крылом, поднятым над фюзеляжем и  тандемным расположением двигателей.   Устойчивость на воде: устойчивость гидроплана обеспечивали боковые спонсоны  фюзеляжа («жабры»).   Конструкция планера: цельнометаллическая.   Модификации: самолёт имел более десятка модификаций, которые отличались  двигателями, оборудованием, вооружением и объёмами бензобаков. Некоторые машины оснащались пассажирскими салонами или грузовыми трюмами.  Некоторые факты о использовании в СССР: в 1926–1929 годах для ВВС РККА было  закуплено 22 «Валя» итальянской постройки для применения в качестве дальнего  морского разведчика. Вплоть до начала Отечественной войны советские Do-J возили грузы над тундрой и осуществляли ледовую разведку в Северном Ледовитом океане. Летающая лодка Дорнье «Валь» использовалась в полярной авиации, в том числе на  Крайнем Севере СССР.   Первый «Валь» появился на советском Крайнем Севере в 1928 году, его назвали  «Моссовет». За зиму 1928–29 года лодка перевезла 135 пассажиров, 2,5 тонны почты, налетав более 100 тысяч километров. « Моссовет» летал как с воды, так и с ледяной  поверхности.  Экипаж другого самолёта, «Советский Север», в 1928 году пытался совершить перелёт по  Северному морскому пути из Владивостока в Ленинград. Руководил перелётом Г. Д.  Красинский, но полёт не увенчался успехом. Из 14 000 км экипаж преодолел только 6 000  км, а из-за аварии в Колючинской губе пришлось вернуться во Владивосток. Третий самолёт, названный «Комсеверопуть», под управлением лётчика Бориса  Чухновского, помогал ледовой разведкой ледоколу «Красин», осуществлявшего проводку  судов по Северному морскому пути. « Комсеверопуть» участвовала в фотосъёмке  Ангарстроя, обследовала район падения Тунгусского метеорита, а в августе прибыла на  Новую Землю.   До самого начала Великой Отечественной войны гидросамолёты Дорнье «Валь»  оставались в рядах советской полярной авиации.  ',
       images: [
-        { src: '../images/Italy1.jpg', title: '"Italia" in Kingsbay Bay (West Spitsbergen Island)' },
-        { src: '../images/Italy2.jpg', title: '"Italia" before departure from Milan' },
-        { src: '../images/Italy3.jpg', title: 'Airship Italia' },
-        { src: '../images/Italy4.jpg', title: '"Italia" engine gondolas' }
+        { src: '../images/dorne1.jpg', title: 'dorne1' },
+        { src: '../images/dorne2.jpg', title: 'dorne2' }
       ],
       videos: [],
       audios: []
     },
-    alex: {
-      title: <>steamship "Alexander Sibiryakov"</>,
-      text: 'Date: 1932. Location: Arctic, Cape Jennet. On July 28, 1932, the icebreaking steamship "Alexander Sibiryakov" began its voyage along the Northern Sea Route and achieved what no one had before: the first through-navigation in a single season. The ship barely survived the ice, but the crew accomplished the seemingly impossible—surviving and preserving the vessel. After this voyage, the "Alexander Sibiryakov" remained in service for ten more years before heroically perishing during the Great Patriotic War.',
-      images: [],
-      videos: [],
-      audios: []
-    },
-    cheluskina: {
+    {
+      id: 'tracks',
       title: (
         <>
-          rescue of the crew and passengers
-          <br />
-          of the steamship "Chelyuskin",
+          ТРАССЫ И ПУТИ ПОЛЯРНОЙ <br />
+          АВИАЦИИ
         </>
       ),
-      text: 'Date: 1933–1934. Location: Arctic, Bering Strait, near the Diomede Islands. On February 13, 1934, the Chelyuskin was crushed by ice and sank within two hours. The operation to rescue 104 people stranded on an ice floe took Soviet aviators two months. Pilots braved ice, fog, and Arctic cold to reach them.',
-      images: [],
-      videos: [{ src: 'https://rutube.ru/video/2681f8efa5ee0634627d85be7c7e2bdc/?r=plemwd', title: 'Chelyuskin' }],
-      audios: [
-        { src: '../audio/Chelyuskin1.mp3', title: 'Chelyuskin1.mp3' },
-        { src: '../audio/Chelyuskin2.mp3', title: 'Chelyuskin2.mp3' },
-        { src: '../audio/Chelyuskin3.mp3', title: 'Chelyuskin3.mp3' },
-        { src: '../audio/Chelyuskin4.mp3', title: 'Chelyuskin4.mp3' },
-        { src: '../audio/Chelyuskin5.mp3', title: 'Chelyuskin5.mp3' },
-        { src: '../audio/Chelyuskin6.mp3', title: 'Chelyuskin6.mp3' },
-        { src: '../audio/Chelyuskin7.mp3', title: 'Chelyuskin7.mp3' },
-        { src: '../audio/Chelyuskin8.mp3', title: 'Chelyuskin8.mp3' }
-      ]
-    },
-    ruslan: {
-      title: <>the sinking of the rescue vessel "Ruslan"</>,
-      text: 'Date: 1933. Location: in the Spitsbergen area. On April 25, 1933, the vessel sank due to heavy icing off South Cape, Spitsbergen archipelago, in the Barents Sea. Under Captain N. Klyuev, Ruslan had helped rescue the icebreaker "Malygin," which had run aground near Spitsbergen. After completing that operation on April 24, Ruslan and the rescued Malygin set out for Murmansk. While awaiting the icebreaker Krasin, which was to tow them, Ruslan followed at slow speed. On the night of April 25, strong winds and snow began to ice up the ship, sharply reducing its stability. Listing heavily, it could only be briefly righted by turning bow-to-waves and chipping away ice. By evening the measures failed, water flooded the engine room, and around midnight Ruslan capsized and sank. Of the 22 crew who took to the lifeboats, only three were rescued by a Norwegian fishing vessel five days later.',
-      images: [{ src: '../images/ruslan1.JPG', title: 'Rescue tug "Ruslan"' }],
+      text: 'В 1930-е годы в СССР была создана полярная авиация, которая помогала осваивать Арктику. 17 декабря 1932 года при СНК СССР образовали Главное управление Северного морского пути (ГУСМП). Для работы новой транспортной артерии необходимо было наладить регулярную связь с районами Крайнего Севера, и обеспечить её могла только авиация. Некоторые воздушные трассы Северного морского пути того времени: с 1933 года началось регулярное воздушное сообщение по маршруту Красноярск — Игарка. Аэрогидропорт в Красноярске обустроили на острове Телячем. В феврале 1935 года В. С. Молоков совершил арктический перелёт по маршруту Красноярск — Игарка — Дудинка — Диксон. В июле 1936 года лётчики Г. Т. Побежимов и В. С. Молоков на летающей лодке Дорнье «Валь» облетели территорию Крайнего Севера, преодолев по кольцевому маршруту Красноярск — Якутск — Охотск — остров Врангеля — Москва — Красноярск 31 000 километров. Бортмеханик Побежимов с конца 1920-х годов участвовал в полярных рейсах, летал на остров Врангеля. В последующие годы он участвовал в воздушной ледовой разведке и прокладке воздушных трасс в Красноярском крае и Арктике. На красноярском авиаремонтном заводе руководил ремонтом авиамоторов, помогал осваивать технику. Григорий Трофимович заслуженно считался одним из лучших бортмехаников в полярной авиации, никто лучше него не знал, как может вести себя мотор в экстремальных условиях Арктики. В августе 1937 года Г.Т. Побежимов погиб при перелёте через Северный полюс, за штурвалом самолёта находился Герой Советского Союза С.А. Леваневский. В 1936 году В. С. Молоков совершил продолжительные полёты по всей трассе Северного морского пути. Воздушная арктическая трасса вдоль евразийского побережья связала Москву с самыми отдалёнными базами Советской Арктики, с её портами, зимовками, полярными станциями и промышленными новостройками. К 1941 году в распоряжении Главсевморпути имелась мощная по тем временам авиация по всему Крайнему Северу — от Архангельска до бухты Провидения. Самолёты могли летать до Владивостока. В поле деятельности Главсеморпути регулярно действовали авиалинии: Тюмен — Салехард, Красноярск — Диксон, Тикси — Анадырь. Полёты, подобные тому, что совершил в 1936 году на гидросамолёте Василий Молоков, прокладывали маршрут по Северному морскому пути как для самолётов, так и для кораблей. В 1930-х годах Северный морской путь стал важной частью транспортной инфраструктуры Советского Союза, и регулярные авиалинии начали развиваться как средство связи между удаленными регионами. Начало авиаперевозок в 1932 году: начало регулярных авиаперевозок в арктическом регионе. Авиаперевозки стали важным инструментом для связи с труднодоступными районами. Основные маршруты в 1930-х годах: Москва - Архангельск (запущена в 1933 году), Архангельск - Норильск (с 1934 года), Норильск - Диксон (с 1935 года), Диксон - Тикси (с 1936 года). Авиаперевозки в арктическом регионе стали важным инструментом для транспортировки грузов, почты и пассажиров. Использование гидросамолетов позволяло приземляться на водные поверхности, что было особенно актуально в условиях сурового климата. Пионеры советской авиации, такие как Водопьянов и Шевелёв, сыграли ключевую роль в организации и развитии этих авиаперевозок, что способствовало улучшению связи и экономическому развитию северных регионов. В начале 1930-х Красноярск стал основной авиационной базой Главного управления Севморпути. 17 декабря 1932 года при СНК СССР было образовано Главное управление Северного морского пути. Руководителем управления был назначен знаменитый полярный исследователь О.Ю. Шмидт. С 1933 года началось регулярное воздушное сообщение по маршрутам Красноярск – Игарка. Аэрогидропорт в Красноярске был обустроен на острове Телячем. В 1934 году на базе двух полуразвалившихся сараев и небольшого коммунального здания, на правом берегу Абаканской протоки, напротив авиабазы, были открыты авиаремонтные мастерские Главсевморпути. В марте 1935 года был построен тёплый ангар, стал возможен ремонт тяжёлых самолётов, в августе мастерские были переименованы в Авиаремонтный завод. Честь уложить первый кирпич в основание завода была предоставлена старейшему полярному лётчику Б.Г. Чухновскому. Среди лётчиков-полярников, работавших в это время на красноярской авиабазе, был в том числе один из первых Героев Советского Союза – В.С. Молоков. В феврале 1935 года он совершил арктический перелёт Красноярск – Игарка – Дудинка – Диксон. Постановлением Красноярского крайисполкома в ознаменование этого события остров Телячий был переименован в остров имени Молокова. В июле 1936 года лётчики Г.Т. Побежимов и В.С. Молоков на летающей лодке Дорнье «Валь» облетели территорию Крайнего Севера, преодолев по кольцевому маршруту Красноярск — Якутск — Охотск — остров Врангеля — Москва — Красноярск 31 000 километров. Подвиг экипажа был отмечен высокими правительственными наградами. В августе 1937 Г.Т. Побежимов погиб при перелёте через Северный полюс. По просьбе трудящихся Красноярскому авиаремонтному заводу было присвоено его имя. С 1949 года завод им. Побежимова был перепрофилирован под судостроение, а в 1958 году он был разделён на судостроительный и судоремонтный заводы. При разделении имя лётчика в названиях предприятий было упущено. После появления в городе аэродрома в районе нынешней Взлётки, необходимость в авиабазе на острове Молокова постепенно отпала, а с началом строительства Коммунального моста, взлёт и посадка гидросамолётов на Абаканской протоке стали невозможны. На конец 1933 года в Управлении имелось 17 самолётов: 6 У-2, 4 Дорнье Валь, 2 ЮГ-1, 2 Ш-2 и по одному Юнкерс В-33, Савойя С-55 и Р-5. Осенью этого года лётчиком Кукановым на самолёте ЮГ-1 за 13 рейсов были эвакуированы 93 человека с зажатых во льдах судов «Север», «Хабаровск» и «Анадырь». В 1934 году лётчики полярной авиации Слепнёв и Леваневский, наряду с авиацией других ведомств, участвовали в операции по спасению экипажа и пассажиров раздавленного льдами парохода Челюскин. На этот год в Управлении полярной авиации имелось 46 самолётов; началось строительство первых постоянно действующих аэродромов в Арктике, открыты авиремонтные мастерские (впоследствии завод) в Красноярске, авиатрасса Красноярк — Игарка продлена до Дудинки и открыта новая регулярная авиалиния вдоль Оби. В 1935 году у полярной авиации имелось 77 самолётов, действовало 3 регулярных авиалинии: Енисейская, Обская и Ленская. В 1936 году УПА обеспечивала ледовую разведку для первого перехода боевых кораблей по Северному морскому пути (ЭОН-3) — эсминцев с Балтийского на Тихоокеанский флот. В структуре Управления полярной авиации на этот год имелись: Московский авиационный отряд особого назначения, Беломорский авиаотряд, Енисейская и Ленская авиагруппы, Обская и Тихоокеанская авиагруппы, Красноярский авиаремонтный завод. В 1935—1937 годах для полярной авиации проводились закупки некоторых самолётов в США. Приобрели 3 самолёта Локхид Л-10, по два — Дуглас ДФ-195 и Сикорский С-43, по одному — Консолидейтед ПБУ-1 и Валти В-1АС.',
+      images: [
+        {
+          src: '../images/tracks1.jpg',
+          title: 'Почтовая марка в честь воздушной экспедиции _Север_, доставившей грузы и полярников на Северный полюс'
+        },
+        {
+          src: '../images/tracks2.jpg',
+          title: 'Первая советская _арктическая_ марка 1931 года ВОЗДУШНАЯ ПОЧТА, посвящённая рейсу _Малыгина_ с туристами'
+        },
+        { src: '../images/tracks3.jpg', title: 'Объявление Енисейской авиагруппы полярной авиации Главсевморпути. 1937. Фото КККМ' },
+        {
+          src: '../images/tracks4.jpg',
+          title: 'Полёт гидросамолёта _СССР Н-2_ на о. Диксон. 07.09.1936 г. (Фото из фондов Государственного музея Арктики и Антарктики).'
+        },
+        {
+          src: '../images/tracks5.jpg',
+          title: 'Почтовый конверт ВОЗДУШНОЙ ПОЧТЫ из первого советского арктического рейса 1931 года на _Малыгине_ с туристами'
+        },
+        { src: '../images/tracks6.jpg', title: 'освоение Арктики в 1937 году карта советского периода' }
+      ],
       videos: [],
       audios: []
     }
-  },
+  ],
   personali: {
     pilots: [
       {
         id: 'pilot',
-        date: '(1895–1982)',
-        title: 'V.S. Molokov',
+        date: '(1895 – 1982)',
+        title: 'В.С. Молоков',
         biography: {
           title:
-            'Soviet polar pilot and military leader, participant in the 1934 Chelyuskin steamship expedition rescue operation, Hero of the Soviet Union, Major General of Aviation.',
-          date: '(13.02.1895–29.12.1982)',
+            'Советский полярный лётчик и военачальник, участник операции по спасению экспедиции парохода «Челюскин» в 1934 году, Герой Советского Союза, Генерал-майор авиации.',
+          date: '(9.04.1895-29.12.1982)',
           awards: [
+            { date: '1934 г.', description: 'три ордена Ленина: 20.04.1934, 27.06.1937, 30.04.1945;' },
             {
-              date: '1904',
-              description: 'Worked in a box workshop in Moscow, then as a hammerman in a smithy and as a fitter.'
+              date: '1944 г.',
+              description: 'два ордена Красного Знамени: 3.11.1944, 15.05.1945;.'
+            },
+            { date: '1945 г.', description: 'орден Суворова 2-й степени: 19.04.1945;' },
+            { date: '1944 г.', description: 'орден Кутузова 2-й степени: 22.07.1944;' },
+            {
+              date: '1943 г.',
+              description: 'орден Отечественной войны 1-й степени: 12.12.1943;'
             },
             {
-              date: '1915',
+              date: '1936 г.',
+              description: 'орден Красной Звезды: 19.09.1936;'
+            },
+            {
+              date: '1941—1945 гг.',
               description:
-                'Served as assistant mechanic in naval aviation. Participant in World War I. From 1918, mechanic in the aviation detachment at the Gatchina Advanced Piloting School. Participant in the Civil War.'
-            },
-            {
-              date: '1921',
-              description: 'Graduated from the Naval Pilots School in Samara. Served in the operational unit of the Air Force of the Baltic Fleet.'
-            },
-            {
-              date: '1924',
-              description:
-                'Graduated from the Sevastopol Military Aviation School of Naval Pilots; remained there as a flight instructor. In 1929, completed the advanced command staff courses at the Zhukovsky Air Force Academy.'
-            },
-            {
-              date: '1931',
-              description: 'Pilot in the Civil Air Fleet (GVF); flew routes in Siberia and the Far East.'
-            },
-            {
-              date: '1932',
-              description:
-                'Commanded the Polar Aviation detachment of the Main Directorate of the Northern Sea Route. During the Chelyuskin rescue, made 9 flights and evacuated 39 people from the ice camp.'
-            },
-            {
-              date: '1937',
-              description: 'As commander of the TB-3 aircraft crew, participated in the landing of Papanin’s team at the North Pole.'
-            },
-            {
-              date: '1938–1942',
-              description: 'Head of the Main Directorate of the Civil Air Fleet.'
-            },
-            {
-              date: '1942',
-              description:
-                'Authorized by the State Defense Committee to inspect the construction progress of the Alaska–Siberia air route. In 1942–43, served as head of the Flight Research Institute.'
-            },
-            {
-              date: '1943',
-              description: 'Commander of the 213th Night Bomber Aviation Division (Western and 3rd Belorussian Fronts).'
-            },
-            {
-              date: '1945–1947',
-              description: 'Deputy Head of the Main Directorate of the Hydrometeorological Service under the Council of Ministers of the USSR.'
-            },
-            {
-              date: '1947',
-              description:
-                'Major General of Aviation V.S. Molokov retired. Chaired the Civil Air Fleet’s Higher Qualification Commission. Member of the Central Auditing Commission of the CPSU. Member of the USSR Central Executive Committee of the 7th Convocation and deputy of the Supreme Soviet of the USSR of the 1st Convocation.'
+                'медали СССР: юбилейная медаль «За доблестный труд (За воинскую доблесть). В ознаменование 100-летия со дня рождения Владимира Ильича Ленина», медаль «За оборону Москвы», медаль «За победу над Германией в Великой Отечественной войне 1941—1945 гг.».'
             }
           ]
         },
         quotes: {
           title:
-            '"First solo flight! It was as if on that very day you became a free bird, merging with the machine into one whole... It’s your celebration. Only ten minutes, yet you remember it for a lifetime."' +
-            '"In flight, we were so busy that we completely forgot about time. I greatly valued good weather, believing that those precious Arctic hours must be used to the fullest..."' +
-            '"We never thought of our flights as heroism. It was our job, albeit very hard and dangerous. I considered it my duty to help people as quickly as possible..."' +
-            '"I did nothing special. I am an ordinary pilot."'
+            '«Первый самостоятельный полёт! Словно именно в этот день ты стал вольной птицей, слившись с машиной в одно целое… Это — твой праздник. Всего 10 минут, а помнишь всю жизнь»'
         },
+
         achievements: [
           {
-            date: '1936',
+            date: '1904 г.',
+            description: '1904 г. - работал в коробочной мастерской в Москве, затем в кузнице молотобойцем и слесарем.'
+          },
+          {
+            date: '1915 г.',
             description:
-              'Opened the air route along the Northern Sea Route. The crew of the aircraft “USSR-H2,” led by Molokov, covered 31,000 km. The flight started in Krasnoyarsk, passed through Yakutia, Kamchatka, Chukotka, the entire Northern Sea Route, reached Moscow, and returned to the starting point.'
+              '1915 г. - служил помощником механика в морской авиации. Участник первой мировой войны. С 1918 – механик авиационного отряда в Гатчинской школе высшего пилотажа. Участник гражданской войны.'
           },
           {
-            date: '1937',
+            date: '1921 г.',
+            description: '1921г. окончил школу морских лётчиков в Самаре. Служил в строевой части ВВС Балтийского флота.'
+          },
+          {
+            date: '1924г г.',
             description:
-              'Participated in the North Pole expedition. From March 22 to June 25, 1937, Molokov commanded the airship “USSR N-171” and delivered I.D. Papanin’s first Soviet polar station to the Pole.'
+              '1924г.окончил Севастопольскую военную авиационную школу морских лётчиков, оставлен в ней лётчиком-инструктором. В 1929 окончил курсы усовершенствования командного состава при Военно-воздушной академии имени Н.Е. Жуковского.'
           },
           {
-            date: '1936',
+            date: '1932 гг.',
             description:
-              'Long-distance flight. Molokov’s 1936 flight demonstrated the capabilities of Soviet polar aviation: over 200 flight hours and more than 31,000 km flown. His achievements significantly contributed to Arctic exploration.'
+              '1932 г. - командовал отрядом Полярной авиации Главного управления Северного морского пути. В операции по спасению челюскинцев совершил 9 полётов и вывез из лагеря 39 человек.'
           },
           {
-            date: '1982',
-            description: 'Died on December 29, 1982. Buried in Moscow at the Kuntsevo Cemetery.'
+            date: '1937 г.',
+            description: '1937 г. - в качестве командира экипажа самолёта ТБ-3 участвовал в высадке папанинцев на Северный полюс.'
           },
           {
-            date: '1945',
-            description: 'Three Orders of Lenin: April 20, 1934; June 27, 1937; April 30, 1945.'
-          },
-          {
-            date: '1944',
-            description: 'Two Orders of the Red Banner: November 3, 1944; May 15, 1945.'
-          },
-          {
-            date: '1945',
-            description: 'Order of Suvorov, 2nd Class: April 19, 1945.'
-          },
-          {
-            date: '1944',
-            description: 'Order of Kutuzov, 2nd Class: July 22, 1944.'
-          },
-          {
-            date: '1943',
-            description: 'Order of the Patriotic War, 1st Class: December 12, 1943.'
-          },
-          {
-            date: '1936',
-            description: 'Order of the Red Star: September 19, 1936.'
-          },
-          {
-            date: '1941–1945',
+            date: '1942 г.',
             description:
-              'USSR medals: Jubilee Medal “For Valiant Labour (For Military Valour) on the occasion of the 100th anniversary of the birth of Vladimir Ilyich Lenin”; Medal “For the Defence of Moscow”; Medal “For the Victory over Germany in the Great Patriotic War 1941–1945.”'
+              '1942г. – уполномоченный Государственного комитета обороны по проверке хода строительства авиационной трассы Аляска-Сибирь. В 1942-1943 – начальник Лётно-исследовательского института.'
+          },
+          {
+            date: '1947 г.',
+            description: '1947 г. генерал-майор авиации В.С.Молоков – в запасе. Возглавлял Высшую квалификационную комиссию ГВФ.'
           }
         ],
         gallery: [
@@ -185,516 +128,82 @@ export const en = {
       },
       {
         id: 'pilot-2',
-        date: '(1899–1980)',
-        title: 'M.V. Vodopyanov',
+        date: '(1908 – 1982)',
+        title: 'Н.П. Каманин',
         biography: {
-          title: 'Soviet pilot, one of the first Heroes of the Soviet Union, Major General of the Soviet Air Force. Also engaged in literary work.',
-          date: '(18.11.1899–11.11.1980)',
+          title: 'Советский летчик, генерал-полковник авиации, один из первых семи Героев Советского Союза.',
+          date: '(05.10.1908 г. – 12.03.1982 г.)',
           awards: [
+            { date: '1934 г.', description: 'звание «Героя Советского Союза» (20 апреля 1934 г)' },
             {
-              date: '1918',
-              description: 'In February 1918 voluntarily joined the Red Army; served as a supply orderly in the “Ilya Muromets” airship division.'
+              date: '1934 г.',
+              description: 'медаль «Золотая звезда» (№2)'
+            },
+            { date: '1934 г.', description: '3 ордена Ленина (20.04.1934; 20.04.1953; 17.06.1961)' },
+            { date: '1944 г.', description: '2 ордена Красного Знамени (29.05.1944; 06.11.1947)' },
+            {
+              date: '1944 г.',
+              description: '2 ордена Суворова 2-й степени (10.01.1944; 28.04.1945)'
             },
             {
-              date: '1925',
-              description: 'From 1925 worked as an aircraft mechanic, then as a flight engineer.'
-            },
-            {
-              date: '1928',
-              description: 'Graduated from the “Dobrolet” flight school in 1928.'
-            },
-            {
-              date: '1929',
-              description: 'Graduated from the Moscow Flight-Technical School in 1929.'
-            },
-            {
-              date: '1930',
-              description: 'In January 1930 became the first to open the air route to Sakhalin Island.'
-            },
-            {
-              date: '1931',
-              description:
-                'From 1931 served at the Central Aerodrome in the Pravda newspaper flight detachment, delivering newspaper printing plates to major Soviet cities.'
-            },
-            {
-              date: '1941',
-              description: 'At the start of the Great Patriotic War commanded a long-range bomber aviation division.'
-            },
-            {
-              date: '1943',
-              description:
-                'Personally took part in the second raid on Berlin, during which his Pe-8 aircraft was shot up and forced to land in enemy-held territory.'
-            },
-            {
-              date: '1943',
-              description: 'In 1943 was promoted to Major General of Aviation. Retired from service in 1946.'
+              date: '1944 г.',
+              description: 'орден Красной Звезды (03.11.1944)'
             }
           ]
         },
         quotes: {
           title:
-            '"You can befriend an airplane as you would a person!" ' +
-            '"In the North you must not only know how to fly, but also know how to wait: good weather is rare and unstable there." ' +
-            '"And I had the great fortune to fly to rescue the Chelyuskin survivors." ' +
-            '"Love for my Motherland and hatred for its enemies are the bearings that keep me from losing my way on any flight."'
+            '«Запомните: летчик – это имя собирательное. На него работают десятки людей. Умейте слушать каждого. И уважать!» (Из книги Н. П. Каманина «Летчики и космонавты»)'
         },
+
         achievements: [
           {
-            date: '1934',
-            description: 'Awarded the Gold Star Medal of Hero of the Soviet Union (April 20, 1934).'
+            date: '1927 г.',
+            description: '1927 г. — призван в РККА и направлен на учёбу в Военно- теоретическую школу ВВС РККА.'
           },
           {
-            date: '1934',
-            description: 'Four Orders of Lenin (April 20 1934; June 27 1937; November 6 1945; December 6 1949).'
+            date: '1928 г.',
+            description: '1928 г. — переведён во 2-ю военную школу лётчиков им. Осоавиахима СССР для обучения практическим полётам.'
           },
           {
-            date: '1940',
-            description: 'Four Orders of the Red Banner (April 11 1940; February 20 1942; November 3 1944; January 14 1952).'
-          },
-          {
-            date: '1945',
-            description: 'Order of the Patriotic War, 1st Class (July 13 1945).'
-          },
-          {
-            date: '1967',
-            description: 'Medal “For Battle Merit” (October 28 1967).'
-          },
-          {
-            date: '1937',
+            date: '1929 г.',
             description:
-              'On May 21 1937, piloting an ANT-6, made the first-ever landing on ice in the vicinity of the North Pole, rescuing ten people en route.'
+              '1929 г. — окончил 2-ю военную школу лётчиков и был назначен в 40-ю авиаэскадрилью ВВС ОКДВА, где проходил службу младшим и старшим лётчиком, командиром звена.'
           },
           {
-            date: '1949',
-            description:
-              'Awarded a fourth Order of Lenin for participation in the secret “North-2” operation, which created ice airfields for delivery of nuclear weapons to the enemy’s vicinity.'
+            date: '1940 г.',
+            description: '1940 г. — командир 19-й легкобомбардировочной авиационной бригады, участник советско-финляндской войны.'
+          },
+          {
+            date: '1943 гг.',
+            description: '1943 г. — командовал 8-м смешанным (с июля 1943 года — 5-м штурмовым) авиационным корпусом, проходившим формирование в тылу.'
+          },
+          {
+            date: '1946 г.',
+            description: '1946 г. — командир 3-го гвардейского штурмового авиационного корпуса (в Южной группе войск, город Арад, Румыния).'
+          },
+          {
+            date: '1955 г.',
+            description: '1955 года — заместитель председателя Центрального Комитета ДОСААФ.'
+          },
+          {
+            date: '1971 г.',
+            description: '1971 г. — генерал-полковник авиации Н. П. Каманин — в запасе.'
           }
         ],
         gallery: [
-          { src: '/images/vodopyanov1.jpg', name: 'vodopyanov1.jpg' },
-          { src: '/images/vodopyanov2.jpg', name: 'vodopyanov2.jpg' },
-          { src: '/images/vodopyanov3.jpg', name: 'vodopyanov3.jpg' }
+          { src: '/images/kamanin1.jpg', name: 'kamanin1.jpg' },
+          { src: '/images/kamanin2.jpg', name: 'kamanin2.jpg' }
         ]
-      },
-      {
-        id: 'pilot-3',
-        date: '(1908–1982)',
-        title: 'N.P. Kamanin',
-        biography: {
-          title: 'Soviet pilot, Colonel-General of Aviation, one of the first seven Heroes of the Soviet Union.',
-          date: '(05.10.1908–12.03.1982)',
-          awards: [
-            {
-              date: '1927',
-              description: 'Conscripted into the Red Army and sent to study at the Military-Theoretical School of the Red Army Air Forces.'
-            },
-            {
-              date: '1928',
-              description: 'Transferred to the 2nd Military Pilot School named after Osoaviakhim USSR for practical flight training.'
-            },
-            {
-              date: '1929',
-              description:
-                'Graduated from the 2nd Military Pilot School and was assigned to the 40th Aviation Squadron of the Air Forces of the Far Eastern Military District as junior and senior pilot, and flight leader.'
-            },
-            {
-              date: '1933',
-              description:
-                'Commanded a detachment in the 28th Aviation Squadron. In December, took part in the search and rescue of the Chelyuskin steamship expedition crew. For courage and heroism was awarded the title Hero of the Soviet Union.'
-            },
-            {
-              date: '1935',
-              description:
-                'Studied at the Zhukovsky Air Force Academy; upon graduation in December 1938 was appointed commander of the 19th Light Bomber Aviation Brigade.'
-            },
-            {
-              date: '1940',
-              description: 'Commander of the 19th Light Bomber Aviation Brigade; participant in the Soviet–Finnish War.'
-            },
-            {
-              date: '1940–1941',
-              description:
-                'Commander of the 3rd Aviation Brigade (Central Asian Military District) and concurrently Commander of the Air Forces of that district.'
-            },
-            {
-              date: '1941',
-              description: 'Commander of the 4th Aviation Brigade (Central Asian Military District); in August took part in the Soviet invasion of Iran.'
-            },
-            {
-              date: '1942–1943',
-              description: 'Commander of the 292nd Assault Aviation Division; participant in the Great Patriotic War.'
-            },
-            {
-              date: '1943',
-              description: 'Commanded the 8th Mixed Aviation Corps (from July renamed the 5th Assault Aviation Corps) during its formation in the rear.'
-            },
-            {
-              date: '1946',
-              description: 'Commander of the 3rd Guards Assault Aviation Corps (Southern Group of Forces, Arad, Romania).'
-            },
-            {
-              date: '1946–1948',
-              description: 'Deputy Head of the Main Directorate of the Civil Air Fleet for Defense Matters.'
-            },
-            {
-              date: '1948',
-              description:
-                'Chairman of the DOSAAF Organizational Bureau (Voluntary Society for Assistance to Aviation); from October 1951–December 1953 Deputy Chairman of the DOSAAF Aviation Committee; December 1953–June 1955 Deputy Chairman of the DOSAAF Central Committee.'
-            },
-            {
-              date: '1956',
-              description: 'Graduated from the Higher Academic Courses at the Military Academy of the General Staff.'
-            },
-            {
-              date: '1957–1958',
-              description:
-                'Commander of the 73rd Air Army (Turkestan Military District); April 1958–January 1961 Deputy Chief of the Air Force General Staff for Combat Training.'
-            },
-            {
-              date: '1961',
-              description:
-                'Deputy Chief of Air Force Combat Training for Space Operations; June 1966–June 1971 Assistant Commander-in-Chief of the Air Force for Space Flight Training and Support.'
-            },
-            {
-              date: '1971',
-              description: 'Colonel-General of Aviation N.P. Kamanin retired.'
-            }
-          ]
-        },
-        quotes: {
-          title:
-            '"Remember: “pilot” is a collective name. Dozens of people support it. Learn to listen to each one—and to respect them!" (From N.P. Kamanin’s book “Pilots and Cosmonauts”)'
-        },
-        achievements: [
-          {
-            date: '1934',
-            description: 'Awarded the title Hero of the Soviet Union (April 20, 1934).'
-          },
-          {
-            date: '1934',
-            description: 'Gold Star Medal (No. 2).'
-          },
-          {
-            date: '1978',
-            description: 'Order of the October Revolution (October 17, 1978).'
-          },
-          {
-            date: '1944',
-            description: 'Two Orders of the Red Banner (May 29, 1944; November 6, 1947).'
-          },
-          {
-            date: '1944',
-            description: 'Two Orders of Suvorov, 2nd Class (January 10, 1944; April 28, 1945).'
-          },
-          {
-            date: '1944',
-            description: 'Order of Kutuzov, 2nd Class (August 19, 1944).'
-          },
-          {
-            date: '1944',
-            description: 'Order of the Red Star (November 3, 1944).'
-          }
-        ],
-        gallery: [
-          { src: '/images/kamanin1.JPG', name: 'kamanin1.JPG' },
-          { src: '/images/kamanin2.JPG', name: 'kamanin2.JPG' }
-        ]
-      }
-    ],
-    engineers: [
-      {
-        id: 'engineer',
-        date: '(1900–1900)',
-        title: 'Surname Name Patronymic1',
-        biography: {
-          title: 'Biography of Engineer 1'
-        },
-        quotes: {
-          title: 'Quote of Engineer 1'
-        },
-        awards: [{ title: 'Achievements of Engineer 1' }],
-        gallery: [
-          {
-            src: '/images/image.png',
-            title: 'Engineer 1'
-          }
-        ]
-      }
-    ],
-    researchers: [
-      {
-        id: 'researcher',
-        date: '(1900–1900)',
-        title: 'Surname Name Patronymic1',
-        biography: {
-          title: 'Biography of Researcher 1'
-        },
-        quotes: {
-          title: 'Quote of Researcher 1'
-        },
-        awards: [{ title: 'Achievements of Researcher 1' }],
-        gallery: [
-          {
-            src: '/images/image.png',
-            title: 'Researcher 1'
-          }
-        ]
-      }
-    ],
-    library: {
-      films: [
-        {
-          title: 'Chelyuskintsy (USSR, 1985, director – Mikhail Ivanovich Ershov)',
-          src: '/videos/cheluskin-video1.mp4'
-        },
-        {
-          title: 'Chelyuskin: The First (Russia, 2024, director – Stepan Korshunov)',
-          src: '/videos/preview.mp4'
-        },
-        {
-          title: 'The Sinking of the Chelyuskin: Rescue of the Survivors (1934)',
-          src: '/videos/preview.mp4'
-        },
-        {
-          title: '“Alexander Sibiryakov”: Biography of the Steamship (Russia, 2014, director – Vladimir Pleshakov)',
-          src: '/videos/preview.mp4'
-        },
-        {
-          title: 'The Voyage of the Sibiryakov (USSR, 1933, directors – Vladimir Schneiderov, Yakov Kuper)',
-          src: '/videos/preview.mp4'
-        },
-        {
-          title: 'Feat in the Ice (Leningrad, 1928, directors – Georgiy Vasilyev, Sergey Vasilyev)',
-          src: '/videos/preview.mp4'
-        },
-        {
-          title: 'The Red Tent (Italy, 1969, director – Mikhail Kalatozov)',
-          src: '/videos/preview.mp4'
-        }
-      ]
-    },
-    audioBooks: [
-      {
-        title: 'Chelyuskin: In the Grip of the Ice Desert by Mikhail Kalashnikov',
-        src: '/audios/cheluskin-audio-book1.mp3'
-      }
-    ],
-    lectures: [],
-    books: [
-      {
-        title: 'Rescue of the Chelyuskin Survivors by S. K. Safonov & Yuri Burlakov',
-        src: '../images/book1.jpg'
-      },
-      {
-        title: 'Chelyuskintsy: The First in the Arctic by A. A. Zamostyanov',
-        src: '../images/book2.jpg'
-      },
-      {
-        title: 'In the Shadow of the First Heroes: White Spots of the Chelyuskin Epic by Nikolai Veligzhanin',
-        src: '../images/book3.jpg'
-      },
-      {
-        title: 'Expedition on the Sibiryakov by Sergey Alexandrovich Semenov (1933)',
-        src: '../images/book4.jpg'
-      },
-      {
-        title: 'The Wreck of the Italia: The History of Umberto Nobile’s Arctic Expedition by Mark Paising',
-        src: '../images/book5.jpg'
-      },
-      {
-        title: 'Umberto Nobile and the Italia at the North Pole by Claudio Sicolo',
-        src: '../images/book6.jpg'
       }
     ]
   },
-  booksfilmsData: [
-    {
-      films: [
-        {
-          id: 1,
-          name: '“Italia”',
-          data: [
-            {
-              id: 1,
-              title: 'Feat in the Ice (Leningrad, 1928, directors – Georgiy Vasilyev, Sergey Vasilyev)',
-              src: ''
-            },
-            {
-              id: 2,
-              title: 'The Red Tent (Italy, 1969, director – Mikhail Kalatozov)',
-              src: ''
-            }
-          ]
-        },
-        {
-          id: 2,
-          name: '“Alexander Sibiryakov”',
-          data: [
-            {
-              id: 1,
-              title: '“Alexander Sibiryakov”: Biography of the Steamship (Russia, 2014, director – Vladimir Pleshakov, 26 min)',
-              src: ''
-            },
-            {
-              id: 2,
-              title: 'The Voyage of the Sibiryakov (USSR, 1933, directors – Vladimir Schneiderov, Yakov Kuper)',
-              src: ''
-            }
-          ]
-        },
-        {
-          id: 3,
-          name: '“Chelyuskin”',
-          data: [
-            {
-              id: 1,
-              title: 'Chelyuskintsy (USSR, 1985, director – Mikhail Ivanovich Ershov)',
-              src: ''
-            },
-            {
-              id: 2,
-              title: 'Chelyuskin: The First (Russia, 2024, director – Stepan Korshunov)',
-              src: ''
-            }
-          ]
-        },
-        {
-          id: 4,
-          name: '“Ruslan”',
-          data: [
-            { id: 1, title: '', src: '' },
-            { id: 2, title: '', src: '' }
-          ]
-        }
-      ],
-      audio: [
-        {
-          id: 3,
-          name: '“Chelyuskin”',
-          data: [
-            {
-              id: 1,
-              title: 'Chelyuskin: In the Grip of the Ice Desert by Mikhail Kalashnikov',
-              src: 'https://books.yandex.ru/audiobooks/FOFQwPrN?utm_place=content_audio_menu_item'
-            }
-          ]
-        }
-      ],
-      lektions: [],
-      books: [
-        {
-          id: 1,
-          name: '“Italia”',
-          data: [
-            {
-              id: 1,
-              title: 'The Wreck of the Italia: The History of Umberto Nobile’s Arctic Expedition by Mark Paising (book)'
-            },
-            {
-              id: 2,
-              title: 'Umberto Nobile and the Italia at the North Pole by Claudio Sicolo (book)'
-            }
-          ]
-        },
-        {
-          id: 2,
-          name: '“Alexander Sibiryakov”',
-          data: [
-            {
-              id: 1,
-              title: 'Expedition on the Sibiryakov by Sergey Alexandrovich Semenov (book, 1933)'
-            }
-          ]
-        },
-        {
-          id: 3,
-          name: '“Chelyuskin”',
-          data: [
-            {
-              id: 1,
-              title: 'Rescue of the Chelyuskin Survivors by S. K. Safonov & Yuri Burlakov (book)'
-            },
-            {
-              id: 2,
-              title: 'Chelyuskintsy: The First in the Arctic by A. A. Zamostyanov (book)'
-            },
-            {
-              id: 3,
-              title: 'In the Shadow of the First Heroes: White Spots of the Chelyuskin Epic by Nikolai Veligzhanin (book)'
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  exhibitsData: [
-    {
-      id: 1,
-      name: 'Ваза эпохи Цинь',
-      images: [
-        'https://i.pinimg.com/736x/d9/cb/b5/d9cbb5972f4855ac1cb6fcb3f095486d.jpg',
-        'https://i.pinimg.com/736x/2e/c0/ca/2ec0ca86151ab5d18626ee34487e0e99.jpg',
-        'https://avatars.mds.yandex.net/i?id=a0ac2453e18891a51065a18a6d0b932a11ad4be9-5388887-images-thumbs&n=13'
-      ],
-      date: '221 г. до н.э.',
-      material: 'Фарфор',
-      size: '45×30 см',
-      description: 'Искусно выполненная ваза с сине-белым орнаментом...'
-    },
-    {
-      id: 2,
-      name: 'Бронзовый меч Хань',
-      images: [
-        'https://avatars.mds.yandex.net/i?id=80a6d53c70733eeeb2468fdec9e186bc_l-5179194-images-thumbs&n=13',
-        'https://avatars.mds.yandex.net/i?id=ef452bbbc1f810b133c07ca846353dcb78f510ab-5294137-images-thumbs&n=13'
-      ],
-      date: '206 г. до н.э. - 220 г. н.э.',
-      material: 'Бронза',
-      size: '78×8 см',
-      description:
-        'Церемониальный меч эпохи Хань с инкрустацией золотом. Клинок украшен символикой неба и земли, характерной для конфуцианской традиции. Отличная сохранность демонстрирует мастерство древних металлургов.'
-    },
-    {
-      id: 3,
-      name: 'Шёлковый свиток Тан',
-      images: [
-        'https://avatars.mds.yandex.net/i?id=c325000056bd3d08774795d436f9764cf26954c3-4552028-images-thumbs&n=13',
-        'https://avatars.mds.yandex.net/i?id=11383ffb762db0e19ab44f9f7e338a9318222d28-5859422-images-thumbs&n=13',
-        'https://avatars.mds.yandex.net/i?id=8e85d04bb886fd3408df6eb190daa366e4295a35-7149282-images-thumbs&n=13',
-        'https://avatars.mds.yandex.net/i?id=8e85d04bb886fd3408df6eb190daa366e4295a35-7149282-images-thumbs&n=13'
-      ],
-      date: '618-907 гг.',
-      material: 'Шёлк, минеральные пигменты',
-      size: '120×45 см',
-      description:
-        "Свиток с пейзажной живописью эпохи Тан, изображающий горный массив Хуаншань. Работа демонстрирует характерную для периода технику 'сине-зеленых пейзажей'. Сохранились подписи трёх владельцев XVII века."
-    },
-    {
-      id: 4,
-      name: 'Нефритовый диск Би',
-      images: [
-        'https://avatars.mds.yandex.net/i?id=041196872fccb611f18129b53c0fdb4068e928c7-5220281-images-thumbs&n=13',
-        'https://avatars.mds.yandex.net/i?id=e88971888dbc82dc6f1a4cc8c609590e-5734541-images-thumbs&n=13'
-      ],
-      date: '2500-2000 гг. до н.э.',
-      material: 'Нефрит',
-      size: 'Ø 22 см',
-      description:
-        'Ритуальный диск культуры Лянчжу с характерным отверстием в центре. Символизировал небо в древних космогонических культах. Полировка поверхности достигнута многолетней обработкой бамбуком и водой.'
-    },
-    {
-      id: 5,
-      name: 'Терракотовый музыкант',
-      images: [
-        'https://avatars.mds.yandex.net/i?id=61c68d96eedcf83c4f2530c7a1ed042de9db9ba2-10147998-images-thumbs&n=13',
-        'https://avatars.mds.yandex.net/i?id=3cdd91f76f48839b7ff94d8d3fdd42eabf881a09-10197150-images-thumbs&n=13',
-        'https://avatars.mds.yandex.net/i?id=dbf583607b8b008a6b74fcab042fd24bdd004ade-10356912-images-thumbs&n=13'
-      ],
-      date: 'VIII век',
-      material: 'Глина, минеральные пигменты',
-      size: '38×22×18 см',
-      description:
-        'Фигурка музыканта с лютной пипа из захоронения эпохи Тан. Представитель ансамбля из 12 музыкантов, сопровождавших знатную особу в загробный мир. Сохранились фрагменты оригинальной росписи.'
-    }
-  ]
+  library: {
+    films: [{ src: '', title: '' }],
+    audioBooks: [],
+    lectures: [],
+    books: []
+  },
+
+  exhibitsData: []
 };
