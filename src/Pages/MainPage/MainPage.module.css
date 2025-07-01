@@ -43,13 +43,15 @@
   height: 350px;
   border-radius: 50%;
   border: none;
-  outline: 3px dashed rgba(255, 255, 255, 1) !important;
   outline-offset: 15px;
   font-family: 'Snowstorm', arial;
   font-size: 40px;
-  background: rgba(255, 255, 255, 0.25);
   color: rgba(255, 255, 255, 1);
   text-transform: uppercase;
   font-weight: normal;
   cursor: pointer;
+
+  /* change */
+  outline: 3px dashed #2E565A7F !important;
+  background: #2E565A7F;
 }
