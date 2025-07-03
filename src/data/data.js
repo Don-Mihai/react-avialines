@@ -109,7 +109,7 @@ export const translations = {
 export const operationStyles = {
   dorne: {
     position: 'absolute',
-    top: '66%',
+    top: '68%',
     right: '17%',
     width: '640px',
     height: '177px',
@@ -117,10 +117,10 @@ export const operationStyles = {
   },
   tracks: {
     position: 'absolute',
-    top: '39%',
-    left: '3%',
-    width: '690px',
-    height: '160px',
+    top: '41%',
+    left: '15%',
+    width: '460px',
+    height: '170px',
     cursor: 'pointer'
   }
 };
