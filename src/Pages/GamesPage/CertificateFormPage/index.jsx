@@ -230,12 +230,27 @@ const CertificateFormPage = () => {
         <form className={styles.form}>
           <div className={styles.formGroup}>
             <label>ваше имя</label>
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} onFocus={() => handleFocus('name')} required />
+            <input
+              className={styles.fioEnter}
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              onFocus={() => handleFocus('name')}
+              required
+            />
           </div>
 
           <div className={styles.formGroup}>
             <label>e-mail</label>
-            <input type="text" inputMode="email" value={email} onChange={(e) => setEmail(e.target.value)} onFocus={() => handleFocus('email')} required />
+            <input
+              className={styles.fioEnter}
+              type="text"
+              inputMode="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              onFocus={() => handleFocus('email')}
+              required
+            />
           </div>
         </form>
       </div>
