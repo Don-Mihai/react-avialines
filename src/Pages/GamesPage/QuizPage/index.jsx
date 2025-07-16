@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router';
-import { quizData } from '../../../data/games.js';
 
 import { useSelector } from 'react-redux';
 
@@ -8,6 +7,7 @@ import styles from './QuizPage.module.css';
 import GamesMenu from '../../../components/GamesMenu/index.jsx';
 import Footer from '../../../components/Footer/index.jsx';
 import QuizModal from './QuizModal';
+import { useLanguage } from '../../../LanguageContext';
 
 const QuizPage = () => {
   const navigate = useNavigate();
@@ -20,6 +20,8 @@ const QuizPage = () => {
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
   const [gameSeconds, setGameSeconds] = useState(0);
   const timerRef = useRef(null);
+  const { data = {} } = useLanguage();
+  const quizData = data.quizData;
 
   const currentQuestion = quizData[currentQuestionIndex];
 

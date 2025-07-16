@@ -1,4 +1,4 @@
-export const puzzleData = [
+window.puzzleData = [
   {
     id: 1,
     imageSrc: '/images/puzzle1.jpg',
@@ -16,7 +16,7 @@ export const puzzleData = [
   }
 ];
 
-export const difficultyLevels = [
+window.difficultyLevels = [
   {
     id: 'easy',
     name: 'Легкий',
@@ -40,7 +40,7 @@ export const difficultyLevels = [
   }
 ];
 
-export const crosswordData = {
+window.crosswordData = {
   size: 23,
   words: [
     {
@@ -126,7 +126,7 @@ export const crosswordData = {
   ]
 };
 
-export const quizData = [
+window.quizData = [
   {
     id: 1,
     question: 'Для чего в 1930-е годы в СССР была создана полярная авиация?',
