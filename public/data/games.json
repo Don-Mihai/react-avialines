@@ -1,6 +1,6 @@
 {
-  "gamesData": [
-    {
+  
+    
       "puzzleData": [
         {
           "id": 1,
@@ -156,7 +156,7 @@
           }
         ]
       },
-      "quizDataMain": [
+      "quizData": [
         {
           "id": 1,
           "question": "Для чего в 1930-е годы в СССР была создана полярная авиация?",
@@ -385,6 +385,6 @@
           "multiAnswer": false
         }
       ]
-    }
-  ]
+    
+
 }

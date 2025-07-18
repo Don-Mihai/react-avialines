@@ -17,7 +17,8 @@ const HistoricalPage = () => {
     navigate(`/history-item/${id}`);
   };
 
-  console.log(data);
+  console.log('data', data);
+  console.log('operations', operations);
 
   return (
     <>
@@ -28,7 +29,7 @@ const HistoricalPage = () => {
             <span className={styles.title}>{data.sectionHistoryTitle}</span>
             {operations.map?.((operation) => (
               <React.Fragment key={operation.id}>
-                <span className={styles.subTitle} dangerouslySetInnerHTML={{ __html: operation.title }}></span>
+                <span className={styles.subTitle} dangerouslySetInnerHTML={{ __html: operation.title }} />
                 <span className={styles.info} onClick={() => handleItemClick(operation.id)}>
                   {data.learnMore}
                 </span>
