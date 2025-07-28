@@ -14,7 +14,6 @@
   display: flex;
   position: absolute;
   gap: 15px;
-
   top: 50%;
   left: 50%;
   transform: translate(-50%, -10%);
@@ -52,6 +51,6 @@
   cursor: pointer;
 
   /* change */
-  outline: 3px dashed #2E565A7F !important;
-  background: #2E565A7F;
+  outline: 3px dashed #416C70 !important;
+  background: #416C70;
 }

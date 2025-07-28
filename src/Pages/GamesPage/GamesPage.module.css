@@ -16,7 +16,7 @@
     gap: 15px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 15%);
+    transform: translate(-50%, 0);
 }
 
 /* версия слабовидящих включена */
@@ -43,11 +43,11 @@
     height: 350px;
     border-radius: 50%;
     border: none;
-    outline: 3px dashed rgba(255, 255, 255, 1) !important;
+    outline: 3px dashed #416C70 !important;
     outline-offset: 15px;
     font-family: 'Snowstorm', arial;
     font-size: 43px;
-    background: rgba(255, 255, 255, 0.25);
+    background: #416C70;
     color: rgba(255, 255, 255, 1);
     text-transform: uppercase;
     font-weight: normal;
