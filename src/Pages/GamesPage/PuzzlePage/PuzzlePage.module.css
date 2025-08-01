@@ -164,6 +164,8 @@
     flex: 1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: solid 2px #fff;
+    touch-action: none; /* Блокирует браузерные жесты (zoom/scroll) */
+    user-select: none;  /* Запрещает выделение элементов */
 }
 
 .puzzleArea {

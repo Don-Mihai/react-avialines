@@ -292,8 +292,7 @@ const CrosswordPage = () => {
                   <div
                     key={`${rowIndex}-${colIndex}`}
                     className={`${styles.cell} ${isEmpty ? styles.empty : ''} ${isSelected ? styles.selected : ''} ${isSolved ? styles.solved : ''}`}
-                    onClick={() => !allRevealed && handleCellClick(rowIndex, colIndex)}
-                  >
+                    onClick={() => !allRevealed && handleCellClick(rowIndex, colIndex)}>
                     {!isEmpty && !isSolved && !isRevealed && cell.clueNumber && <span className={styles.cellNumber}>{cell.clueNumber}</span>}
                     {(isSolved || isRevealed) && cell.value}
                   </div>
@@ -306,7 +305,7 @@ const CrosswordPage = () => {
         <div className={styles.controls}>
           {selectedClue ? (
             <form onSubmit={handleSubmit} className={styles.form}>
-              <span>Подсказка #{clueNumberMap[selectedClue.id]}:</span>
+              <span>Вопрос №{clueNumberMap[selectedClue.id]}:</span>
               <p className={styles.clue}>{selectedClue.clue}</p>
 
               <div className={styles.inputGroup}>

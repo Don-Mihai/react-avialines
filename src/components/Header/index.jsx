@@ -45,8 +45,7 @@ const Header = () => {
                     border: colorScheme === key ? '2px solid #ff0000' : '1px solid #ccc'
                   }}
                   onClick={() => handleSchemeChange(key)}
-                  title={`Схема ${key.replace('scheme', '')}`}
-                >
+                  title={`Схема ${key.replace('scheme', '')}`}>
                   <span style={{ color: textColor }}>Ц</span>
                 </span>
               )
@@ -63,7 +62,7 @@ const Header = () => {
             <button onClick={() => setIsCatalogOpen(true)} className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>
               {data.catalog}
             </button>
-            <button className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>{data.audioguide}</button>
+            {/* <button className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>{data.audioguide}</button> */}
           </>
         )}
 
@@ -71,8 +70,7 @@ const Header = () => {
         <button
           onClick={toggleLang}
           className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''} 
-                ${isGamesPage ? styles.button_header_games : ''}`}
-        >
+                ${isGamesPage ? styles.button_header_games : ''}`}>
           {lang}
         </button>
       </div>

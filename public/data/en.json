@@ -2,8 +2,8 @@
   "operations": [
     {
       "id": "dorne",
-      "title": "воздушные трассы северного <br /> морского пути",
-      "text": " В 1933 году были созданы первые авиабазы для организации и обеспечения регулярных арктических полетов. Они разместились на мысе Северном (Чукотский полуостров), на мысе Челюскина и на Земле Франца-Иосифа. В 1934 году образовано Управление Полярной авиации Главсевморпути. Цель регулярной авиации — освоение Арктики, решение задач, связанных с освоением Северного морского пути (СМП). Задачи, которая выполняла регулярная авиация. Ледовая разведка для судов, следовавших по СМП. Авиационное обслуживание научно-исследовательских экспедиций, изучавших природные ресурсы Северного Ледовитого океана. Связь с отдалёнными северными районами и зимовками, доставка грузов и пассажиров не только в короткий навигационный период, но и в течение всего года. Помощь зазимовавшим во льдах судам. Созданы Енисейская, Ленская и Обская авиагруппы Полярной авиации для организации регулярных полётов по линиям Тюмень — Салехард, Красноярск — Дудинка — Диксон и Якутск — Тикси. Некоторые воздушные трассы Северного морского пути того времени: С 1933 года началось регулярное воздушное сообщение по маршруту Красноярск — Игарка. Аэрогидропорт в Красноярске обустроили на острове Телячем.  В феврале 1935 года  В. С. Молоков совершил арктический перелёт по маршруту Красноярск — Игарка — Дудинка — Диксон.   В июле 1936 года лётчики Г. Т. Побежимов и В. С. Молоков на летающей лодке Дорнье «Валь» облетели территорию Крайнего Севера, преодолев по кольцевому маршруту Красноярск — Якутск — Охотск — остров Врангеля — Москва — Красноярск 31 000 километров.  В 1936 году В. С. Молоков совершил продолжительные полёты по всей трассе Северного морского пути. Воздушная арктическая трасса вдоль евразийского побережья связала Москву с самыми отдалёнными базами Советской Арктики, с её портами, зимовками, полярными станциями и промышленными новостройками.  К 1941 году в распоряжении Главсевморпути имелась мощная по тем временам авиация по всему Крайнему Северу — от Архангельска до бухты Провидения. Самолёты могли летать до Владивостока. В поле деятельности Главсеморпути регулярно действовали авиалинии: Тюмен — Салехард, Красноярск — Диксон, Тикси — Анадырь. Полёты, подобные тому, что совершил в 1936 году на гидросамолёте Василий Молоков, прокладывали маршрут по Северному морскому пути как для самолётов, так и для кораблей.",
+      "title": "air routes of the northern <br /> sea route",
+      "text": " In 1933, the first air bases were created to organize and support regular Arctic flights. They were located on Cape Severny (Chukotka Peninsula), Cape Chelyuskin and Franz Josef Land. <br/> In 1934, the Polar Aviation Directorate of the Main Directorate of the Northern Sea Route was formed <br/> The purpose of regular aviation was to develop the Arctic, solve problems related to the development of the Northern Sea Route (NSR) <br/> <strong>Tasks performed by regular aviation</strong> <br/> Ice reconnaissance for ships traveling along the NSR. <br/> Aviation services for research expeditions studying the natural resources of the Arctic Ocean. <br/> Communication with remote northern regions and wintering grounds, delivery of cargo and passengers not only during the short navigation period, but throughout the year. <br/> Assistance to ships wintered in ice. <br/> The Yenisei, Lena and Ob air groups of Polar Aviation were created to organize regular flights along the Tyumen-Salekhard, Krasnoyarsk-Dudinka-Dikson and Yakutsk-Tiksi routes. <br/> <strong>Some air routes of the Northern Sea Route of that time: </strong> <br/> Since 1933, regular air traffic began on the Krasnoyarsk-Igarka route. The airport and hydroport in Krasnoyarsk was built on Telyachiy Island. <br/> In February 1935, V.S. Molokov made an Arctic flight along the Krasnoyarsk-Igarka-Dudinka-Dikson route. <br/> In July 1936, pilots G. T. Pobezhimov and V. S. Molokov flew around the territory of the Far North in a Dornier Val flying boat, covering 31,000 kilometers along the ring route Krasnoyarsk - Yakutsk - Okhotsk - Wrangel Island - Moscow - Krasnoyarsk. <br/> In 1936, V. S. Molokov made long flights along the entire Northern Sea Route. The Arctic air route along the Eurasian coast connected Moscow with the most remote bases of the Soviet Arctic, with its ports, wintering grounds, polar stations and industrial new buildings. <br/> By 1941, the Main Directorate of the Northern Sea Route had at its disposal a powerful aviation force for that time throughout the Far North - from Arkhangelsk to Providence Bay. Airplanes could fly to Vladivostok. The following airlines regularly operated in the area of activity of the Main Directorate of the Northern Sea Route: Tyumen-Salekhard, Krasnoyarsk-Dikson, Tiksi-Anadyr. <br/> Flights like the one made in 1936 by Vasily Molokov on a seaplane paved the way along the Northern Sea Route for both aircraft and ships.",
       "images": [
         {
           "src": "../images/dorne1.jpg",
@@ -18,45 +18,45 @@
       "audios": [
         {
           "src": "../audios/Dorne-text1.mp3",
-          "title": "Воздушные трассы  северного морского пути"
+          "title": "Northern Sea Route Air Routes"
         }
       ]
     },
     {
       "id": "tracks",
-      "title": "«комсеверпуть» <br /> служба связи",
-      "text": "«Комсеверпуть» (Комитет Северного морского пути) был образован в 1919 году для обеспечения транспортировки грузов в Северном Ледовитом океане и прилегающих к нему территориях. В 1928 году Борис Чухновский и Анатолий Алексеев и Марк Шевелёв при Комсеверпути образовали штаб по созданию авиационной группы. С этого небольшого коллектива и началась советская полярная авиация. В этом же году правление общества «Комсеверпуть» приобретает  один из самолётов Дорнье «Валь», наиболее подходящих по своим характеристикам для работы в условиях Крайнего Севера, для обеспечения ледовой разведки Карских экспедиций. По личному решению наркома обороны Климента Ворошилова организации выделили одну машину из состава черноморских ВВС, назвав её «Комсеверпуть-1». В июле 1929 года экипаж Чухновского перегнал машину из Севастополя в Архангельск, подготовил к работе на Севере и в августе начал ледовую разведку в Карском море. Успешное выполнение задач ледовой разведки в навигацию 1929 года стало основанием для приобретения обществом ещё двух самолётов Дорнье «Валь», которые были построены по спецзаказу за границей. Самолёт Дорнье Do 16 «Валь» (нем. Dornier Do 16 Wal) – двухмоторная летающая лодка, в конце 1920-х годов был признан наиболее оптимальным вариантом для проведения ледовой разведки в высоких широтах. Машина разрабатывалась в четырёх модификациях: для СССР, Испании, Нидерландов и Югославии. В 1930 году уже три самолёта «Комсеверпуть» № 1, 2 и 3 обслуживали навигацию, причём в карских проводках участвовало уже 46 судов. Экипажам приходилось выкладываться полностью. 1 марта 1931 года в составе «Комсеверпуть» была создана Служба связи, позже переименованная в Авиаслужбу. Так появилась первая авиационная структура со своим командованием и самолётами. Эту дату принято считать днём рождения Полярной авиации, которая сначала появилась в Западной Арктике, но в последующие годы уверенно шагнула на Восток.",
+      "title": "«komseverput» <br /> communication service",
+      "text": "«Komseverput» (Northern Sea Route Committee) was formed in 1919 to ensure the transportation of goods in the Arctic Ocean and adjacent territories. <br/> The Communications Service, formed by «Komseverput» on March 1, 1931, dealt with organizational and economic issues of all «Komseverput» aviation. <br/> M. I. Shevelev was appointed Head of the Communications Service, and B. G. Chukhnovsky was his deputy. <br/> In 1932, the Communications Service became known as the Aviation Service. <br/> In 1928, Boris Chukhnovsky, Anatoly Alekseyev and Mark Shevelev formed a headquarters for the creation of an aviation group at Komseverput. This small group was the beginning of Soviet polar aviation.<br/> That same year, the board of the Komseverput society acquired one of the Dornier Val aircraft, which was most suitable in terms of its characteristics for work in the conditions of the Far North, to provide ice reconnaissance for the Kara expeditions.<br/> By personal decision of the People's Commissar of Defense Kliment Voroshilov, the organization allocated one aircraft from the Black Sea Air Force, calling it «Komseverput-1».<br/> In July 1929, Chukhnovsky's crew ferried the aircraft from Sevastopol to Arkhangelsk, prepared it for work in the North, and in August began ice reconnaissance in the Kara Sea. <br/> For three weeks, flying over the ice, the seaplane assisted the icebreaker Krasin, which escorted ships in groups to the Gulf of Ob and the Yenisei Gulf.<br/> The successful completion of ice reconnaissance missions during the 1929 navigation season became the basis for the company to purchase two more Dornier Wal aircraft, which were built to special order abroad.<br/> The Dornier Do 16 Wal aircraft (German: Dornier Do 16 Wal) is a twin-engine flying boat that was recognized in the late 1920s as the best option for ice reconnaissance in high latitudes. The machine was developed in four modifications: for the USSR, Spain, the Netherlands and Yugoslavia.<br/> In the Soviet Union, most of the Do 16s ended up in the Black Sea Fleet, from where the first aircraft was transferred to organize ice reconnaissance in the Arctic. Dornier «Val» took part in combat operations at the early stage of the Great Patriotic War, after which they were removed from service.<br/> In 1930, three Komseverput aircraft No. 1, 2 and 3 were already servicing navigation, and 46 ships were already participating in the Kara Sea escorts. The crews had to give it their all.<br/> One of the summary reports of the joint-stock company directly stated: »... The success of ice aerial reconnaissance in 1930 exceeded all expectations. The icebreakers «Lenin» and «Malygin», which participated in the operation, were idle, and all ship escort was carried out based on data obtained by aerial reconnaissance.» <br/> The exceptionally successful results of the use of aviation in the northern seas in 1930 led to the creation of an air unit as an independent enterprise. On March 1, 1931, the Communications Service, later renamed the Aviation Service, was created as part of the North Siberian State Joint-Stock Company of Industry and Transport «Komseverput» of the People's Commissariat of Foreign and Domestic Trade of the USSR. <br/> Thus, the first aviation structure with its own command and aircraft appeared. <br/> This date is considered to be the birthday of Polar Aviation, which first appeared in the Western Arctic, but in subsequent years confidently stepped to the East.",
       "images": [
         {
           "src": "../images/tracks1.jpg",
-          "title": "Почтовая марка в честь воздушной экспедиции _Север_, доставившей грузы и полярников на Северный полюс"
+          "title": "Postage stamp in honor of the Sever air expedition, which delivered cargo and polar explorers to the North Pole"
         },
         {
           "src": "../images/tracks2.jpg",
-          "title": "Первая советская _арктическая_ марка 1931 года ВОЗДУШНАЯ ПОЧТА, посвящённая рейсу _Малыгина_ с туристами"
+          "title": "The first Soviet Arctic stamp of 1931 AIR MAIL, dedicated to Malygin's flight with tourists"
         },
         {
           "src": "../images/tracks3.jpg",
-          "title": "Объявление Енисейской авиагруппы полярной авиации Главсевморпути. 1937. Фото КККМ"
+          "title": "Announcement of the Yenisei air group of the polar aviation of the Main Directorate of the Northern Sea Route. 1937. Photo by KKKM"
         },
         {
           "src": "../images/tracks4.jpg",
-          "title": "Полёт гидросамолёта _СССР Н-2_ на о. Диксон. 07.09.1936 г. (Фото из фондов Государственного музея Арктики и Антарктики)."
+          "title": "Flight of the USSR N-2 seaplane on the island. Dixon. 09/07/1936 (Photo from the funds of the State Museum of the Arctic and Antarctic)."
         },
         {
           "src": "../images/tracks5.jpg",
-          "title": "Почтовый конверт ВОЗДУШНОЙ ПОЧТЫ из первого советского арктического рейса 1931 года на _Малыгине_ с туристами"
+          "title": "AIR MAIL postal envelope from the first Soviet Arctic flight in 1931 on Malygin with tourists"
         },
         {
           "src": "../images/tracks6.jpg",
-          "title": "освоение Арктики в 1937 году карта советского периода"
+          "title": "Arctic exploration in 1937 map of the soviet period"
         }
       ],
       "videos": [],
       "audios": [
         {
           "src": "../audios/Tracks-text1.mp3",
-          "title": "«Комсеверпуть»"
+          "title": "«Komseverput»"
         }
       ]
     }
