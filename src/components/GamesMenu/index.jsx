@@ -82,7 +82,7 @@ const GamesMenu = ({
   const getAnswersText = () => {
     switch (activeGame) {
       case 'пазлы':
-        return `${currentPieces}/${totalPieces} ${data.puzzlesProgress}`;
+        return totalPieces > 0 ? `${currentPieces}/${totalPieces} ${data.puzzlesProgress}` : data.selectGame;
       case 'кроссворд':
         return `${data.crosswordProgress} ${solvedCrosswords}/${totalCrosswords}`;
       case 'викторина':

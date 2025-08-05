@@ -1,17 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router';
-import { JigsawPuzzle } from 'react-jigsaw-puzzle/lib';
 import { useLanguage } from '../../../LanguageContext.jsx';
-
-import 'react-jigsaw-puzzle/lib/jigsaw-puzzle.css';
+import CustomPuzzle from './CustomPuzzle';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft'; // Добавлена новая иконка
 import styles from './PuzzlePage.module.css';
 import GamesMenu from '../../../components/GamesMenu/index.jsx';
 import Footer from '../../../components/Footer/index.jsx';
 
 const PuzzlePage = () => {
   const navigate = useNavigate();
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
   const [selectedPuzzle, setSelectedPuzzle] = useState(null);
   const [selectedDifficulty, setSelectedDifficulty] = useState('medium');
   const [gameStarted, setGameStarted] = useState(false);
@@ -24,7 +24,29 @@ const PuzzlePage = () => {
   const [timerActive, setTimerActive] = useState(false);
   const [currentPuzzleTime, setCurrentPuzzleTime] = useState(0);
   const [showHint, setShowHint] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0); // Новое состояние для слайдера
+  const [currentCorrectPieces, setCurrentCorrectPieces] = useState(0);
+  const [currentTotalPieces, setCurrentTotalPieces] = useState(0);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchMove = (e) => {
+    if (!touchStartX.current || !touchStartY.current) return;
+
+    const touchX = e.touches[0].clientX;
+    const touchY = e.touches[0].clientY;
+
+    const diffX = Math.abs(touchX - touchStartX.current);
+    const diffY = Math.abs(touchY - touchStartY.current);
+
+    // Блокируем только горизонтальные свайпы
+    if (diffX > diffY && diffX > 10) {
+      e.preventDefault();
+    }
+  };
 
   // Функции для навигации по слайдеру
   const goToPrevSlide = () => {
@@ -53,6 +75,8 @@ const PuzzlePage = () => {
       setTimerActive(true);
       setCurrentPuzzleTime(0);
       setShowHint(false);
+      setCurrentCorrectPieces(0);
+      setCurrentTotalPieces(getCurrentPuzzlePieces());
     }
   };
 
@@ -73,9 +97,16 @@ const PuzzlePage = () => {
     const updatedPuzzleData = puzzleData.map((puzzle) => (puzzle.id === selectedPuzzle.id ? { ...puzzle, completed: true } : puzzle));
   };
 
+  const handlePuzzleProgress = (correctPieces, totalPieces) => {
+    setCurrentCorrectPieces(correctPieces);
+    setCurrentTotalPieces(totalPieces);
+  };
+
   const handleBackToSelection = () => {
     setGameStarted(false);
     setTimerActive(false);
+    setCurrentCorrectPieces(0);
+    setCurrentTotalPieces(0);
   };
 
   // Таймер
@@ -132,7 +163,8 @@ const PuzzlePage = () => {
                 <div
                   key={puzzle.id}
                   className={`${styles.puzzleCard} ${selectedPuzzle?.id === puzzle.id ? styles.selected : ''}`}
-                  onClick={() => setSelectedPuzzle(puzzle)}>
+                  onClick={() => setSelectedPuzzle(puzzle)}
+                >
                   <div className={styles.statusIndicator}>{puzzle.completed ? '✓' : ''}</div>
                   <img src={puzzle.imageSrc} alt={puzzle.title} className={styles.puzzleImage} />
                 </div>
@@ -144,6 +176,16 @@ const PuzzlePage = () => {
             </button>
           </div>
 
+          {/* <div className={styles.sliderDots}>
+            {Array.from({ length: Math.ceil(puzzleData.length / 3) }).map((_, index) => (
+              <span 
+                key={index} 
+                className={`${styles.dot} ${currentSlide === index ? styles.activeDot : ''}`}
+                onClick={() => setCurrentSlide(index)}
+              />
+            ))}
+          </div> */}
+
           <p className={styles.title}>{data.difficultyTitle}</p>
 
           <div className={styles.difficultyContainerVertical}>
@@ -151,7 +193,8 @@ const PuzzlePage = () => {
               <div
                 key={level.id}
                 className={`${styles.difficultyItem} ${selectedDifficulty === level.id ? styles.selectedItem : ''}`}
-                onClick={() => setSelectedDifficulty(level.id)}>
+                onClick={() => setSelectedDifficulty(level.id)}
+              >
                 <div className={styles.difficultyLabel}>
                   {selectedDifficulty === level.id && <ArrowRightIcon className={styles.arrowIcon} />}
                   <span className={`${styles.difficultyName} ${selectedDifficulty === level.id ? styles.selectedText : ''}`}>
@@ -177,15 +220,20 @@ const PuzzlePage = () => {
 
   return (
     <section className={styles.container}>
-      <GamesMenu completedPuzzles={completedPuzzles} totalPuzzles={totalPuzzles} initialSeconds={gameSeconds} puzzlePieces={puzzlePieces} />
+      <GamesMenu
+        completedPuzzles={completedPuzzles}
+        totalPuzzles={totalPuzzles}
+        initialSeconds={gameSeconds}
+        currentPieces={currentCorrectPieces}
+        totalPieces={currentTotalPieces}
+      />
 
       <div className={styles.gameContainer}>
         <button className={styles.backButton} onClick={handleBackToSelection}>
           {data.backToPuzzleSelection}
         </button>
 
-        {/* Удалены обработчики onTouchStart и onTouchMove */}
-        <div className={styles.puzzleArea}>
+        <div className={styles.puzzleArea} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
           <div className={styles.hintPanel}>
             <button className={styles.hintToggle} onClick={() => setShowHint(!showHint)}>
               {showHint ? data.hideHint : data.showHint}
@@ -194,14 +242,13 @@ const PuzzlePage = () => {
             {showHint && <img src={selectedPuzzle.imageSrc} alt={data.hintImageAlt} className={styles.hintImage} />}
           </div>
 
-          <div
-            className={styles.puzzleWrapper}
-            onTouchStart={(e) => e.preventDefault()} // Блокировка стандартных действий
-            onTouchMove={(e) => e.preventDefault()} // Предотвращаем скролл/навигацию
-            onContextMenu={(e) => e.preventDefault()} // Отключаем контекстное меню
-          >
-            <JigsawPuzzle imageSrc={selectedPuzzle.imageSrc} rows={difficulty.rows} columns={difficulty.columns} onSolved={handlePuzzleComplete} />
-          </div>
+          <CustomPuzzle
+            imageSrc={selectedPuzzle.imageSrc}
+            rows={difficulty.rows}
+            columns={difficulty.columns}
+            onSolved={handlePuzzleComplete}
+            onProgressChange={handlePuzzleProgress}
+          />
         </div>
       </div>
 
